@@ -116,21 +116,21 @@ function Home() {
                         <div className="ECsmall">
                             <img src={f7} />
                             <div className="ECsmallTitle" style={{ fontSize: 20 }}>Which Yaris does Edmunds recommend?</div>
-                            <div>The Yaris comes well appointed from the get-go, so we recommend sticking with the base L trim. The LE and the XLE add a number of convenience features</div>
+                            <div className="des">The Yaris comes well appointed from the get-go, so we recommend sticking with the base L trim. The LE and the XLE add a number of convenience features</div>
                         </div>
                     </div>
                     <div className="col-4">
                         <div className="ECsmall">
                             <img src={f6} />
                             <div className="ECsmallTitle" style={{ fontSize: 20 }}>Which Yaris does Edmunds recommend?</div>
-                            <div>The Yaris comes well appointed from the get-go, so we recommend sticking with the base L trim. The LE and the XLE add a number of convenience features</div>
+                            <div className="des">The Yaris comes well appointed from the get-go, so we recommend sticking with the base L trim. The LE and the XLE add a number of convenience features</div>
                         </div>
                     </div>
                     <div className="col-4">
                         <div className="ECsmall">
                             <img src={f5} />
                             <div className="ECsmallTitle" style={{ fontSize: 20 }}>Which Yaris does Edmunds recommend?</div>
-                            <div>The Yaris comes well appointed from the get-go, so we recommend sticking with the base L trim. The LE and the XLE add a number of convenience features</div>
+                            <div className="des">The Yaris comes well appointed from the get-go, so we recommend sticking with the base L trim. The LE and the XLE add a number of convenience features</div>
                         </div>
                     </div>
                 </div>
@@ -140,21 +140,21 @@ function Home() {
                         <div className="ECsmall">
                             <img src={f3} />
                             <div className="ECsmallTitle" style={{ fontSize: 20 }}>Which Yaris does Edmunds recommend?</div>
-                            <div>The Yaris comes well appointed from the get-go, so we recommend sticking with the base L trim. The LE and the XLE add a number of convenience features</div>
+                            <div className="des">The Yaris comes well appointed from the get-go, so we recommend sticking with the base L trim. The LE and the XLE add a number of convenience features</div>
                         </div>
                     </div>
                     <div className="col-4">
                         <div className="ECsmall">
                             <img src={f2} />
                             <div className="ECsmallTitle" style={{ fontSize: 20 }}>Which Yaris does Edmunds recommend?</div>
-                            <div>The Yaris comes well appointed from the get-go, so we recommend sticking with the base L trim. The LE and the XLE add a number of convenience features</div>
+                            <div className="des">The Yaris comes well appointed from the get-go, so we recommend sticking with the base L trim. The LE and the XLE add a number of convenience features</div>
                         </div>
                     </div>
                     <div className="col-4">
                         <div className="ECsmall">
                             <img src={f1} />
                             <div className="ECsmallTitle" style={{ fontSize: 20 }}>Which Yaris does Edmunds recommend?</div>
-                            <div>The Yaris comes well appointed from the get-go, so we recommend sticking with the base L trim. The LE and the XLE add a number of convenience features</div>
+                            <div className="des">The Yaris comes well appointed from the get-go, so we recommend sticking with the base L trim. The LE and the XLE add a number of convenience features</div>
                         </div>
                     </div>
                 </div>
