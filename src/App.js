@@ -8,6 +8,8 @@ import Event from './components/event/Event'
 import Contest from './components/contest/Contest';
 import News from './components/news/News';
 import AboutUs from './components/about/AboutUs';
+import TermOfUse from './components/info/TermOfUse';
+import PrivacyStatement from './components/info/PrivacyStatement';
 
 function App() {
   return (
@@ -16,11 +18,13 @@ function App() {
         <Navbar />
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/home" exact component={Home} />
-          <Route path="/event" exact component={Event} />
-          <Route path="/contest" exact component={Contest} />
-          <Route path="/news" exact component={News} />
-          <Route path="/about" exact component={AboutUs} />
+          <Route path="/trang-chu" exact component={Home} />
+          <Route path="/su-kien" exact component={Event} />
+          <Route path="/cuoc-thi" exact component={Contest} />
+          <Route path="/tin-tuc" exact component={News} />
+          <Route path="/ve-chung-toi" exact component={AboutUs} />
+          <Route path="/dieu-khoan-su-dung" exact component={TermOfUse} />
+          <Route path="/chinh-sach-bao-mat" exact component={PrivacyStatement} />
         </Switch>
         <Footer />
       </Router>

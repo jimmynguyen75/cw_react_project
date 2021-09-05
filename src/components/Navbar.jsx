@@ -54,26 +54,26 @@ function Navbar() {
             }}
             options={options}
         >
-            <Input.Search size="middle" placeholder="Search in Car World" />
+            <Input.Search size="middle" placeholder="Tìm kiếm" />
         </AutoComplete>
     );
     const history = useHistory();
     const location = useLocation();
     const home = () => {
-        history.push('/home')
+        history.push('/trang-chu')
         console.log(location.pathname)
     }
     function news() {
-        history.push('/news');
+        history.push('/tin-tuc');
     }
     function event() {
-        history.push('/event');
+        history.push('/su-kien');
     }
     function contest() {
-        history.push('/contest');
+        history.push('/cuoc-thi');
     }
     function about() {
-        history.push('/about');
+        history.push('/ve-chung-toi');
     }
 
     return (
@@ -87,11 +87,11 @@ function Navbar() {
                         <div className="col-6">
                             <div className="divMenu">
                                 <Menu mode="horizontal" className="MenuCW" defaultSelectedKeys={[location.pathname]}>
-                                    <Menu.Item key="/home" className="navRight1" onClick={home}>Home</Menu.Item>
-                                    <Menu.Item key="/news" className="navRight2" onClick={news}>News</Menu.Item>
-                                    <Menu.Item key="/event" className="navRight3" onClick={event}>Event</Menu.Item>
-                                    <Menu.Item key="/contest" className="navRight4" onClick={contest}>Contest</Menu.Item>
-                                    <Menu.Item key="/about" className="navRight5" onClick={about}>About</Menu.Item>
+                                    <Menu.Item key="/trang-chu" className="navRight1" onClick={home}>Trang chủ</Menu.Item>
+                                    <Menu.Item key="/tin-tuc" className="navRight2" onClick={news}>Tin tức</Menu.Item>
+                                    <Menu.Item key="/su-kien" className="navRight3" onClick={event}>Sự kiện</Menu.Item>
+                                    <Menu.Item key="/cuoc-thi" className="navRight4" onClick={contest}>Cuộc thi</Menu.Item>
+                                    <Menu.Item key="/ve-chung-toi" className="navRight5" onClick={about}>Về chúng tôi</Menu.Item>
                                 </Menu>
                             </div>
                         </div>

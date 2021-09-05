@@ -1,7 +1,7 @@
 import React from 'react'
 import 'antd/dist/antd.less'
 import './styles.less'
-import { Button, BackTop } from 'antd'
+import { Button } from 'antd'
 import featured from './featured1.png'
 import f1 from './1.jpg'
 import f2 from './2.jpg'
@@ -43,11 +43,11 @@ function Home() {
 
     const theme = {
         background: '#f5f8fb',
-        fontFamily: 'Helvetica Neue',
-        headerBgColor: '#FF7643',
+        fontFamily: 'Azeret Mono',
+        headerBgColor: '#ffa751',
         headerFontColor: '#ffff',
         headerFontSize: '18px',
-        botBubbleColor: '#FF7643',
+        botBubbleColor: '#ffa751',
         botFontColor: '#fff',
         userBubbleColor: '#fff',
         userFontColor: '#4a4a4a',
@@ -159,7 +159,6 @@ function Home() {
                     </div>
                 </div>
             </div>
-            <BackTop />
             <ThemeProvider theme={theme}>
                 <ChatBot
                     steps={steps}
