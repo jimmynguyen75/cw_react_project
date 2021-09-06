@@ -2,63 +2,31 @@ import React from 'react'
 import './styles.less'
 import 'antd/dist/antd.less'
 import { HomeOutlined, MailOutlined, PhoneOutlined, CopyrightOutlined } from '@ant-design/icons'
-import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom"
 import { BackTop } from 'antd'
-
 function Footer() {
     const history = useHistory();
-
-    function home() {
-        history.push('/trang-chu');
-        window.parent.location = window.parent.location.href;
-    }
-    function news() {
-        history.push('/tin-xe');
-        window.parent.location = window.parent.location.href;
-    }
-    function event() {
-        history.push('/su-kien');
-        window.parent.location = window.parent.location.href;
-    }
-    function contest() {
-        history.push('/cuoc-thi');
-        window.parent.location = window.parent.location.href;
-    }
-    function about() { 
-        history.push('/ve-chung-toi');
-        window.parent.location = window.parent.location.href;
-    }
-    function term() {
-        history.push('/dieu-khoan-su-dung');
-        window.parent.location = window.parent.location.href;
-    }
-    function privacy() {
-        history.push('/chinh-sach-bao-mat');
-        window.parent.location = window.parent.location.href;
-
-    }
-
     return (
         <div className="ftCW">
             <div className="headerCW">
                 <div className="footerCW">
                     <div className="row">
                         <div className="col-3">
-                            <div className="ftTitle" style={{fontSize: 18}}>CAR WORLD</div>
+                            <div className="ftTitle" style={{ fontSize: 18 }}>CAR WORLD</div>
                             <div className="spaceFT" style={{ fontSize: 16 }}>Xây dựng một sân chơi hữu ích dành cho những người chơi xe chuyên nghiệp</div>
                         </div>
                         <div className="col-3">
                             <div className="ftTitle" style={{ fontSize: 18 }}>ĐIỀU HƯỚNG</div>
-                            <button className="spaceFT1" style={{ fontSize: 16 }} onClick={home}>Trang chủ</button><br />
-                            <button className="spaceFT1" style={{ fontSize: 16 }} onClick={news}>Tin xe</button><br />
-                            <button className="spaceFT1" style={{ fontSize: 16 }} onClick={event}>Sự kiện</button><br />
-                            <button className="spaceFT1" style={{ fontSize: 16 }} onClick={contest}>Cuộc thi</button><br />
-                            <button className="spaceFT1" style={{ fontSize: 16 }} onClick={about}>Về chúng tôi</button>
+                            <button className="spaceFT1" style={{ fontSize: 16 }} ><a className="spaceFT11" href="/trang-chu">Trang chủ</a></button><br />
+                            <button className="spaceFT1" style={{ fontSize: 16 }} ><a className="spaceFT11" href="/tin-xe">Tin xe</a></button><br />
+                            <button className="spaceFT1" style={{ fontSize: 16 }} ><a className="spaceFT11" href="/su-kien">Sự kiện</a></button><br />
+                            <button className="spaceFT1" style={{ fontSize: 16 }} ><a className="spaceFT11" href="/cuoc-thi">Cuộc thi</a></button><br />
+                            <button className="spaceFT1" style={{ fontSize: 16 }} ><a className="spaceFT11" href="/ve-chung-toi">Về chúng tôi</a></button>
                         </div>
                         <div className="col-3">
                             <div className="ftTitle" style={{ fontSize: 18 }}>THÔNG TIN</div>
-                            <button className="spaceFT2" style={{ fontSize: 16 }} onClick={term}>Điều khoản sử dụng</button>
-                            <button className="spaceFT2" style={{ fontSize: 16 }} onClick={privacy}>Chính sách bảo mật</button>
+                            <button className="spaceFT2" style={{ fontSize: 16 }}><a className="spaceFT22" href="/dieu-khoan-su-dung">Điều khoản sử dụng</a></button>
+                            <button className="spaceFT2" style={{ fontSize: 16 }}><a className="spaceFT22" href="/chinh-sach-bao-mat">Chính sách bảo mật</a></button>
                         </div>
                         <div className="col-3">
                             <div className="ftTitle" style={{ fontSize: 18 }}>VỀ CHÚNG TÔI</div>

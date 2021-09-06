@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './styles.less'
 
 function PrivacyStatement() {
+    useEffect(() => {
+        document.title = "Chính sách bảo mật"
+    })
+
     return (
         <div className="body11">
             <div className="title22"><span className="border22">CHÍNH  </span>SÁCH BẢO MẬT</div>
@@ -46,11 +50,11 @@ function PrivacyStatement() {
                 <p>
                     Công ty TNHH Thương mại Dịch vụ Trao đổi Xe và Các Linh Phụ Kiện Car World
                     <br />Địa chỉ trụ sở chính: Đại Học FPT, Phường Long Thạnh Mỹ, Tp. Thủ Đức
-                    <br /> Người đại diện theo pháp luật:
+                    <br /> Người đại diện theo pháp luật: Nguyễn Minh Thư
                     <br />Ngoài ra, nhằm bảo vệ thông tin cá nhân và xử lý những khiếu nại liên quan đến thông tin cá nhân của khách hàng, công ty đã chỉ định bộ phận người chịu trách nhiệm quản lý thông tin riêng tư của khách hàng.
                     <br />Trung tâm chăm sóc khách hàng:
                     <br />Số điện thoại: 0868 470 598
-                    <br />Email: hotline@CarWorld.vn
+                    <br />Email: carworld@gmail.com
                 </p>
                 <h5>6. PHƯƠNG TIỆN VÀ CÔNG CỤ ĐỂ NGƯỜI DÙNG TIẾP CẬN VÀ CHỈNH SỬA DỮ LIỆU CÁ NHÂN CỦA KHÁCH HÀNG</h5>
                 <p>
@@ -67,17 +71,17 @@ function PrivacyStatement() {
                 </p>
                 <h5>8. CƠ CHẾ TIẾP NHẬN VÀ GIẢI QUYẾT KHIẾU NẠI CỦA NGƯỜI TIÊU DÙNG LIÊN QUAN ĐẾN VIỆC THÔNG TIN CÁ NHÂN BỊ SỬ DỤNG SAI MỤC ĐÍCH HOẶC PHẠM VI ĐÃ THÔNG BÁO</h5>
                 <p>
-                    •	Khi phát hiện thông tin cá nhân của mình bị sử dụng sai mục đích hoặc phạm vi, người dùng có quyền gửi email khiếu nại đến hòm thư hotline@CarWorld.vn hoặc liên hệ qua SĐT 0868 470 598 với các thông tin, chứng cứ liên quan tới việc này. Công ty cam kết sẽ phản hồi ngay lập tức trong vòng 24 tiếng để cùng người dùng thống nhất phương án giải quyết. Chúng tôi không chịu trách nhiệm cũng như không giải quyết mọi khiếu nại có liên quan đến quyền lợi của Thành viên đó nếu xét thấy tất cả thông tin cá nhân của Thành viên đó cung cấp khi mua hàng ban đầu là không chính xác.
+                    •	Khi phát hiện thông tin cá nhân của mình bị sử dụng sai mục đích hoặc phạm vi, người dùng có quyền gửi email khiếu nại đến hòm thư carworld@gmail.com hoặc liên hệ qua SĐT 0868 470 598 với các thông tin, chứng cứ liên quan tới việc này. Công ty cam kết sẽ phản hồi ngay lập tức trong vòng 24 tiếng để cùng người dùng thống nhất phương án giải quyết. Chúng tôi không chịu trách nhiệm cũng như không giải quyết mọi khiếu nại có liên quan đến quyền lợi của Thành viên đó nếu xét thấy tất cả thông tin cá nhân của Thành viên đó cung cấp khi mua hàng ban đầu là không chính xác.
                     <br /> •	Khi phát sinh tranh chấp hoặc khiếu nại, chúng tôi khuyến khích giải pháp thương lượng, hòa giải giữa các bên để đạt được sự đồng thuận về phương án giải quyết. Trong trường hợp nằm ngoài khả năng và thẩm quyền giải quyết của chúng tôi sẽ yêu cầu các bên tranh chấp đưa vụ việc ra giải quyết tại cơ quan nhà nước có thẩm quyền theo quy định của pháp luật. Chúng tôi tôn trọng và nghiêm túc thực hiện các quy định của pháp luật về bảo vệ quyền lợi của khách hàng.
                 </p>
                 <h5>9. THAY ĐỔI VỀ CHÍNH SÁCH:</h5>
                 <p>
-                   •  Chúng tôi hoàn toàn có thể thay đổi nội dung trong “Chính sách bảo mật” mà không cần phải thông báo trước, để phù hợp với các nhu cầu của Car World cũng như nhu cầu được phản hồi từ khách hàng. Khi cập nhật nội dung chính sách này, chúng tôi sẽ chỉnh sửa lại thời gian “Cập nhật lần cuối” bên dưới.
+                    •  Chúng tôi hoàn toàn có thể thay đổi nội dung trong “Chính sách bảo mật” mà không cần phải thông báo trước, để phù hợp với các nhu cầu của Car World cũng như nhu cầu được phản hồi từ khách hàng. Khi cập nhật nội dung chính sách này, chúng tôi sẽ chỉnh sửa lại thời gian “Cập nhật lần cuối” bên dưới.
                     <br /> • Nội dung “Chính sách bảo mật” này chỉ áp dụng tại Car World, không bao gồm hoặc liên quan đến các bên thứ ba đặt quảng cáo hay có link tại Car World. Chúng tôi khuyến khích quý khách đọc kỹ "Chính sách An toàn và Bảo mật" của các trang web của bên thứ ba trước khi cung cấp thông tin cá nhân cho các trang web đó. Chúng tôi không chịu trách nhiệm dưới bất kỳ hình thức nào về nội dung và tính pháp lý của trang web thuộc bên thứ ba.
                 </p>
                 <h5>10. THÔNG TIN LIÊN HỆ:</h5>
                 <p>
-                    Chúng tôi luôn hoan nghênh các ý kiến đóng góp, liên hệ và phản hồi thông tin từ quý khách hàng về “Chính sách bảo mật”. Nếu quý khách có những thắc mắc liên quan xin vui lòng liên hệ theo địa chỉ email hotline@CarWorld.vn hoặc hotline 0868 470 598.
+                    Chúng tôi luôn hoan nghênh các ý kiến đóng góp, liên hệ và phản hồi thông tin từ quý khách hàng về “Chính sách bảo mật”. Nếu quý khách có những thắc mắc liên quan xin vui lòng liên hệ theo địa chỉ email carworld@gmail.com hoặc hotline 0868 470 598.
                 </p>
             </div>
         </div>

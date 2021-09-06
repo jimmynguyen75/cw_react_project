@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './styles.less'
 
 function TermOfUse() {
+    useEffect(() => {
+        document.title = "Điều khoản sử dụng";
+    })
     return (
         <div className="body11">
             <div className="title22"><span className="border22">ĐIỀU  </span>KHOẢN SỬ DỤNG</div>
@@ -20,7 +23,7 @@ function TermOfUse() {
                 </p>
                 <h5>3. QUYỀN VÀ TRÁCH NHIỆM CỦA NGƯỜI SỬ DỤNG</h5>
                 <p>
-                    CarWorld cho phép người sử dụng xem, chiết xuất thông tin trên website (in, tải, chuyển tiếp…) hoặc chia sẻ cho người khác nhưng chỉ cho mục đích sử dụng cá nhân và phi thương mại với điều kiện phải trích dẫn thông báo bản quyền sau đây: '©2019 Copyright by CarWorld” Bạn đảm bảo tuân theo pháp luật và các quy định liên quan đến việc sử dụng website của CarWorld; Không can thiệp, gây ảnh hưởng đến việc sử dụng website của những người sử dụng khác; Không can thiệp vào hoạt động và quản lý website của CarWorld. Bạn nhận thức rõ và chấp nhận rằng CarWorld và/hoặc các đối tác không chịu trách nhiệm đối với bất kỳ tổn thất, thiệt hại, chi phí phát sinh từ bất kỳ quyết định nào của bạn khi sử dụng bất kỳ thông tin nào trên website với bất kỳ nguyên nhân gì. Nếu bạn không bằng lòng với bất kỳ thông tin nào trên Website hoặc với bất kỳ điều khoản và điều kiện sử dụng thông tin trên Website này thì phương thức duy nhất bạn nên thực hiện là chấm dứt truy cập/sử dụng thông tin trên website.
+                    CarWorld cho phép người sử dụng xem, chiết xuất thông tin trên website (in, tải, chuyển tiếp…) hoặc chia sẻ cho người khác nhưng chỉ cho mục đích sử dụng cá nhân và phi thương mại với điều kiện phải trích dẫn thông báo bản quyền sau đây: '©2021-2022 Copyright by CarWorld” Bạn đảm bảo tuân theo pháp luật và các quy định liên quan đến việc sử dụng website của CarWorld; Không can thiệp, gây ảnh hưởng đến việc sử dụng website của những người sử dụng khác; Không can thiệp vào hoạt động và quản lý website của CarWorld. Bạn nhận thức rõ và chấp nhận rằng CarWorld và/hoặc các đối tác không chịu trách nhiệm đối với bất kỳ tổn thất, thiệt hại, chi phí phát sinh từ bất kỳ quyết định nào của bạn khi sử dụng bất kỳ thông tin nào trên website với bất kỳ nguyên nhân gì. Nếu bạn không bằng lòng với bất kỳ thông tin nào trên Website hoặc với bất kỳ điều khoản và điều kiện sử dụng thông tin trên Website này thì phương thức duy nhất bạn nên thực hiện là chấm dứt truy cập/sử dụng thông tin trên website.
                 </p>
                 <h5>4. QUYỀN VÀ TRÁCH NHIỆM CỦA CARWORLD</h5>
                 <p>
@@ -28,7 +31,7 @@ function TermOfUse() {
                 </p>
                 <h5>5. BẢN QUYỀN VÀ THƯƠNG HIỆU</h5>
                 <p>
-                    Tuyên bố các quyền Sở hữu trí tuệ của CarWorld đối với các đối tượng thể hiện trên website Trang web này và tất cả nội dung của website, bao gồm nhưng không giới hạn các văn bản, thiết kế, đồ họa, giao diện, hình ảnh, mã code đều thuộc bản quyền của CarWorld hoặc bên thứ ba cấp phép cho CarWorld. Bản quyền của CarWorld được thể hiện trên website bằng dòng chữ tiếng Anh '© 2015 Copyright by CarWorld. All rights reserved.' Bất kỳ nội dung nào thuộc website này bao gồm nhãn hiệu, tên thương mại, mẫu logo công ty hoặc dịch vụ, sản phẩm, kiểu dáng sản phẩm... đều thuộc quyền sở hữu của CarWorld và được bảo hộ theo quy định của Luật Sở hữu trí tuệ Việt Nam và các văn bản liên quan. Mọi hành vi sao chép, trích dẫn, sửa đổi, phân phối, xuất bản, lưu thông… vì mục đích thương mại dưới mọi hình thức mà không được sự chấp thuận trước bằng văn bản của CarWorld là xâm phạm quyền của CarWorld. CarWorld có quyền yêu cầu người sử dụng chấm dứt việc sử dụng và bồi thường thiệt hại (nếu có).
+                    Tuyên bố các quyền Sở hữu trí tuệ của CarWorld đối với các đối tượng thể hiện trên website Trang web này và tất cả nội dung của website, bao gồm nhưng không giới hạn các văn bản, thiết kế, đồ họa, giao diện, hình ảnh, mã code đều thuộc bản quyền của CarWorld hoặc bên thứ ba cấp phép cho CarWorld. Bản quyền của CarWorld được thể hiện trên website bằng dòng chữ tiếng Anh '©2021-2022 Copyright by CarWorld. All rights reserved.' Bất kỳ nội dung nào thuộc website này bao gồm nhãn hiệu, tên thương mại, mẫu logo công ty hoặc dịch vụ, sản phẩm, kiểu dáng sản phẩm... đều thuộc quyền sở hữu của CarWorld và được bảo hộ theo quy định của Luật Sở hữu trí tuệ Việt Nam và các văn bản liên quan. Mọi hành vi sao chép, trích dẫn, sửa đổi, phân phối, xuất bản, lưu thông… vì mục đích thương mại dưới mọi hình thức mà không được sự chấp thuận trước bằng văn bản của CarWorld là xâm phạm quyền của CarWorld. CarWorld có quyền yêu cầu người sử dụng chấm dứt việc sử dụng và bồi thường thiệt hại (nếu có).
                 </p>
                 <h5>6. THAY ĐỔI ĐIỀU KHOẢN SỬ DỤNG</h5>
                 <p>
@@ -41,7 +44,7 @@ function TermOfUse() {
                 <h6>Công ty TNHH Thương mại Dịch vụ Trao đổi Xe và Các Linh Phụ Kiện Car World</h6>
                 <p>
                     Địa chỉ: Đại Học FPT, Phường Long Thạnh Mỹ, Tp. Thủ Đức
-                    <br />Email: hotline@CarWorld.vn
+                    <br />Email: carworld@gmail.com
                     <br />Website: www.CarWorld.vn
 
                     <br />Cập nhật lần cuối vào ngày 6 tháng 9 năm 2021

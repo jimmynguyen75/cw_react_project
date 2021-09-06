@@ -9,6 +9,7 @@ import Contest from './components/contest/Contest';
 import AboutUs from './components/about/AboutUs';
 import TermOfUse from './components/info/TermOfUse';
 import PrivacyStatement from './components/info/PrivacyStatement';
+import Car from './components/car/Car';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/ve-chung-toi" exact component={AboutUs} />
           <Route path="/dieu-khoan-su-dung" exact component={TermOfUse} />
           <Route path="/chinh-sach-bao-mat" exact component={PrivacyStatement} />
+          <Route path="/tin-xe" exact component={Car} />
         </Switch>
         <Footer />
       </Router>

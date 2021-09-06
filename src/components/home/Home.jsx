@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import 'antd/dist/antd.less'
 import './styles.less'
 import { Button } from 'antd'
@@ -12,8 +12,15 @@ import f6 from './6.jpg'
 import f7 from './7.jpg'
 import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 function Home() {
+
+    useEffect(() => {
+        Aos.init({ duration: 2000 });
+        document.title = "Trang chủ";
+    }, []);
 
     const steps = [
         {
@@ -111,7 +118,7 @@ function Home() {
                     </div>
                 </div>
                 <div className="EC">Sự kiện</div>
-                <div className="row">
+                <div className="row" data-aos="zoom-in">
                     <div className="col-4">
                         <div className="ECsmall">
                             <img src={f7} />
@@ -134,8 +141,8 @@ function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="EC" style={{ paddingTop: 20 }}>Cuộc thi</div>
-                <div className="row">
+                <div className="EC" style={{ paddingTop: 20 }} >Cuộc thi</div>
+                <div className="row" data-aos="zoom-in">
                     <div className="col-4">
                         <div className="ECsmall">
                             <img src={f3} />

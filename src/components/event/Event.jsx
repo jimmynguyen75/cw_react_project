@@ -11,6 +11,7 @@ function Event() {
     const [events, setEvents] = useState();
 
     useEffect(() => {
+        document.title = "Sự kiện";
         EventService
             .getTotalEvents()
             .then(res => {
