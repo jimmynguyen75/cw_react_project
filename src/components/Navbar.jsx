@@ -64,7 +64,7 @@ function Navbar() {
         console.log(location.pathname)
     }
     function news() {
-        history.push('/tin-tuc');
+        history.push('/tin-xe');
     }
     function event() {
         history.push('/su-kien');
@@ -88,7 +88,7 @@ function Navbar() {
                             <div className="divMenu">
                                 <Menu mode="horizontal" className="MenuCW" defaultSelectedKeys={[location.pathname]}>
                                     <Menu.Item key="/trang-chu" className="navRight1" onClick={home}>Trang chủ</Menu.Item>
-                                    <Menu.Item key="/tin-tuc" className="navRight2" onClick={news}>Tin tức</Menu.Item>
+                                    <Menu.Item key="/tin-xe" className="navRight2" onClick={news}>Tin xe</Menu.Item>
                                     <Menu.Item key="/su-kien" className="navRight3" onClick={event}>Sự kiện</Menu.Item>
                                     <Menu.Item key="/cuoc-thi" className="navRight4" onClick={contest}>Cuộc thi</Menu.Item>
                                     <Menu.Item key="/ve-chung-toi" className="navRight5" onClick={about}>Về chúng tôi</Menu.Item>

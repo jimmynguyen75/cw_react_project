@@ -6,7 +6,6 @@ import Home from './components/home/Home';
 import Footer from './components/Footer';
 import Event from './components/event/Event'
 import Contest from './components/contest/Contest';
-import News from './components/news/News';
 import AboutUs from './components/about/AboutUs';
 import TermOfUse from './components/info/TermOfUse';
 import PrivacyStatement from './components/info/PrivacyStatement';
@@ -21,7 +20,6 @@ function App() {
           <Route path="/trang-chu" exact component={Home} />
           <Route path="/su-kien" exact component={Event} />
           <Route path="/cuoc-thi" exact component={Contest} />
-          <Route path="/tin-tuc" exact component={News} />
           <Route path="/ve-chung-toi" exact component={AboutUs} />
           <Route path="/dieu-khoan-su-dung" exact component={TermOfUse} />
           <Route path="/chinh-sach-bao-mat" exact component={PrivacyStatement} />

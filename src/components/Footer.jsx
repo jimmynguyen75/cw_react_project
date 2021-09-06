@@ -13,7 +13,7 @@ function Footer() {
         window.parent.location = window.parent.location.href;
     }
     function news() {
-        history.push('/tin-tuc');
+        history.push('/tin-xe');
         window.parent.location = window.parent.location.href;
     }
     function event() {
@@ -24,7 +24,7 @@ function Footer() {
         history.push('/cuoc-thi');
         window.parent.location = window.parent.location.href;
     }
-    function about() {
+    function about() { 
         history.push('/ve-chung-toi');
         window.parent.location = window.parent.location.href;
     }
@@ -50,7 +50,7 @@ function Footer() {
                         <div className="col-3">
                             <div className="ftTitle">ĐIỀU HƯỚNG</div>
                             <button className="spaceFT1" onClick={home}>Trang chủ</button><br />
-                            <button className="spaceFT1" onClick={news}>Tin tức</button><br />
+                            <button className="spaceFT1" onClick={news}>Tin xe</button><br />
                             <button className="spaceFT1" onClick={event}>Sự kiện</button><br />
                             <button className="spaceFT1" onClick={contest}>Cuộc thi</button><br />
                             <button className="spaceFT1" onClick={about}>Về chúng tôi</button>

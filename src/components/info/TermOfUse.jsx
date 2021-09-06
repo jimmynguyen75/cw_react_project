@@ -6,108 +6,46 @@ function TermOfUse() {
         <div className="body11">
             <div className="title22"><span className="border22">ĐIỀU  </span>KHOẢN SỬ DỤNG</div>
             <div className="content22">
-                1. MỤC ĐÍCH THU THẬP THÔNG TIN CÁ NHÂN:
+                <p>
+                    Chào mừng bạn ghé thăm website của CarWorld!<br />
+                    <br />Chúng tôi mong bạn vui lòng dành thời gian đọc và tìm hiểu những điều khoản về thỏa thuận pháp lý giữa bạn và CarWorld như dưới đây. Thông qua việc truy cập, duyệt nội dung, hoặc sử dụng bất kì nội dung, hình ảnh nào của trang thông tin điện tử này, bạn (người sử dụng / khách hàng) công nhận rằng bạn đã đọc, hiểu và nhất trí với việc tuân thủ các quy định của những điều khoản này. Nếu bạn không nhất trí với những điều khoản này, xin vui lòng không sử dụng trang thông tin điện tử này. Mọi thông tin, hình ảnh và toàn bộ nội dung được đăng tải trên website tuân thủ các quy định của pháp luật, và phù hợp với thuần phong mỹ tục Việt Nam.
+                </p>
+                <h5>1. QUY ĐỊNH CHUNG</h5>
+                <p>
+                    Bằng việc ghé thăm website www.CarWorld.vn và sử dụng các dịch vụ, Bạn đồng ý với Điều khoản sử dụng này và Chính sách bảo mật của chúng tôi. Thuật ngữ “Bạn” và/hoặc “Người sử dụng” sau đây được gọi chung để chỉ tới những người sử dụng các dịch vụ. Chúng tôi thực hiện Điều khoản sử dụng này và Chính sách bảo mật theo quy định của pháp luật hiện hành và không nội dung nào trong các tài liệu trên cản trở quyền và nghĩa vụ của chúng tôi tuân thủ các quy định của pháp luật.
+                </p>
+                <h5>2. QUY ĐỊNH SỬ DỤNG DỊCH VỤ</h5>
+                <p>
+                    Khi sử dụng dịch vụ của CarWorld, nghĩa là, Bạn đã đồng ý chấp thuận và tuân thủ các điều kiện quy định dưới đây: – Tuân thủ quy định của pháp luật – Tuân thủ theo hợp đồng thỏa thuận đã ký – Tuân thủ các quy định của những điều khoản này – Các tranh chấp xảy ra nếu có do hai bên thỏa thuận giải quyết trên cơ sở hợp tác và thỏa thuận.
+                </p>
+                <h5>3. QUYỀN VÀ TRÁCH NHIỆM CỦA NGƯỜI SỬ DỤNG</h5>
+                <p>
+                    CarWorld cho phép người sử dụng xem, chiết xuất thông tin trên website (in, tải, chuyển tiếp…) hoặc chia sẻ cho người khác nhưng chỉ cho mục đích sử dụng cá nhân và phi thương mại với điều kiện phải trích dẫn thông báo bản quyền sau đây: '©2019 Copyright by CarWorld” Bạn đảm bảo tuân theo pháp luật và các quy định liên quan đến việc sử dụng website của CarWorld; Không can thiệp, gây ảnh hưởng đến việc sử dụng website của những người sử dụng khác; Không can thiệp vào hoạt động và quản lý website của CarWorld. Bạn nhận thức rõ và chấp nhận rằng CarWorld và/hoặc các đối tác không chịu trách nhiệm đối với bất kỳ tổn thất, thiệt hại, chi phí phát sinh từ bất kỳ quyết định nào của bạn khi sử dụng bất kỳ thông tin nào trên website với bất kỳ nguyên nhân gì. Nếu bạn không bằng lòng với bất kỳ thông tin nào trên Website hoặc với bất kỳ điều khoản và điều kiện sử dụng thông tin trên Website này thì phương thức duy nhất bạn nên thực hiện là chấm dứt truy cập/sử dụng thông tin trên website.
+                </p>
+                <h5>4. QUYỀN VÀ TRÁCH NHIỆM CỦA CARWORLD</h5>
+                <p>
+                    CarWorld có quyền thay đổi và/hoặc chấm dứt các nội dung, tính năng của một phần hay toàn bộ website mà không cần thông báo trước với người sử dụng. CarWorld có quyền thực hiện các biện pháp an ninh để bảo vệ và chống lại các truy cập trái phép hoặc sửa đổi trái phép, tiết lộ hoặc phá hủy thông tin trên website. Khi sử dụng website, thông tin sẽ được truyền qua một phương tiện/thiết bị nằm ngoài sự kiểm soát của CarWorld. Theo đó, CarWorld không chịu trách nhiệm cho hoặc liên quan đến bất kỳ sự chậm trễ, thất bại, bị gián đoạn của bất kỳ dữ liệu hoặc các thông tin khác được truyền trong kết nối với việc sử dụng của website. Thông tin cá nhân như địa chỉ, email, số điện thoại của người sử dụng website (do người sử dụng tự nguyện cung cấp bằng các hình thức khác) có thể được sử dụng nội bộ cho mục đích nâng cấp các sản phẩm, dịch vụ và chăm sóc khách hàng của CarWorld. CarWorld cam kết không chủ động tiết lộ bất kỳ thông tin nào của người sử dụng cho bên thứ ba, ngoại trừ trường hợp có yêu cầu bằng văn bản của các đơn vị điều tra theo đúng luật pháp hiện hành. Khi đó, CarWorld sẽ thông báo tới người sử dụng bằng văn bản. Bạn phải ‎ý thức và bảo đảm những thông tin, tài liệu mà bạn gửi phải nằm trong quyền hạn sử dụng của bạn; điều đó có nghĩa CarWorld sẽ không vi phạm bất cứ quyền lợi nào của bên thứ ba. CarWorld có quyền từ chối một số thông tin, tài liệu bạn gửi mà không bắt buộc phản hồi lý do.
+                </p>
+                <h5>5. BẢN QUYỀN VÀ THƯƠNG HIỆU</h5>
+                <p>
+                    Tuyên bố các quyền Sở hữu trí tuệ của CarWorld đối với các đối tượng thể hiện trên website Trang web này và tất cả nội dung của website, bao gồm nhưng không giới hạn các văn bản, thiết kế, đồ họa, giao diện, hình ảnh, mã code đều thuộc bản quyền của CarWorld hoặc bên thứ ba cấp phép cho CarWorld. Bản quyền của CarWorld được thể hiện trên website bằng dòng chữ tiếng Anh '© 2015 Copyright by CarWorld. All rights reserved.' Bất kỳ nội dung nào thuộc website này bao gồm nhãn hiệu, tên thương mại, mẫu logo công ty hoặc dịch vụ, sản phẩm, kiểu dáng sản phẩm... đều thuộc quyền sở hữu của CarWorld và được bảo hộ theo quy định của Luật Sở hữu trí tuệ Việt Nam và các văn bản liên quan. Mọi hành vi sao chép, trích dẫn, sửa đổi, phân phối, xuất bản, lưu thông… vì mục đích thương mại dưới mọi hình thức mà không được sự chấp thuận trước bằng văn bản của CarWorld là xâm phạm quyền của CarWorld. CarWorld có quyền yêu cầu người sử dụng chấm dứt việc sử dụng và bồi thường thiệt hại (nếu có).
+                </p>
+                <h5>6. THAY ĐỔI ĐIỀU KHOẢN SỬ DỤNG</h5>
+                <p>
+                    Chúng tôi giữ quyền thay đổi và/hoặc sửa đổi mà không cần báo trước bất kỳ điều khoản nào trong Điều khoản sử dụng này tùy từng thời điểm. Những sự thay đổi và/hoặc sửa đổi như vậy sẽ có hiệu lực ngay khi đăng lên website www.CarWorld.vn. Nếu Bạn tiếp tục truy cập www.CarWorld.vn hoặc sử dụng các dịch vụ sau khi các thay đổi và/hoặc sửa đổi được đăng lên, Bạn đã chấp nhận và đồng ý với các thay đổi và/hoặc sửa đổi đó.
+                </p>
+                <h5>7.ĐIỀU KHOẢN CHUNG</h5>
+                <p>
+                    Điều khoản sử dụng được điều chỉnh bởi pháp luật Việt Nam. Một điều khoản sử dụng bị vô hiệu theo quyết định của tòa án có thẩm quyền sẽ không ảnh hưởng đến tính hiệu lực của các điều khoản còn lại. CarWorld luôn hoan nghênh những ý kiến/góp ý của bạn về nội dung website. Nếu có một phần nào đó của website này mà bạn cho rằng đã có dấu hiệu vi phạm bản quyền của bên thứ ba, vui lòng gửi liên hệ đến Ban Truyền Thông của CarWorld. Thông báo này và tất cả các điều khoản sử dụng tạo thành toàn bộ thỏa thuận giữa CarWorld và bạn liên quan đến việc sử dụng các thông tin trên website. CarWorld có thể điều chỉnh nội dung thông báo này bất cứ lúc nào bằng cách cập nhật lên website. Bạn nên thường xuyên truy cập website để theo dõi các quy định ràng buộc này khi sử dụng.
+                </p>
+                <h6>Công ty TNHH Thương mại Dịch vụ Trao đổi Xe và Các Linh Phụ Kiện Car World</h6>
+                <p>
+                    Địa chỉ: Đại Học FPT, Phường Long Thạnh Mỹ, Tp. Thủ Đức
+                    <br />Email: hotline@CarWorld.vn
+                    <br />Website: www.CarWorld.vn
 
-                1.1. Mục đích thu thập thông tin
-
-                Các thông tin thu thập sẽ giúp chúng tôi:
-
-                Hỗ trợ khách hàng khi có nhu cầu cụ thể.
-                Giải đáp thắc mắc khách hàng.
-                Cung cấp cho quý khách thông tin mới nhất của chúng tôi.
-                Xem xét và nâng cấp nội dung và giao diện của website.
-                Thực hiện các hoạt động quảng bá liên quan đến các sản phẩm và dịch vụ của Momcare24h.
-                1.2. Phạm vi thu thập thông tin
-
-                Để truy cập và sử dụng một số dịch vụ tại website và ứng dụng của chúng tôi, quý khách có thể sẽ được yêu cầu đăng ký với chúng tôi thông tin cá nhân (Họ tên, Số điện thoại liên lạc, Email…). Mọi thông tin khai báo phải đảm bảo tính chính xác và hợp pháp. Momcare24h không chịu mọi trách nhiệm liên quan đến pháp luật của thông tin khai báo.
-
-                Chúng tôi cũng có thể thu thập thông tin về số lần ghé thăm, bao gồm số trang quý khách xem, số liên kết (links) quý khách click và những thông tin khác liên quan đến việc kết nối đến Momcare24h. Chúng tôi cũng thu thập các thông tin mà trình duyệt web (browser) quý khách sử dụng mỗi khi truy cập vào Momcare24h, bao gồm: địa chỉ IP, loại browser, ngôn ngữ sử dụng, thời gian và những địa chỉ mà browser truy xuất đến.
-
-
-
-                2. PHẠM VI SỬ DỤNG THÔNG TIN
-
-                Website momcare24h.vn thu thập và sử dụng thông tin cá nhân quý khách với mục đích phù hợp và hoàn toàn tuân thủ nội dung của “Chính sách bảo mật thông tin cá nhân” này.
-                Khi cần thiết, chúng tôi có thể sử dụng những thông tin này để liên hệ trực tiếp với bạn dưới các hình thức như: gửi thư ngỏ, thư cảm ơn, thông tin về kỹ thuật và bảo mật, quý khách có thể nhận được thư định kỳ cung cấp thông tin sản phẩm, hàng hóa mới, thông tin về các sự kiện sắp tới hoặc thông tin tuyển dụng nếu quý khách đăng kí nhận email thông báo.
-
-
-                3. THỜI GIAN LƯU TRỮ THÔNG TIN
-
-                Đối với nội dung tư vấn miễn phí qua email và kiến thức chung thì thời gian lưu trữ tại momcare24h.vn không giới hạn.
-
-                Đối với nội dung tư vấn qua tổng đài điện thoại thì yêu cầu và tương tác với người liên hệ được lưu trữ tối đa 06 (sáu) tháng.
-
-
-
-                4. NHỮNG NGƯỜI HOẶC TỔ CHỨC CÓ THỂ ĐƯỢC TIẾP CẬN VỚI THÔNG TIN CÁ NHÂN
-
-                Đối tượng được tiếp cận với thông tin cá nhân của khách hàng thuộc một trong những trường hợp sau:
-
-                Công ty TNHH Thương mại Dịch vụ Tư vấn CHT
-                Các đối tác có ký hợp động thực các dự án nghiên cứu thị trường với Công ty TNHH Thương mại Dịch vụ Tư vấn CHT. Các đối tác này sẽ nhận được những thông tin theo thỏa thuận hợp đồng (có thể một phần hoặc toàn bộ thông tin tuy theo điều khoản hợp đồng) và sẽ bị ràng buộc bởi một thỏa thuận về bảo mật mà theo đó họ chỉ được phép sử dụng những thông tin được cung cấp cho mục đích hoàn thành dự án.
-                Ngoài ra, chúng tôi có thể tiết lộ hoặc cung cấp thông tin cá nhân của quý khách trong các trường hợp thật sự cần thiết như sau:
-
-                Khi có yêu cầu của các cơ quan pháp luật;
-                Trong trường hợp mà chúng tôi tin rằng điều đó sẽ giúp chúng tôi bảo vệ quyền lợi chính đáng của chúng tôi trước pháp luật;
-                Tình huống khẩn cấp và cần thiết để bảo vệ quyền an toàn cá nhân của các thành viên Momcare24h.
-
-
-                5. ĐỊA CHỈ CỦA ĐƠN VỊ THU THẬP VÀ QUẢN LÝ THÔNG TIN CÁ NHÂN
-
-                Công ty TNHH Thương mại Dịch vụ Tư vấn CHT
-
-                Mã số doanh nghiệp: 0312779938 do Sở Kế hoạch và đầu tư Thành phố Hồ Chí Minh cấp ngày 15/05/2014
-
-                Địa chỉ trụ sở chính: 24C Đường số 6, KDC Him Lam, P. Tân Hưng, Quận 7, Tp.Hồ Chí Minh, Việt Nam
-
-                Người đại diện theo pháp luật: Bà Bùi Thu Hà
-
-
-
-                Ngoài ra, nhằm bảo vệ thông tin cá nhân và xử lý những khiếu nại liên quan đến thông tin cá nhân của khách hàng, công ty đã chỉ định bộ phận người chịu trách nhiệm quản lý thông tin riêng tư của khách hàng.
-
-                Trung tâm chăm sóc khách hàng:
-
-                Số điện thoại: 090 8338 968
-
-                Email: hotline@momcare24h.vn
-
-
-
-                6. PHƯƠNG TIỆN VÀ CÔNG CỤ ĐỂ NGƯỜI DÙNG TIẾP CẬN VÀ CHỈNH SỬA DỮ LIỆU CÁ NHÂN CỦA KHÁCH HÀNG
-
-                Quý khách hàng có quyền yêu cầu truy cập và yêu cầu chúng tôi sửa lại những sai sót trong dữ liệu cá nhân đã cung cấp thậm trí có thể yêu cầu chúng tôi xóa bỏ thông tin cá nhân bất kỳ lúc nào. Người dùng, quý khách hàng có thể chỉnh sửa, thay đổi thông tin đã gửi đề nghị tư vấn bằng hình thức gửi mail trực tiếp đến hòm thư hotline@momcare24h.vn, hoặc liên hệ qua SĐT: 090 8338 968 để đề nghị thay đổi.
-
-
-
-                7. BẢO MẬT THÔNG TIN KHÁCH HÀNG
-
-                Khi quý khách gửi thông tin cá nhân cho chúng tôi, quý khách đã đồng ý với các điều khoản mà chúng tôi đã nêu ở trên. Momcare24h cam kết và khuyến cáo quý khách nên tuân thủ các nguyên tắc sau để có thể bảo vệ thông tin cá nhân của mình, gồm:
-
-                Không tiết lộ Tên sử dụng/Tên đăng nhập và/hoặc Mật khẩu với bất kỳ ai, viết hoặc sử dụng ở nơi mà mọi người có thể nhận biết và nhìn thấy được.
-                Khi chọn mật khẩu quý khách không nên chọn những thông tin dễ xác định như họ tên, ngày sinh, số điện thoại hoặc một số ký tự, con số dễ nhận biết từ tên, ngày sinh, số điện thoại của quý khách.
-                Thoát khỏi hệ thống và trình duyệt khi rời khỏi máy tính, ngay cả trong thời gian ngắn. Nếu sử dụng máy tính chung nhiều người, quý khách nên đăng xuất, hoặc thoát hết tất cả cửa sổ website đang mở.
-                Khi nghi ngờ mật khẩu đã bị lộ, quý khách thay đổi mật khẩu ngay lập tức, trong trường hợp cần thiết quý khách lập tức thông báo và đề nghị được hỗ trợ từ Momcare24h.
-                Trong trường hợp các giao dịch, hành vi trái pháp luật được tiến hành với tài khoản hoặc thông thông tin cá nhân của quý khách mà không có sự ủy quyền hoặc do sự sai sót, vô ý hoặc cố ý từ phía quý khách, Momcare24h hiểu rằng quý khách sẽ chịu toàn bộ tổn thất hoặc trách nhiệm theo quy định pháp luật khi các giao dịch đó được thực hiện.
-
-
-                8. CƠ CHẾ TIẾP NHẬN VÀ GIẢI QUYẾT KHIẾU NẠI CỦA NGƯỜI TIÊU DÙNG LIÊN QUAN ĐẾN VIỆC THÔNG TIN CÁ NHÂN BỊ SỬ DỤNG SAI MỤC ĐÍCH HOẶC PHẠM VI ĐÃ THÔNG BÁO
-
-                Khi phát hiện thông tin cá nhân của mình bị sử dụng sai mục đích hoặc phạm vi, người dùng có quyền gửi email khiếu nại đến hòm thư hotline@momcare24h.vn hoặc liên hệ qua SĐT 090 8338 968  với các thông tin, chứng cứ liên quan tới việc này. Công ty cam kết sẽ phản hồi ngay lập tức trong vòng 24 tiếng để cùng người dùng thống nhất phương án giải quyết. Chúng tôi không chịu trách nhiệm cũng như không giải quyết mọi khiếu nại có liên quan đến quyền lợi của Thành viên đó nếu xét thấy tất cả thông tin cá nhân của Thành viên đó cung cấp khi mua hàng ban đầu là không chính xác
-                Khi phát sinh tranh chấp hoặc khiếu nại, chúng tôi khuyến khích giải pháp thương lượng, hòa giải giữa các bên để đạt được sự đồng thuận về phương án giải quyết. Trong trường hợp nằm ngoài khả năng và thẩm quyền giải quyết của chúng tôi sẽ yêu cầu các bên tranh chấp đưa vụ việc ra giải quyết tại cơ quan nhà nước có thẩm quyền theo quy định của pháp luật. Chúng tôi tôn trọng và nghiêm túc thực hiện các quy định của pháp luật về bảo vệ quyền lợi của khách hàng.
-
-
-                9. THAY ĐỔI VỀ CHÍNH SÁCH:
-
-                Chúng tôi hoàn toàn có thể thay đổi nội dung trong “Chính sách bảo mật” mà không cần phải thông báo trước, để phù hợp với các nhu cầu của Momcare24h cũng như nhu cầu được phản hồi từ khách hàng. Khi cập nhật nội dung chính sách này, chúng tôi sẽ chỉnh sửa lại thời gian “Cập nhật lần cuối” bên dưới.
-
-                Nội dung “Chính sách bảo mật” này chỉ áp dụng tại Momcare24h, không bao gồm hoặc liên quan đến các bên thứ ba đặt quảng cáo hay có link tại Momcare24h. Chúng tôi khuyến khích quý khách đọc kỹ "Chính sách An toàn và Bảo mật" của các trang web của bên thứ ba trước khi cung cấp thông tin cá nhân cho các trang web đó. Chúng tôi không chịu trách nhiệm dưới bất kỳ hình thức nào về nội dung và tính pháp lý của trang web thuộc bên thứ ba.
-
-
-
-                10. THÔNG TIN LIÊN HỆ:
-
-                Chúng tôi luôn hoan nghênh các ý kiến đóng góp, liên hệ và phản hồi thông tin từ quý khách hàng về “Chính sách bảo mật”. Nếu quý khách có những thắc mắc liên quan xin vui lòng liên hệ theo địa chỉ email hotline@momcare24h.vn hoặc hotline 0908 338 968.
+                    <br />Cập nhật lần cuối vào ngày 6 tháng 9 năm 2021
+                </p>
             </div>
         </div>
     )
