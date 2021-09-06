@@ -78,7 +78,7 @@ function Event() {
                                                         </div>
                                                     </div>
                                                     <div className="findOutMore">
-                                                        <div style={{ float: 'left' }}>Find out more </div>
+                                                        <div style={{ float: 'left', fontSize: 14 }}>Find out more </div>
                                                         <DoubleRightOutlined />
                                                     </div>
                                                 </div>

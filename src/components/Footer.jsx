@@ -44,37 +44,37 @@ function Footer() {
                 <div className="footerCW">
                     <div className="row">
                         <div className="col-3">
-                            <div className="ftTitle">CAR WORLD</div>
-                            <div className="spaceFT">Xây dựng một sân chơi hữu ích dành cho những người chơi xe chuyên nghiệp</div>
+                            <div className="ftTitle" style={{fontSize: 18}}>CAR WORLD</div>
+                            <div className="spaceFT" style={{ fontSize: 16 }}>Xây dựng một sân chơi hữu ích dành cho những người chơi xe chuyên nghiệp</div>
                         </div>
                         <div className="col-3">
-                            <div className="ftTitle">ĐIỀU HƯỚNG</div>
-                            <button className="spaceFT1" onClick={home}>Trang chủ</button><br />
-                            <button className="spaceFT1" onClick={news}>Tin xe</button><br />
-                            <button className="spaceFT1" onClick={event}>Sự kiện</button><br />
-                            <button className="spaceFT1" onClick={contest}>Cuộc thi</button><br />
-                            <button className="spaceFT1" onClick={about}>Về chúng tôi</button>
+                            <div className="ftTitle" style={{ fontSize: 18 }}>ĐIỀU HƯỚNG</div>
+                            <button className="spaceFT1" style={{ fontSize: 16 }} onClick={home}>Trang chủ</button><br />
+                            <button className="spaceFT1" style={{ fontSize: 16 }} onClick={news}>Tin xe</button><br />
+                            <button className="spaceFT1" style={{ fontSize: 16 }} onClick={event}>Sự kiện</button><br />
+                            <button className="spaceFT1" style={{ fontSize: 16 }} onClick={contest}>Cuộc thi</button><br />
+                            <button className="spaceFT1" style={{ fontSize: 16 }} onClick={about}>Về chúng tôi</button>
                         </div>
                         <div className="col-3">
-                            <div className="ftTitle">THÔNG TIN</div>
-                            <button className="spaceFT2" onClick={term}>Điều khoản sử dụng</button>
-                            <button className="spaceFT2" onClick={privacy}>Chính sách bảo mật</button>
+                            <div className="ftTitle" style={{ fontSize: 18 }}>THÔNG TIN</div>
+                            <button className="spaceFT2" style={{ fontSize: 16 }} onClick={term}>Điều khoản sử dụng</button>
+                            <button className="spaceFT2" style={{ fontSize: 16 }} onClick={privacy}>Chính sách bảo mật</button>
                         </div>
                         <div className="col-3">
-                            <div className="ftTitle">VỀ CHÚNG TÔI</div>
-                            <div className="spaceFT">
+                            <div className="ftTitle" style={{ fontSize: 18 }}>VỀ CHÚNG TÔI</div>
+                            <div className="spaceFT" style={{ fontSize: 16 }}>
                                 <HomeOutlined className="iconFooter" />Đại Học FPT, P. Long Thạnh Mỹ, TP. Thủ Đức
                             </div>
-                            <div className="spaceFT">
+                            <div className="spaceFT" style={{ fontSize: 16 }}>
                                 <MailOutlined className="iconFooter" />carworld@gmail.com
                             </div>
-                            <div className="spaceFT">
+                            <div className="spaceFT" style={{ fontSize: 16 }}>
                                 <PhoneOutlined className="iconFooter" />+84 868 4705 98
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="copyRight">
+                <div className="copyRight" style={{ fontSize: 16 }}>
                     <CopyrightOutlined className="iconFooterC" /> Copyright 2021-2022. All rights reserved.</div>
             </div>
             <BackTop />
