@@ -10,6 +10,7 @@ import AboutUs from './components/about/AboutUs';
 import TermOfUse from './components/info/TermOfUse';
 import PrivacyStatement from './components/info/PrivacyStatement';
 import Car from './components/car/Car';
+import EventPost from './components/event/EventPost';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/trang-chu" exact component={Home} />
           <Route path="/su-kien" exact component={Event} />
+          <Route path="/su-kien/:title?/:id?" exact component={EventPost} />
           <Route path="/cuoc-thi" exact component={Contest} />
           <Route path="/ve-chung-toi" exact component={AboutUs} />
           <Route path="/dieu-khoan-su-dung" exact component={TermOfUse} />

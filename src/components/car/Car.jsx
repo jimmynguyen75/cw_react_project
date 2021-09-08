@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 
 function Car() {
     useEffect(() => {
@@ -6,7 +6,7 @@ function Car() {
     })
     return (
         <div>
-
+            
         </div>
     )
 }
