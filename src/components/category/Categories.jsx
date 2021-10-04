@@ -2,14 +2,20 @@ import React, { useEffect, useState } from 'react'
 import { Divider, Row, Col, Image, List, Card } from 'antd';
 import CategoriesService from '../../services/CategoriesService';
 import { useLocation } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import removeVietnamese from '../../utils/removeVietnamese'
 import './style.less'
 function Categories() {
     const [data, setData] = useState({ cars: [], accessories: [], events: [], contests: [] })
     const firstData = data.cars[0]
     const location = useLocation();
-    console.log("location: ", location.pathname)
+    const history = useHistory();
     const { Meta } = Card;
     const [title, setTitle] = useState("")
+    function handleDetail(record) {
+        let repo = removeVietnamese.removeVietnameseTones(record.Title)
+        history.push(`/${repo.replace(/\s+/g, '-').toLowerCase()}`, { record: record });
+    }
     useEffect(() => {
         document.title = title
         switch (location.pathname) {
@@ -46,10 +52,6 @@ function Categories() {
                         <div style={{ fontSize: 16 }}>{firstData != null && firstData.Overview}</div>
                     </Col>
                 </Row>
-                {/* {data.cars.map((object) => {
-                    return <li key={object.Id}>{object.Title}</li>
-                    //firstData != null && firstData.FeaturedImage
-                })} */}
                 <List
                     grid={{ gutter: 16, column: 3 }}
                     dataSource={
@@ -58,7 +60,10 @@ function Categories() {
                                 location.pathname == '/tin-su-kien' ? data.events :
                                     location.pathname == '/tin-cuoc-thi' ? data.contests : null}
                     renderItem={item => (
-                        <List.Item >
+                        <List.Item
+                            onClick={() => {
+                                handleDetail(item)
+                            }}>
                             <Card
                                 cover={<Image alt="" src={item.FeaturedImage} preview={false} style={{ height: 250, maxWidth: '100%' }} />}
                                 hoverable

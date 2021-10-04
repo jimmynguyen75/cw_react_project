@@ -11,7 +11,7 @@ import TermOfUse from './components/info/TermOfUse';
 import PrivacyStatement from './components/info/PrivacyStatement';
 import Categories from './components/category/Categories';
 import EventPost from './components/event/EventPost';
-
+import ViewCategory from './components/category/ViewCategory';
 function App() {
   return (
     <div>
@@ -29,6 +29,7 @@ function App() {
           <Route path="/tin-phu-kien" exact component={Categories} />
           <Route path="/tin-su-kien" exact component={Categories} />
           <Route path="/tin-cuoc-thi" exact component={Categories} />
+          <Route path="/:title?" exact component={ViewCategory} />
         </Switch>
         <Footer />
       </Router>
