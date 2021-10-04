@@ -9,7 +9,7 @@ import Contest from './components/contest/Contest';
 import AboutUs from './components/about/AboutUs';
 import TermOfUse from './components/info/TermOfUse';
 import PrivacyStatement from './components/info/PrivacyStatement';
-import Car from './components/car/Car';
+import Categories from './components/category/Categories';
 import EventPost from './components/event/EventPost';
 
 function App() {
@@ -19,14 +19,16 @@ function App() {
         <Navbar />
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/trang-chu" exact component={Home} />
           <Route path="/su-kien" exact component={Event} />
           <Route path="/su-kien/:title?/:id?" exact component={EventPost} />
           <Route path="/cuoc-thi" exact component={Contest} />
           <Route path="/ve-chung-toi" exact component={AboutUs} />
           <Route path="/dieu-khoan-su-dung" exact component={TermOfUse} />
           <Route path="/chinh-sach-bao-mat" exact component={PrivacyStatement} />
-          <Route path="/tin-xe" exact component={Car} />
+          <Route path="/tin-xe" exact component={Categories} />
+          <Route path="/tin-phu-kien" exact component={Categories} />
+          <Route path="/tin-su-kien" exact component={Categories} />
+          <Route path="/tin-cuoc-thi" exact component={Categories} />
         </Switch>
         <Footer />
       </Router>
