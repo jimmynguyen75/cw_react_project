@@ -11,24 +11,24 @@ function Footer() {
             <div className="headerCW">
                 <div className="footerCW">
                     <div className="row">
-                        <div className="col-3">
+                        <div className="col-4">
                             <div className="ftTitle" style={{ fontSize: 18 }}>CAR WORLD</div>
                             <div className="spaceFT" style={{ fontSize: 16 }}>Xây dựng một sân chơi hữu ích dành cho những người chơi xe chuyên nghiệp</div>
                         </div>
-                        <div className="col-3">
+                        {/* <div className="col-3">
                             <div className="ftTitle" style={{ fontSize: 18 }}>ĐIỀU HƯỚNG</div>
                             <button className="spaceFT1" style={{ fontSize: 16 }} ><a className="spaceFT11" href="/trang-chu">Trang chủ</a></button><br />
                             <button className="spaceFT1" style={{ fontSize: 16 }} ><a className="spaceFT11" href="/tin-xe">Tin xe</a></button><br />
                             <button className="spaceFT1" style={{ fontSize: 16 }} ><a className="spaceFT11" href="/su-kien">Sự kiện</a></button><br />
                             <button className="spaceFT1" style={{ fontSize: 16 }} ><a className="spaceFT11" href="/cuoc-thi">Cuộc thi</a></button><br />
                             <button className="spaceFT1" style={{ fontSize: 16 }} ><a className="spaceFT11" href="/ve-chung-toi">Về chúng tôi</a></button>
-                        </div>
-                        <div className="col-3">
+                        </div> */}
+                        <div className="col-4">
                             <div className="ftTitle" style={{ fontSize: 18 }}>THÔNG TIN</div>
                             <button className="spaceFT2" style={{ fontSize: 16 }}><a className="spaceFT22" href="/dieu-khoan-su-dung">Điều khoản sử dụng</a></button>
-                            <button className="spaceFT2" style={{ fontSize: 16 }}><a className="spaceFT22" href="/chinh-sach-bao-mat">Chính sách bảo mật</a></button>
+                            <br /><button className="spaceFT2" style={{ fontSize: 16 }}><a className="spaceFT22" href="/chinh-sach-bao-mat">Chính sách bảo mật</a></button>
                         </div>
-                        <div className="col-3">
+                        <div className="col-4">
                             <div className="ftTitle" style={{ fontSize: 18 }}>VỀ CHÚNG TÔI</div>
                             <div className="spaceFT" style={{ fontSize: 16 }}>
                                 <HomeOutlined className="iconFooter" />Đại Học FPT, P. Long Thạnh Mỹ, TP. Thủ Đức

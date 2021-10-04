@@ -33,10 +33,10 @@ export default function ViewCategory() {
         <div className="headerCW">
             <div style={{ padding: '9.6px', fontWeight: 600, fontSize: 32, width: 900, marginTop: 30 }}> {record !== '' && record.Title}</div>
             <div style={{ fontWeight: '500', marginBottom: 1, fontSize: 18, padding: '9.6px', width: 900 }}>
-                {record !== '' && record.Type == 1 ? <span style={{ color: '#555555', fontWeight: 450}}>Xe </span> :
-                    record !== '' && record.Type == 2 ? <span style={{ color: '#555555', fontWeight: 450}}>Phụ kiện </span> :
-                        record !== '' && record.Type == 3 ? <span style={{ color: '#555555', fontWeight: 450}}>Sự kiện </span> :
-                            record !== '' && record.Type == 4 ? <span style={{ color: '#555555', fontWeight: 450}}>Cuộc thi </span> : null}
+                {record !== '' && record.Type === 1 ? <span style={{ color: '#555555', fontWeight: 450}}>Xe </span> :
+                    record !== '' && record.Type === 2 ? <span style={{ color: '#555555', fontWeight: 450}}>Phụ kiện </span> :
+                        record !== '' && record.Type === 3 ? <span style={{ color: '#555555', fontWeight: 450}}>Sự kiện </span> :
+                            record !== '' && record.Type === 4 ? <span style={{ color: '#555555', fontWeight: 450}}>Cuộc thi </span> : null}
                 - {record !== '' && record.Overview}
             </div>
             <div id="toolbar-container"></div>
