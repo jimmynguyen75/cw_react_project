@@ -12,7 +12,7 @@
 .eventTitle33 {
     width: 1200px;
     margin: auto;
-    padding: 16px 0px 16px 16px;
+    padding: 16px 0px 0px 16px;
     font-weight: 500;
     font-size: 24px;
     color: #FF7643;
@@ -79,4 +79,28 @@
     width: 100%;
 }
 
-.right {}
+.right .slick-dots {
+    margin-right: 50px;
+}
+
+.right .slick-active button {
+    background-color: #FF7643 !important;
+    height: 7px !important;
+}
+
+.right button {
+    background-color: #FF7643 !important;
+    height: 7px !important;
+}
+
+.ant-empty-description {
+    text-indent: -9999px;
+    line-height: 0;
+}
+
+.ant-empty-description::after {
+    content: 'Không có dữ liệu';
+    display: block;
+    text-indent: 0;
+    line-height: initial;
+}

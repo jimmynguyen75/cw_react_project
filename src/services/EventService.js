@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-const EVENTS_API_URL = "https://fakestoreapi.com/products";
+const EVENTS_API_URL = "https://carworld.cosplane.asia/api/event/";
 
 class EventService {
-    getTotalEvents() {
-        return axios.get(EVENTS_API_URL);
+    getEvents() {
+        return axios.get(EVENTS_API_URL + "GetAllNewEvents");
     }
 
     getEventDetail(eventId) {

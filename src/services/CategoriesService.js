@@ -15,6 +15,9 @@ class Categories {
     getContests() {
         return axios.get(CATEGORIES_API_URL + "GetAllPostsByType?postType=4")
     }
+    search(value) {
+        return axios.get(CATEGORIES_API_URL + "GetAllPostsByKeyword?keyword=" + value)
+    }
 }
 
 export default new Categories();

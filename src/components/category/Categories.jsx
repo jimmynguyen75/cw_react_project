@@ -6,9 +6,13 @@ import { useHistory } from "react-router-dom";
 import removeVietnamese from '../../utils/removeVietnamese'
 import './style.less'
 function Categories() {
-    const [data, setData] = useState({ cars: [], accessories: [], events: [], contests: [] })
-    const firstData = data.cars[0]
     const location = useLocation();
+    const [data, setData] = useState({ cars: [], accessories: [], events: [], contests: [] })
+    const firstData =
+        location.pathname == '/tin-xe' ? data.cars[0] :
+            location.pathname == '/tin-phu-kien' ? data.accessories[0] :
+                location.pathname == '/tin-su-kien' ? data.events[0] :
+                    location.pathname == '/tin-cuoc-thi' ? data.contests[0] : null
     const history = useHistory();
     const { Meta } = Card;
     const [title, setTitle] = useState("")
@@ -43,9 +47,11 @@ function Categories() {
         <div className="headerCW">
             <div className="navCW">
                 <Divider orientation="left" style={{ fontSize: 32 }}>TIN XE</Divider>
-                <Row gutter={30}>
+                <Row gutter={30} style={{ marginBottom: 30, cursor: 'pointer' }} onClick={() => {
+                    handleDetail(firstData)
+                }} >
                     <Col span={16}>
-                        <Image alt="" src={firstData != null && firstData.FeaturedImage} />
+                        <Image preview={false} alt="" style={{ height: 500, width: 780 }} src={firstData != null && firstData.FeaturedImage} />
                     </Col>
                     <Col span={8}>
                         <div style={{ fontSize: 22, marginBottom: 10, fontWeight: '600' }}>{firstData != null && firstData.Title}</div>
@@ -56,9 +62,9 @@ function Categories() {
                     grid={{ gutter: 16, column: 3 }}
                     dataSource={
                         location.pathname == '/tin-xe' ? data.cars.filter(function (value, index, arr) { return index !== 0 }) :
-                            location.pathname == '/tin-phu-kien' ? data.accessories :
-                                location.pathname == '/tin-su-kien' ? data.events :
-                                    location.pathname == '/tin-cuoc-thi' ? data.contests : null}
+                            location.pathname == '/tin-phu-kien' ? data.accessories.filter(function (value, index, arr) { return index !== 0 }) :
+                                location.pathname == '/tin-su-kien' ? data.events.filter(function (value, index, arr) { return index !== 0 }) :
+                                    location.pathname == '/tin-cuoc-thi' ? data.contests.filter(function (value, index, arr) { return index !== 0 }) : null}
                     renderItem={item => (
                         <List.Item
                             onClick={() => {

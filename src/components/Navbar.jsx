@@ -1,71 +1,28 @@
-import React from 'react'
-import './styles.less'
-import 'antd/dist/antd.less'
-import { Input, AutoComplete, Menu, Dropdown, message, Row, Col } from 'antd';
-import { UserOutlined, DownOutlined, SettingOutlined } from '@ant-design/icons';
+import { Col, Input, Menu, Row } from 'antd';
+import 'antd/dist/antd.less';
+import React, { useState } from 'react';
 import { useHistory, useLocation } from "react-router-dom";
+import CategoriesService from '../services/CategoriesService';
+import './styles.less';
 function Navbar() {
+    const { Search } = Input;
+    const [value, setValue] = useState([])
     const { SubMenu } = Menu;
-    const renderTitle = (title) => (
-        <span>
-            {title}
-            <a
-                style={{
-                    float: 'right',
-                }}
-                href="https://www.google.com/search?q=antd"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                more
-            </a>
-        </span>
-    );
-    const renderItem = (title, count) => ({
-        value: title,
-        label: (
-            <div
-                style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                }}
-            >
-                {title}
-                <span>
-                    <UserOutlined /> {count}
-                </span>
-            </div>
-        ),
-    });
-    const options = [
-        {
-            label: renderTitle('News'),
-            options: [renderItem('News', 10000), renderItem('News UI', 10600)],
-        }
-    ];
+    const onSearch = value => {
+        CategoriesService.search(value)
+            .then((res) => {
+                setValue(res.data)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    };
     const Complete = () => (
-        <AutoComplete
-            dropdownClassName="certain-category-search-dropdown"
-            dropdownMatchSelectWidth={500}
-            options={options}
-        >
-            <Input.Search size="middle" placeholder="Tìm kiếm" />
-        </AutoComplete>
+        <Search placeholder="input search text" onSearch={onSearch} enterButton />
     );
+    console.log("value: ", value)
     const history = useHistory();
     const location = useLocation();
-    const home = () => {
-        history.push('/trang-chu')
-        console.log(location.pathname)
-    }
-
-    const menu = (
-        <Menu >
-            <Menu.Item key="1">1st menu item</Menu.Item>
-            <Menu.Item key="2">2nd menu item</Menu.Item>
-            <Menu.Item key="3">3rd menu item</Menu.Item>
-        </Menu>
-    );
     return (
         <div className="headerLine">
             <div className="headerCW">

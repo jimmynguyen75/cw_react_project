@@ -10,7 +10,7 @@ import AboutUs from './components/about/AboutUs';
 import TermOfUse from './components/info/TermOfUse';
 import PrivacyStatement from './components/info/PrivacyStatement';
 import Categories from './components/category/Categories';
-import EventPost from './components/event/EventPost';
+import ViewEvent from './components/event/ViewEvent';
 import ViewCategory from './components/category/ViewCategory';
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/su-kien" exact component={Event} />
-          <Route path="/su-kien/:title?/:id?" exact component={EventPost} />
+          <Route path="/su-kien/:title?" exact component={ViewEvent} />
           <Route path="/cuoc-thi" exact component={Contest} />
           <Route path="/ve-chung-toi" exact component={AboutUs} />
           <Route path="/dieu-khoan-su-dung" exact component={TermOfUse} />
