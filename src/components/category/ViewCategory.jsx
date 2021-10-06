@@ -3,11 +3,20 @@ import { useHistory, useLocation } from "react-router-dom";
 import parse from 'html-react-parser';
 import DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
+import { Row, Col, List } from 'antd'
+import 'moment/locale/vi';
+import moment from 'moment';
+import EventService from '../../services/EventService';
+import CategoriesService from '../../services/CategoriesService';
+import ContestService from '../../services/ContestService';
 export default function ViewCategory() {
     const history = useHistory();
     const location = useLocation();
     const [title, setTitle] = useState('');
-    const [record, setRecord] = useState('')
+    const [record, setRecord] = useState('');
+    const [postList, setPostList] = useState([]);
+    const [eventList, setEventList] = useState([]);
+    const [contestList, setContestList] = useState([]);
     useEffect(() => {
         document.title = title
         switch (location.pathname) {
@@ -18,6 +27,48 @@ export default function ViewCategory() {
     useEffect(() => {
         setRecord(location.state != null && location.state.record)
     })
+    useEffect(() => {
+        let result = []
+        CategoriesService.getCars()
+            .then((res) => {
+                res.data.forEach((data) => {
+                    if (data.Id !== record.Id) {
+                        result.push(data)
+                    }
+                })
+                let filtered = result.filter(function (value, index, arr) {
+                    return index < 3
+                })
+                setPostList(filtered)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }, [record])
+    useEffect(() => {
+        EventService.getEvents()
+            .then((res) => {
+                let filtered = res.data.filter(function (value, index, arr) {
+                    return index < 3
+                })
+                setEventList(filtered)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }, [])
+    useEffect(() => {
+        ContestService.getContests()
+            .then((res) => {
+                let filtered = res.data.filter(function (value, index, arr) {
+                    return index < 3
+                })
+                setContestList(filtered)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }, [])
     DecoupledEditor
         .create(document.querySelector('#editor'))
         .then(editor => {
@@ -31,19 +82,50 @@ export default function ViewCategory() {
         });
     return (
         <div className="headerCW">
-            <div style={{ padding: '9.6px', fontWeight: 600, fontSize: 32, width: 900, marginTop: 30 }}> {record !== '' && record.Title}</div>
-            <div style={{ fontWeight: '500', marginBottom: 1, fontSize: 18, padding: '9.6px', width: 900 }}>
-                {record !== '' && record.Type === 1 ? <span style={{ color: '#555555', fontWeight: 450}}>Xe </span> :
-                    record !== '' && record.Type === 2 ? <span style={{ color: '#555555', fontWeight: 450}}>Phụ kiện </span> :
-                        record !== '' && record.Type === 3 ? <span style={{ color: '#555555', fontWeight: 450}}>Sự kiện </span> :
-                            record !== '' && record.Type === 4 ? <span style={{ color: '#555555', fontWeight: 450}}>Cuộc thi </span> : null}
-                - {record !== '' && record.Overview}
-            </div>
-            <div id="toolbar-container"></div>
-            <div id="editor" style={{ width: 900 }}>
-                <p>{record !== '' && parse(record.Contents)}</p>
-            </div>
-            <div style={{ paddingLeft: '9.6px', fontWeight: '500' }}>Thực hiện: {record !== '' && record.CreatedByNavigation.FullName}</div>
+            <Row gutter={15}>
+                <Col>
+                    <div style={{ padding: '9.6px', fontWeight: 600, fontSize: 32, width: 900, marginTop: 30 }}> {record !== '' && record.Title}</div>
+                    <div style={{ marginLeft: '9.6px', fontSize: 15, color: '#888888' }}>{record !== '' && moment(record.CreatedDate).format('llll')}</div>
+                    <div style={{ fontWeight: '500', marginBottom: 1, fontSize: 18, padding: '9.6px', width: 900 }}>
+                        {record !== '' && record.Type === 1 ? <span style={{ color: '#555555', fontWeight: 450 }}>Xe </span> :
+                            record !== '' && record.Type === 2 ? <span style={{ color: '#555555', fontWeight: 450 }}>Phụ kiện </span> :
+                                record !== '' && record.Type === 3 ? <span style={{ color: '#555555', fontWeight: 450 }}>Sự kiện </span> :
+                                    record !== '' && record.Type === 4 ? <span style={{ color: '#555555', fontWeight: 450 }}>Cuộc thi </span> : null}
+                        - {record !== '' && record.Overview}
+                    </div>
+                    <div id="toolbar-container"></div>
+                    <div id="editor" style={{ width: 900 }}>
+                        <p>{record !== '' && parse(record.Contents)}</p>
+                    </div>
+                    <div style={{ paddingLeft: '9.6px', fontWeight: '500' }}>Thực hiện: {record !== '' && record.CreatedByNavigation.FullName}</div>
+                </Col>
+                <Col style={{ width: 280 }}>
+                    <div style={{ marginTop: 50 }}>Bài đăng gần đây</div>
+                    <List
+                        itemLayout="horizontal"
+                        dataSource={postList}
+                        renderItem={item => (
+                            <div>{item.Title}</div>
+                        )}
+                    />
+                    <div style={{ marginTop: 30 }}>Sự kiện đề xuất</div>
+                    <List
+                        itemLayout="horizontal"
+                        dataSource={eventList}
+                        renderItem={item => (
+                            <div>{item.Title}</div>
+                        )}
+                    />
+                    <div style={{ marginTop: 30 }}>Cuộc thi đề xuất</div>
+                    <List
+                        itemLayout="horizontal"
+                        dataSource={contestList}
+                        renderItem={item => (
+                            <div>{item.Title}</div>
+                        )}
+                    />
+                </Col>
+            </Row>
         </div>
     )
 }
