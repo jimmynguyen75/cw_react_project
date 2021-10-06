@@ -14,9 +14,11 @@ import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-
+import ReactGA from 'react-ga';
 function Home() {
-
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname + window.location.search);
+    }, [])
     useEffect(() => {
         Aos.init({ duration: 2000 });
         document.title = "Trang chủ";

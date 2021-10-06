@@ -1,9 +1,10 @@
 import { Col, Input, Menu, Row } from 'antd';
 import 'antd/dist/antd.less';
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import { useHistory, useLocation } from "react-router-dom";
 import CategoriesService from '../services/CategoriesService';
 import './styles.less';
+
 function Navbar() {
     const { Search } = Input;
     const [value, setValue] = useState([])
@@ -23,6 +24,7 @@ function Navbar() {
     console.log("value: ", value)
     const history = useHistory();
     const location = useLocation();
+
     return (
         <div className="headerLine">
             <div className="headerCW">

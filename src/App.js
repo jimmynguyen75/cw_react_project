@@ -12,6 +12,8 @@ import PrivacyStatement from './components/info/PrivacyStatement';
 import Categories from './components/category/Categories';
 import ViewEvent from './components/event/ViewEvent';
 import ViewCategory from './components/category/ViewCategory';
+import ReactGA from 'react-ga';
+ReactGA.initialize('G-1CF3W5KCBY');
 function App() {
   return (
     <div>
