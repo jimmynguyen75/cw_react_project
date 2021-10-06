@@ -168,14 +168,14 @@ function Home() {
                     </div>
                 </div>
             </div>
-            <ThemeProvider theme={theme}>
+            {/* <ThemeProvider theme={theme}>
                 <ChatBot
                     steps={steps}
                     headerTitle="Car World xin chào bạn!"
                     floating={true}
                     botAvatar={f1}
                 />
-            </ThemeProvider>
+            </ThemeProvider> */}
         </div>
     )
 }

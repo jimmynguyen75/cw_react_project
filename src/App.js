@@ -1,6 +1,5 @@
 import './App.less';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
 import Navbar from './components/Navbar';
 import Home from './components/home/Home';
 import Footer from './components/Footer';
@@ -12,8 +11,9 @@ import PrivacyStatement from './components/info/PrivacyStatement';
 import Categories from './components/category/Categories';
 import ViewEvent from './components/event/ViewEvent';
 import ViewCategory from './components/category/ViewCategory';
-import ReactGA from 'react-ga';
-ReactGA.initialize('G-1CF3W5KCBY');
+import ReactGA from "react-ga4";
+ReactGA.initialize("G-1CF3W5KCBY");
+ReactGA.send("pageview");
 function App() {
   return (
     <div>
@@ -21,7 +21,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/su-kien" exact component={Event} />
+          <Route path="/su-kien"exact component={Event} />
           <Route path="/su-kien/:title?" exact component={ViewEvent} />
           <Route path="/cuoc-thi" exact component={Contest} />
           <Route path="/ve-chung-toi" exact component={AboutUs} />
