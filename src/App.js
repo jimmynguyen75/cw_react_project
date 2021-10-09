@@ -12,6 +12,7 @@ import Categories from './components/category/Categories';
 import ViewEvent from './components/event/ViewEvent';
 import ViewCategory from './components/category/ViewCategory';
 import ReactGA from "react-ga4";
+import ScrollToTop from './utils/scrollToTop';
 ReactGA.initialize("G-1CF3W5KCBY");
 ReactGA.send("pageview");
 function App() {
@@ -19,6 +20,7 @@ function App() {
     <div>
       <Router>
         <Navbar />
+        <ScrollToTop />
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/su-kien"exact component={Event} />

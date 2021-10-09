@@ -18,6 +18,9 @@ class Categories {
     search(value) {
         return axios.get(CATEGORIES_API_URL + "GetAllPostsByKeyword?keyword=" + value)
     }
+    getAll() {
+        return axios.get(CATEGORIES_API_URL + "GetAllPosts")
+    }
 }
 
 export default new Categories();
