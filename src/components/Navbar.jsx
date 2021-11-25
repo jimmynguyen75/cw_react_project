@@ -1,30 +1,48 @@
 import { Col, Input, Menu, Row } from 'antd';
 import 'antd/dist/antd.less';
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory, useLocation } from "react-router-dom";
 import CategoriesService from '../services/CategoriesService';
+import removeVietnamese from '../utils/removeVietnamese'
 import './styles.less';
-
+import { AutoComplete } from 'antd';
 function Navbar() {
     const { Search } = Input;
-    const [value, setValue] = useState([])
+    const [data, setData] = useState([])
     const { SubMenu } = Menu;
+    const history = useHistory();
+    const location = useLocation();
     const onSearch = value => {
+        let result = []
         CategoriesService.search(value)
-            .then((res) => {
-                setValue(res.data)
+            .then((response) => {
+                response.data.forEach((res) => {
+                    if (res.Status === 1) {
+                        result.push(res)
+                    }
+                })
+                let repo = removeVietnamese.removeVietnameseTones(value)
+                setData(result)
+                history.push({
+                    pathname: '/tim-kiem',
+                    search: '?' + repo.replace(/\s+/g, '-').toLowerCase(),
+                    state: ({ data: result, search: value })
+                })
             })
             .catch((err) => {
                 console.log(err)
             })
     };
     const Complete = () => (
-        <Search placeholder="input search text" onSearch={onSearch} enterButton />
+        <Search
+            className="searchSVG"
+            placeholder="Tìm kiếm"
+            onSearch={onSearch}
+            enterButton
+            allowClear
+        />
     );
-    console.log("value: ", value)
-    const history = useHistory();
-    const location = useLocation();
-
+    console.log("value: ", data)
     return (
         <div className="headerLine">
             <div className="headerCW">

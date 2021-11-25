@@ -3,12 +3,13 @@ import { useHistory, useLocation } from "react-router-dom";
 import parse from 'html-react-parser';
 import DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
-import { Row, Col, List } from 'antd'
+import { Row, Col, List, Image } from 'antd'
 import 'moment/locale/vi';
 import moment from 'moment';
 import EventService from '../../services/EventService';
 import CategoriesService from '../../services/CategoriesService';
 import ContestService from '../../services/ContestService';
+import './style.less'
 export default function ViewCategory() {
     const history = useHistory();
     const location = useLocation();
@@ -33,7 +34,9 @@ export default function ViewCategory() {
             .then((res) => {
                 res.data.forEach((data) => {
                     if (data.Id !== record.Id) {
-                        result.push(data)
+                        if (data.Status === 1) {
+                            result.push(data)
+                        }
                     }
                 })
                 let filtered = result.filter(function (value, index, arr) {
@@ -100,30 +103,42 @@ export default function ViewCategory() {
                     <div style={{ paddingLeft: '9.6px', fontWeight: '500' }}>Thực hiện: {record !== '' && record.CreatedByNavigation.FullName}</div>
                 </Col>
                 <Col style={{ width: 280 }}>
-                    <div style={{ marginTop: 50 }}>Bài đăng gần đây</div>
+                    {/* <div style={{ marginTop: 50 }}>Bài đăng gần đây</div> */}
+                    <div className="featuredEC" style={{ marginTop: 40 }}>
+                        <span style={{ paddingBottom: 2, borderBottom: '4px solid rgb(245, 126, 79)' }}>BÀI ĐĂNG</span> NỔI BẬT
+                    </div>
                     <List
                         itemLayout="horizontal"
                         dataSource={postList}
                         renderItem={item => (
-                            <div>{item.Title}</div>
+                            <div style={{ paddingBottom: 15, cursor: 'pointer'}}>
+                                <Image src={item.FeaturedImage}></Image>
+                                <div className="hoverTitle" style={{ fontWeight: 550, fontSize: 16 }}>{item.Title}</div>
+                            </div>
                         )}
                     />
-                    <div style={{ marginTop: 30 }}>Sự kiện đề xuất</div>
+                    {/* <div style={{ marginTop: 20 }}>Sự kiện đề xuất</div> */}
+                    <div className="featuredEC" style={{ marginTop: 20 }}>
+                        <span style={{ paddingBottom: 2, borderBottom: '4px solid rgb(245, 126, 79)' }}>SỰ KIỆN</span> NỔI BẬT
+                    </div>
                     <List
                         itemLayout="horizontal"
                         dataSource={eventList}
                         renderItem={item => (
-                            <div>{item.Title}</div>
+                            <div style={{ paddingBottom: 15, cursor: 'pointer' }}>
+                                <Image src={item.Image}></Image>
+                                <div className="hoverTitle" style={{ fontWeight: 550, fontSize: 16 }}>{item.Title}</div>
+                            </div>
                         )}
                     />
-                    <div style={{ marginTop: 30 }}>Cuộc thi đề xuất</div>
+                    {/* <div style={{ marginTop: 30 }}>Cuộc thi đề xuất</div>
                     <List
                         itemLayout="horizontal"
                         dataSource={contestList}
                         renderItem={item => (
                             <div>{item.Title}</div>
                         )}
-                    />
+                    /> */}
                 </Col>
             </Row>
         </div>

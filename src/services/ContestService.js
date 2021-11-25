@@ -1,10 +1,11 @@
 import axios from 'axios';
-
-const CONTESTS_API_URL = "https://carworld.cosplane.asia/api/contest/";
+import moment from 'moment';
+import 'moment/locale/vi';
+const CONTEST_API_URL = "https://carworld.cosplane.asia/api/contestEvent/"
 
 class ContestService {
     getContests() {
-        return axios.get(CONTESTS_API_URL + "GetAllNewContests");
+        return axios.get(CONTEST_API_URL + "GetNewCEs?type=2&now=" + moment().format('yyyy-MM-DDTHH:mm:ss'))
     }
 }
 

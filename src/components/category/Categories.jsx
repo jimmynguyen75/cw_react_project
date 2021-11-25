@@ -34,12 +34,36 @@ function Categories() {
         }
     }, [location.pathname, title])
     useEffect(() => {
+        let car = []
+        let accessory = []
+        let event = []
+        let contest = []
         const fetchData = async () => {
             const cars = await CategoriesService.getCars();
             const accessories = await CategoriesService.getAccessories();
             const events = await CategoriesService.getEvents();
             const contests = await CategoriesService.getContests();
-            setData({ cars: cars.data, accessories: accessories.data, events: events.data, contests: contests.data })
+            cars.data.forEach((data) => {
+                if (data.Status === 1) {
+                    car.push(data)
+                }
+            })
+            accessories.data.forEach((data) => {
+                if (data.Status === 1) {
+                    accessory.push(data)
+                }
+            })
+            events.data.forEach((data) => {
+                if (data.Status === 1) {
+                    event.push(data)
+                }
+            })
+            contests.data.forEach((data) => {
+                if (data.Status === 1) {
+                    contest.push(data)
+                }
+            })
+            setData({ cars: car, accessories: accessory, events: event, contests: contest })
         }
         fetchData();
     }, [])
@@ -51,7 +75,7 @@ function Categories() {
                     handleDetail(firstData)
                 }} >
                     <Col span={16}>
-                        <Image preview={false} alt="" style={{ height: 500, width: 780 }} src={firstData != null && firstData.FeaturedImage} />
+                        <Image preview={false} alt="" style={{ height: 300, width: 500 }} src={firstData != null && firstData.FeaturedImage} />
                     </Col>
                     <Col span={8}>
                         <div style={{ fontSize: 22, marginBottom: 10, fontWeight: '600' }}>{firstData != null && firstData.Title}</div>

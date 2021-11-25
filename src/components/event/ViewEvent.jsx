@@ -43,23 +43,27 @@ function ViewEvent() {
                                     backgroundColor: "#9DBAD5",
                                     color: "white",
                                 }}>
-                                    <div className="col-3" style={{ fontSize: 28, fontWeight: "bold" }}>
-                                        <div style={{ border: "2px solid white", margin: "10px", height: "150px", width: "150px" }}>
-                                            <div style={{ textAlign: "center" }}>{moment(record.StartDate).format('DD')}</div>
-                                            <div style={{ textAlign: "center" }}>Tháng {moment(record.StartDate).format('MM')}</div>
+                                    <Row>
+                                        <div className="col-3" style={{ fontSize: 28, fontWeight: "bold" }}>
+                                            <div style={{ border: "2px solid white", margin: "10px", height: "150px", width: "150px" }}>
+                                                <div style={{ textAlign: "center" }}>{moment(record.StartDate).format('DD')}</div>
+                                                <div style={{ textAlign: "center" }}>Tháng {moment(record.StartDate).format('MM')}</div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="col-9">
-                                        <div style={{ margin: "10px", marginLeft: "30px" }}>
-                                            <div>Thời gian bắt đầu: {moment(record.StartDate).format('HH:mm DD/MM/YYYY')}</div>
-                                            <div>Thời gian kết thúc: {moment(record.EndDate).format('HH:mm DD/MM/YYYY')}</div>
-                                            <div>Thời gian bắt đầu đăng ký: {moment(record.StartRegister).format('HH:mm DD/MM/YYYY')}</div>
-                                            <div>Thời gian kết thúc đăng ký: {moment(record.EndRegister).format('HH:mm DD/MM/YYYY')}</div>
-                                            <div>Số lượng tham gia: {record.MinParticipants} - {record.MaxParticipants}</div>
-                                            <div>Đã tham gia: {record.CurrentParticipants}</div>
-                                            <div>Địa điểm: {record.Venue}</div>
+                                        <div className="col-9">
+                                            <div style={{ margin: "10px", marginLeft: "40px" }}>
+                                                <div style={{letterSpacing: 1}}>Thời gian bắt đầu: {moment(record.StartDate).format('HH:mm DD/MM/YYYY')}</div>
+                                                <div style={{letterSpacing: 1}}>Thời gian kết thúc: {moment(record.EndDate).format('HH:mm DD/MM/YYYY')}</div>
+                                                <div style={{letterSpacing: 1}}>Thời gian bắt đầu đăng ký: {moment(record.StartRegister).format('HH:mm DD/MM/YYYY')}</div>
+                                                <div style={{letterSpacing: 1}}>Thời gian kết thúc đăng ký: {moment(record.EndRegister).format('HH:mm DD/MM/YYYY')}</div>
+                                                <div style={{letterSpacing: 1}}>Số lượng tham gia: {record.MinParticipants} - {record.MaxParticipants}</div>
+                                                <div style={{letterSpacing: 1}}>Đã tham gia: {record.CurrentParticipants}</div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </Row>
+                                    <Row>
+                                        <div style={{margin: 10}}>Địa điểm: {record.Venue}</div>
+                                    </Row>
                                 </div>
                             </div>
                         </Col>
@@ -76,10 +80,10 @@ function ViewEvent() {
                                 </Carousel>
                             </div>
                         </Col>
-                        <div style={{ width: '1200px', margin: '5px 12px 5px 5px', }}>
-                            <Input.TextArea style={{ backgroundColor: 'white', color: 'black', border: 'none' }} disabled={true} autoSize={{ minRows: 2, maxRows: 100 }} value={record.Description}></Input.TextArea>
-                        </div>
                     </Row>
+                    <div style={{ width: '1160px' }}>
+                        <Input.TextArea style={{ backgroundColor: 'white', color: 'black', border: 'none' }} disabled={true} autoSize={{ minRows: 2, maxRows: 100 }} value={record.Description}></Input.TextArea>
+                    </div>
                 </Spin>
             </div>
         </div>

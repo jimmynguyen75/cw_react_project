@@ -57,7 +57,7 @@ function Event() {
     return (
         <div className="event">
             <img src={f1} />
-            <div className="eventTitle33"><span className="eventTitle34">SỰ KIỆN THÁNG {moment().format('M')}</span>
+            <div className="eventTitle33"><span className="eventTitle34">SỰ KIỆN THÁNG {month}</span>
                 <Select defaultValue={monthNow} style={{ width: 130, float: 'right', marginTop: 15, marginRight: 12 }} onChange={handleChange}>
                     <Option value="1" disabled={1 < monthNow ? true : false}>Tháng 1</Option>
                     <Option value="2" disabled={2 < monthNow ? true : false}>Tháng 2</Option>

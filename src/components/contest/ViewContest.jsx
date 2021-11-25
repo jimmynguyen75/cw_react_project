@@ -1,11 +1,9 @@
 import React from 'react'
 
-function ContestPost() {
+export default function ViewContest() {
     return (
         <div>
-
+            
         </div>
     )
 }
-
-export default ContestPost;

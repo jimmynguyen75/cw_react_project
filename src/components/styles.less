@@ -177,6 +177,11 @@
 
 .des {
     font-size: 16px;
+    display: -webkit-box;
+    max-width: 100%;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 /* Event and contest */
@@ -194,8 +199,14 @@
 }
 
 .ECsmallTitle {
+    padding-top: 5px;
     font-weight: 600;
     margin-bottom: 10px;
+    margin-bottom: 5px;
+}
+
+.ECsmallTitle:hover {
+    color: #F69E7B
 }
 
 /* footer */
@@ -288,4 +299,10 @@
 
 .spaceFT22:hover {
     color: white;
+}
+.searchSVG .anticon svg {
+    margin-bottom: 2.2px;
+}
+.searchSVG.ant-input-search>.ant-input-group>.ant-input-group-addon:last-child .ant-input-search-button {
+    height: 41.99px;
 }
