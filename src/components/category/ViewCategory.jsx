@@ -9,12 +9,24 @@ import CategoriesService from '../../services/CategoriesService';
 // import ContestService from '../../services/ContestService';
 import EventService from '../../services/EventService';
 import './style.less';
+import { useHistory } from "react-router-dom";
+import removeVietnamese from '../../utils/removeVietnamese'
 export default function ViewCategory() {
     const location = useLocation();
     const [title, setTitle] = useState('');
     const [record, setRecord] = useState('');
     const [postList, setPostList] = useState([]);
     const [eventList, setEventList] = useState([]);
+    const history = useHistory();
+    function handleDetail(record1) {
+        let repo = removeVietnamese.removeVietnameseTones(record1.Title)    
+        history.push(`/${repo.replace(/\s+/g, '-').toLowerCase()}`, { record: record1 });
+        window.location.reload()
+    }
+    function handleEventDetail(record) {
+        let repo = removeVietnamese.removeVietnameseTones(record.Title)
+        history.push(`/su-kien/${repo.replace(/\s+/g, '-').toLowerCase()}`, { record: record });
+    }
     // const [contestList, setContestList] = useState([]);
     useEffect(() => {
         document.title = title
@@ -110,9 +122,9 @@ export default function ViewCategory() {
                     <List
                         itemLayout="horizontal"
                         dataSource={postList}
-                        renderItem={item => (
-                            <div style={{ paddingBottom: 15, cursor: 'pointer' }}>
-                                <Image src={item.FeaturedImage}></Image>
+                        renderItem={(item) => (
+                            <div style={{ paddingBottom: 15, cursor: 'pointer' }} onClick={() => { handleDetail(item) }}>
+                                <Image src={item.FeaturedImage} preview={false}></Image>
                                 <div className="hoverTitle" style={{ fontWeight: 550, fontSize: 16 }}>{item.Title}</div>
                             </div>
                         )}
@@ -125,8 +137,8 @@ export default function ViewCategory() {
                         itemLayout="horizontal"
                         dataSource={eventList}
                         renderItem={item => (
-                            <div style={{ paddingBottom: 15, cursor: 'pointer' }}>
-                                <Image src={item.Image}></Image>
+                            <div style={{ paddingBottom: 15, cursor: 'pointer' }} onClick={() => { handleEventDetail(item) }}>
+                                <Image src={item.Image} preview={false}></Image>
                                 <div className="hoverTitle" style={{ fontWeight: 550, fontSize: 16 }}>{item.Title}</div>
                             </div>
                         )}

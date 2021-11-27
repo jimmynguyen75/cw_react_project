@@ -37,6 +37,7 @@ function Navbar() {
             onSearch={onSearch}
             enterButton
             allowClear
+            size="small"
         />
     );
     return (

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Divider, Row, Col, Image, List, Card } from 'antd';
+import { Divider, Row, Col, Image, List, Card, Spin } from 'antd';
 import CategoriesService from '../../services/CategoriesService';
 import { useLocation } from "react-router-dom";
 import { useHistory } from "react-router-dom";
@@ -13,6 +13,16 @@ function Categories() {
             location.pathname === "/tin-phu-kien" ? data.accessories[0] :
                 location.pathname === "/tin-su-kien" ? data.events[0] :
                     location.pathname === "/tin-cuoc-thi" ? data.contests[0] : null
+    const secondData =
+        location.pathname === "/tin-xe" ? data.cars[1] :
+            location.pathname === "/tin-phu-kien" ? data.accessories[1] :
+                location.pathname === "/tin-su-kien" ? data.events[1] :
+                    location.pathname === "/tin-cuoc-thi" ? data.contests[1] : null
+    const thirdData =
+        location.pathname === "/tin-xe" ? data.cars[2] :
+            location.pathname === "/tin-phu-kien" ? data.accessories[2] :
+                location.pathname === "/tin-su-kien" ? data.events[2] :
+                    location.pathname === "/tin-cuoc-thi" ? data.contests[2] : null
     const history = useHistory();
     const { Meta } = Card;
     const [title, setTitle] = useState("")
@@ -20,7 +30,7 @@ function Categories() {
         let repo = removeVietnamese.removeVietnameseTones(record.Title)
         history.push(`/${repo.replace(/\s+/g, '-').toLowerCase()}`, { record: record });
     }
-    useEffect(() => { 
+    useEffect(() => {
         document.title = title
         switch (location.pathname) {
             case "/tin-xe":
@@ -68,47 +78,55 @@ function Categories() {
         fetchData();
     }, [])
     return (
-        <div className="headerCW">
-            <div className="navCW">
-                <Divider orientation="left" style={{ fontSize: 32 }}>TIN XE</Divider>
-                <Row gutter={30} style={{ marginBottom: 30, cursor: 'pointer' }} onClick={() => {
-                    handleDetail(firstData)
-                }} >
-                    <Col span={16}>
-                        <Image preview={false} alt="" style={{ height: 300, width: 500 }} src={firstData != null && firstData.FeaturedImage} />
-                    </Col>
-                    <Col span={8}>
-                        <div style={{ fontSize: 22, marginBottom: 10, fontWeight: '600' }}>{firstData != null && firstData.Title}</div>
-                        <div style={{ fontSize: 16 }}>{firstData != null && firstData.Overview}</div>
-                    </Col>
-                </Row>
-                <List
-                    grid={{ gutter: 16, column: 3 }}
-                    dataSource={
-                        location.pathname === "/tin-xe" ? data.cars.filter(function (value, index, arr) { return index !== 0 }) :
-                            location.pathname === "/tin-phu-kien" ? data.accessories.filter(function (value, index, arr) { return index !== 0 }) :
-                                location.pathname === "/tin-su-kien" ? data.events.filter(function (value, index, arr) { return index !== 0 }) :
-                                    location.pathname === "/tin-cuoc-thi" ? data.contests.filter(function (value, index, arr) { return index !== 0 }) : null}
-                    renderItem={item => (
-                        <List.Item
-                            onClick={() => {
-                                handleDetail(item)
-                            }}>
-                            <Card
-                                cover={<Image alt="" src={item.FeaturedImage} preview={false} style={{ height: 250, maxWidth: '100%' }} />}
-                                hoverable
-                            >
-                                <Meta
-                                    style={{ height: 155 }}
-                                    title={<div style={{ height: 55, fontSize: 18 }}>{item.Title}</div>}
-                                    description={<div className="textOverflow">{item.Overview}</div>}
-                                />
-                            </Card>
-                        </List.Item>
-                    )}
-                />
+        <Spin spinning={data.cars.length !== 0 ? false : true}>
+            <div className="headerCW">
+                <div className="navCW">
+                    <Divider orientation="left" style={{ fontSize: 32 }}>TIN XE</Divider>
+                    <Row gutter={15} style={{ marginBottom: 20 }}>
+                        <Col className="hoverTitlePage" span={16} style={{ cursor: 'pointer' }} onClick={() => { handleDetail(firstData) }}>
+                            <Image preview={false} alt="" style={{ height: 400, width: '773.68px', objectFit: 'cover' }} src={firstData != null && firstData.FeaturedImage} />
+                            <div style={{ fontSize: 28, marginBottom: 10, fontWeight: '600' }}>{firstData != null && firstData.Title}</div>
+                        </Col>
+                        <Col span={8}>
+                            <Row className="hoverTitlePage" style={{ cursor: 'pointer' }} onClick={() => { handleDetail(secondData) }} >
+                                <Image preview={false} alt="" style={{ height: 200, width: '378.67px', objectFit: 'cover', cursor: 'pointer' }} src={secondData != null && secondData.FeaturedImage} />
+                                <div style={{ fontSize: 16, marginBottom: 15, fontWeight: '600', width: '378.67px' }}>{secondData != null && secondData.Title}</div>
+                            </Row>
+                            <Row className="hoverTitlePage" style={{ cursor: 'pointer' }} onClick={() => { handleDetail(thirdData) }}>
+                                <Image preview={false} alt="" style={{ height: 200, width: '378.67px', objectFit: 'cover', cursor: 'pointer' }} src={thirdData != null && thirdData.FeaturedImage} />
+                                <div style={{ fontSize: 16, marginBottom: 10, fontWeight: '600', width: '378.67px' }}>{thirdData != null && thirdData.Title}</div>
+                            </Row>
+                        </Col>
+                    </Row>
+                    <Divider></Divider>
+                    <List
+                        grid={{ gutter: 16, column: 3 }}
+                        dataSource={
+                            location.pathname === "/tin-xe" ? data.cars.filter(function (value, index, arr) { return (index !== 0 && index !== 1 && index !== 2) }) :
+                                location.pathname === "/tin-phu-kien" ? data.accessories.filter(function (value, index, arr) { return (index !== 0 && index !== 1 && index !== 2) }) :
+                                    location.pathname === "/tin-su-kien" ? data.events.filter(function (value, index, arr) { return (index !== 0 && index !== 1 && index !== 2) }) :
+                                        location.pathname === "/tin-cuoc-thi" ? data.contests.filter(function (value, index, arr) { return (index !== 0 && index !== 1 && index !== 2) }) : null}
+                        renderItem={item => (
+                            <List.Item
+                                onClick={() => {
+                                    handleDetail(item)
+                                }}>
+                                <Card
+                                    cover={<Image alt="" src={item.FeaturedImage} preview={false} style={{ height: 250, maxWidth: '100%', objectFit: 'cover' }} />}
+                                    hoverable
+                                >
+                                    <Meta
+                                        style={{ height: 155 }}
+                                        title={<div style={{ height: 55, fontSize: 18 }}>{item.Title}</div>}
+                                        description={<div className="textOverflow">{item.Overview}</div>}
+                                    />
+                                </Card>
+                            </List.Item>
+                        )}
+                    />
+                </div>
             </div>
-        </div>
+        </Spin>
     )
 }
 export default Categories;

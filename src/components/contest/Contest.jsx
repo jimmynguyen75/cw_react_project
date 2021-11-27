@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
 import ContestService from '../../services/ContestService';
 import removeVietnamese from '../../utils/removeVietnamese';
+import NumberFormat from 'react-number-format';
 import f1 from './f3.jpg';
 import './styles.less';
 const { Option } = Select;
@@ -83,7 +84,7 @@ function Contest() {
                         dataSource={thisMonth}
                         renderItem={item => (
                             <List.Item>
-                                <div className="rowHover" style={{ cursor: 'pointer' }} onClick={() => { handleClick(item) }}>
+                                <div className="rowHover" style={{ cursor: 'pointer' }} >
                                     <div style={{ width: 1160 }}>
                                         <div className="row">
                                             <div className="col-1" style={{ paddingRight: 0 }}>
@@ -95,7 +96,7 @@ function Contest() {
                                                     <div style={{ fontSize: 15, fontWeight: 550 }}>{moment(item.StartDate).format('HH:mm')}</div>
                                                 </div>
                                             </div>
-                                            <div className="col-9">
+                                            <div className="col-9" onClick={() => { handleClick(item) }}>
                                                 <div className="row">
                                                     <div className="col-4" style={{ padding: 0 }}>
                                                         <div style={{ float: 'left' }} className="eventImage">
@@ -114,6 +115,17 @@ function Contest() {
                                                         <div className="findOutMore">
                                                             <div style={{ float: 'left', fontSize: 14 }}>Chi tiết </div>
                                                             <DoubleRightOutlined />
+                                                            <div style={{ float: 'right', fontSize: 14, marginRight: 10 }}>
+                                                                <i style={{ color: '#87A8A4' }} className="fas fa-money-bill"></i>&nbsp;&nbsp;{item.Fee === 0 ? "Miễn phí" :
+                                                                    <NumberFormat
+                                                                        value={item.Fee}
+                                                                        displayType="text"
+                                                                        type="text"
+                                                                        suffix=" vnđ"
+                                                                        thousandSeparator={'.'}
+                                                                        decimalSeparator={','}
+                                                                    />}
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -149,7 +161,7 @@ function Contest() {
                         dataSource={contests}
                         renderItem={item => (
                             <List.Item>
-                                <div className="rowHover" style={{ cursor: 'pointer' }} onClick={() => { handleClick(item) }}>
+                                <div className="rowHover" style={{ cursor: 'pointer' }} >
                                     <div style={{ width: 1160 }}>
                                         <div className="row">
                                             <div className="col-1" style={{ paddingRight: 0 }}>
@@ -161,7 +173,7 @@ function Contest() {
                                                     <div style={{ fontSize: 15, fontWeight: 550 }}>{moment(item.StartDate).format('HH:mm')}</div>
                                                 </div>
                                             </div>
-                                            <div className="col-9">
+                                            <div className="col-9" onClick={() => { handleClick(item) }}>
                                                 <div className="row">
                                                     <div className="col-4" style={{ padding: 0 }}>
                                                         <div style={{ float: 'left' }} className="eventImage">
@@ -178,18 +190,30 @@ function Contest() {
                                                             </div>
                                                         </div>
                                                         <div className="findOutMore">
-                                                            <div style={{ float: 'left', fontSize: 14 }}>Chi tiết </div>
+                                                            <div style={{ float: 'left', fontSize: 14 }}>Chi tiết</div>
                                                             <DoubleRightOutlined />
+                                                            <div style={{ float: 'right', fontSize: 14, marginRight: 10 }}>
+                                                                <i style={{ color: '#87A8A4' }} className="fas fa-money-bill"></i>&nbsp;&nbsp;{item.Fee === 0 ? "Miễn phí" :
+                                                                    <NumberFormat
+                                                                        value={item.Fee}
+                                                                        displayType="text"
+                                                                        type="text"
+                                                                        suffix=" vnđ"
+                                                                        thousandSeparator={'.'}
+                                                                        decimalSeparator={','}
+                                                                    />}
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div className="col-2" style={{ paddingLeft: 0, backgroundColor: '#d8f4ff' }}>
-                                                <div style={{ textAlign: 'center', height: 160 }}>
-                                                    <div><EnvironmentOutlined style={{ fontSize: 24, paddingTop: 20, color: '#ff7643' }} /></div>
-                                                    <div style={{ fontSize: 15, fontWeight: 600, paddingTop: 5, paddingLeft: 9, paddingRight: 9, color: 'rgb(1, 65, 85)' }}>{item.Venue}</div>
-                                                </div>
                                                 <a href={"http://maps.google.com/?q=" + item.Venue} rel="noopener noreferrer" target="_blank" style={{ textAlign: 'center', display: 'block', fontSize: 18, fontWeight: 600, color: '#ff7643' }}>
+
+                                                    <div style={{ textAlign: 'center', height: 160 }}>
+                                                        <div><EnvironmentOutlined style={{ fontSize: 24, paddingTop: 20, color: '#ff7643' }} /></div>
+                                                        <div style={{ fontSize: 15, fontWeight: 600, paddingTop: 5, paddingLeft: 9, paddingRight: 9, color: 'rgb(1, 65, 85)' }}>{item.Venue}</div>
+                                                    </div>
                                                     Google Maps
                                                 </a>
                                             </div>

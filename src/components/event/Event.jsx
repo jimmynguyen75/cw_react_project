@@ -85,7 +85,7 @@ function Event() {
                         dataSource={thisMonth}
                         renderItem={item => (
                             <List.Item>
-                                <div className="rowHover" style={{ cursor: 'pointer' }} onClick={() => { handleClick(item) }}>
+                                <div className="rowHover" style={{ cursor: 'pointer' }} >
                                     <div style={{ width: 1160 }}>
                                         <div className="row">
                                             <div className="col-1" style={{ paddingRight: 0 }}>
@@ -97,7 +97,7 @@ function Event() {
                                                     <div style={{ fontSize: 15, fontWeight: 550 }}>{moment(item.StartDate).format('HH:mm')}</div>
                                                 </div>
                                             </div>
-                                            <div className="col-9">
+                                            <div className="col-9" onClick={() => { handleClick(item) }}>
                                                 <div className="row">
                                                     <div className="col-4" style={{ padding: 0 }}>
                                                         <div style={{ float: 'left' }} className="eventImage">
@@ -137,7 +137,7 @@ function Event() {
                     />
                 </Spin>
             </div>
-            <div className="eventTitle33" style={{marginTop: '-30px'}}><span className="eventTitle34">CÁC SỰ KIỆN</span></div>
+            <div className="eventTitle33" style={{ marginTop: '-30px' }}><span className="eventTitle34">CÁC SỰ KIỆN</span></div>
             <div className="event33">
                 <Spin size="large" spinning={events == null ? true : false} >
                     <List itemLayout="horizontal"
@@ -151,7 +151,7 @@ function Event() {
                         dataSource={events}
                         renderItem={item => (
                             <List.Item>
-                                <div className="rowHover" style={{ cursor: 'pointer' }} onClick={() => { handleClick(item) }}>
+                                <div className="rowHover" style={{ cursor: 'pointer' }} >
                                     <div style={{ width: 1160 }}>
                                         <div className="row">
                                             <div className="col-1" style={{ paddingRight: 0 }}>
@@ -163,7 +163,7 @@ function Event() {
                                                     <div style={{ fontSize: 15, fontWeight: 550 }}>{moment(item.StartDate).format('HH:mm')}</div>
                                                 </div>
                                             </div>
-                                            <div className="col-9">
+                                            <div className="col-9" onClick={() => { handleClick(item) }}>
                                                 <div className="row">
                                                     <div className="col-4" style={{ padding: 0 }}>
                                                         <div style={{ float: 'left' }} className="eventImage">
@@ -187,11 +187,11 @@ function Event() {
                                                 </div>
                                             </div>
                                             <div className="col-2" style={{ paddingLeft: 0, backgroundColor: '#d8f4ff' }}>
-                                                <div style={{ textAlign: 'center', height: 160 }}>
-                                                    <div><EnvironmentOutlined style={{ fontSize: 24, paddingTop: 20, color: '#ff7643' }} /></div>
-                                                    <div style={{ fontSize: 15, fontWeight: 600, paddingTop: 5, paddingLeft: 9, paddingRight: 9, color: 'rgb(1, 65, 85)' }}>{item.Venue}</div>
-                                                </div>
                                                 <a href={"http://maps.google.com/?q=" + item.Venue} rel="noopener noreferrer" target="_blank" style={{ textAlign: 'center', display: 'block', fontSize: 18, fontWeight: 600, color: '#ff7643' }}>
+                                                    <div style={{ textAlign: 'center', height: 160 }}>
+                                                        <div><EnvironmentOutlined style={{ fontSize: 24, paddingTop: 20, color: '#ff7643' }} /></div>
+                                                        <div style={{ fontSize: 15, fontWeight: 600, paddingTop: 5, paddingLeft: 9, paddingRight: 9, color: 'rgb(1, 65, 85)' }}>{item.Venue}</div>
+                                                    </div>
                                                     Google Maps
                                                 </a>
                                             </div>

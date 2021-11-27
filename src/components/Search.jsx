@@ -51,7 +51,7 @@ export default function Search() {
                                 handleDetail(item)
                             }}>
                             <Card
-                                cover={<Image alt="" src={item.FeaturedImage} preview={false} style={{ height: 200, maxWidth: '100%' }} />}
+                                cover={<Image alt="" src={item.FeaturedImage} preview={false} style={{ height: 200, maxWidth: '100%', objectFit: 'cover' }} />}
                                 hoverable
                             >
                                 <Meta

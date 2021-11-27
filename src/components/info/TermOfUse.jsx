@@ -15,7 +15,7 @@ function TermOfUse() {
                 </p>
                 <h5>1. QUY ĐỊNH CHUNG</h5>
                 <p>
-                    Bằng việc ghé thăm website www.CarWorld.vn và sử dụng các dịch vụ, Bạn đồng ý với Điều khoản sử dụng này và Chính sách bảo mật của chúng tôi. Thuật ngữ “Bạn” và/hoặc “Người sử dụng” sau đây được gọi chung để chỉ tới những người sử dụng các dịch vụ. Chúng tôi thực hiện Điều khoản sử dụng này và Chính sách bảo mật theo quy định của pháp luật hiện hành và không nội dung nào trong các tài liệu trên cản trở quyền và nghĩa vụ của chúng tôi tuân thủ các quy định của pháp luật.
+                    Bằng việc ghé thăm website https://carworld.tokyo và sử dụng các dịch vụ, Bạn đồng ý với Điều khoản sử dụng này và Chính sách bảo mật của chúng tôi. Thuật ngữ “Bạn” và/hoặc “Người sử dụng” sau đây được gọi chung để chỉ tới những người sử dụng các dịch vụ. Chúng tôi thực hiện Điều khoản sử dụng này và Chính sách bảo mật theo quy định của pháp luật hiện hành và không nội dung nào trong các tài liệu trên cản trở quyền và nghĩa vụ của chúng tôi tuân thủ các quy định của pháp luật.
                 </p>
                 <h5>2. QUY ĐỊNH SỬ DỤNG DỊCH VỤ</h5>
                 <p>
@@ -35,7 +35,7 @@ function TermOfUse() {
                 </p>
                 <h5>6. THAY ĐỔI ĐIỀU KHOẢN SỬ DỤNG</h5>
                 <p>
-                    Chúng tôi giữ quyền thay đổi và/hoặc sửa đổi mà không cần báo trước bất kỳ điều khoản nào trong Điều khoản sử dụng này tùy từng thời điểm. Những sự thay đổi và/hoặc sửa đổi như vậy sẽ có hiệu lực ngay khi đăng lên website www.CarWorld.vn. Nếu Bạn tiếp tục truy cập www.CarWorld.vn hoặc sử dụng các dịch vụ sau khi các thay đổi và/hoặc sửa đổi được đăng lên, Bạn đã chấp nhận và đồng ý với các thay đổi và/hoặc sửa đổi đó.
+                    Chúng tôi giữ quyền thay đổi và/hoặc sửa đổi mà không cần báo trước bất kỳ điều khoản nào trong Điều khoản sử dụng này tùy từng thời điểm. Những sự thay đổi và/hoặc sửa đổi như vậy sẽ có hiệu lực ngay khi đăng lên website https://carworld.tokyo. Nếu Bạn tiếp tục truy cập https://carworld.tokyo hoặc sử dụng các dịch vụ sau khi các thay đổi và/hoặc sửa đổi được đăng lên, Bạn đã chấp nhận và đồng ý với các thay đổi và/hoặc sửa đổi đó.
                 </p>
                 <h5>7.ĐIỀU KHOẢN CHUNG</h5>
                 <p>
@@ -45,7 +45,7 @@ function TermOfUse() {
                 <p>
                     Địa chỉ: Đại Học FPT, Phường Long Thạnh Mỹ, Tp. Thủ Đức
                     <br />Email: carworld@gmail.com
-                    <br />Website: www.CarWorld.vn
+                    <br />Website: https://carworld.tokyo
 
                     <br />Cập nhật lần cuối vào ngày 6 tháng 9 năm 2021
                 </p>

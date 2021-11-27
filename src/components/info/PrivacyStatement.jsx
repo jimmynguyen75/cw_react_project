@@ -10,7 +10,7 @@ function PrivacyStatement() {
         <div className="body11">
             <div className="title22"><span className="border22">CHÍNH  </span>SÁCH BẢO MẬT</div>
             <div className="content22">
-                <p>www.CarWorld.vn (gồm cả nền tảng website, mobile website) sau đây gọi chung là Hệ Thống “Car World”, cam kết sẽ bảo mật những thông tin mang tính riêng tư của khách hàng. Quý khách vui lòng đọc “Chính sách bảo mật” dưới đây trước khi truy cập những nội dung khác để hiểu hơn những cam kết mà chúng tôi thực hiện, nhằm tôn trọng và bảo vệ quyền lợi của người truy cập:</p>
+                <p>https://carworld.tokyo (gồm cả nền tảng website, mobile website) sau đây gọi chung là Hệ Thống “Car World”, cam kết sẽ bảo mật những thông tin mang tính riêng tư của khách hàng. Quý khách vui lòng đọc “Chính sách bảo mật” dưới đây trước khi truy cập những nội dung khác để hiểu hơn những cam kết mà chúng tôi thực hiện, nhằm tôn trọng và bảo vệ quyền lợi của người truy cập:</p>
 
                 <h5>1. MỤC ĐÍCH THU THẬP THÔNG TIN CÁ NHÂN:</h5>
                 <h6>1.1. Mục đích thu thập thông tin</h6>
@@ -28,12 +28,12 @@ function PrivacyStatement() {
                 </p>
                 <h5>2. PHẠM VI SỬ DỤNG THÔNG TIN</h5>
                 <p>
-                    •	Website CarWorld.vn thu thập và sử dụng thông tin cá nhân quý khách với mục đích phù hợp và hoàn toàn tuân thủ nội dung của “Chính sách bảo mật thông tin cá nhân” này.
+                    •	Website https://carworld.tokyo thu thập và sử dụng thông tin cá nhân quý khách với mục đích phù hợp và hoàn toàn tuân thủ nội dung của “Chính sách bảo mật thông tin cá nhân” này.
                     <br /> •	Khi cần thiết, chúng tôi có thể sử dụng những thông tin này để liên hệ trực tiếp với bạn dưới các hình thức như: gửi thư ngỏ, thư cảm ơn, thông tin về kỹ thuật và bảo mật, quý khách có thể nhận được thư định kỳ cung cấp thông tin sản phẩm, hàng hóa mới, thông tin về các sự kiện sắp tới hoặc thông tin tuyển dụng nếu quý khách đăng kí nhận email thông báo.
                 </p>
                 <h5>3. THỜI GIAN LƯU TRỮ THÔNG TIN</h5>
                 <p>
-                    Đối với nội dung tư vấn miễn phí qua email và kiến thức chung thì thời gian lưu trữ tại CarWorld.vn không giới hạn.
+                    Đối với nội dung tư vấn miễn phí qua email và kiến thức chung thì thời gian lưu trữ tại https://carworld.tokyo không giới hạn.
                     <br /> Đối với nội dung tư vấn qua tổng đài điện thoại thì yêu cầu và tương tác với người liên hệ được lưu trữ tối đa 06 (sáu) tháng.
                 </p>
                 <h5>4. NHỮNG NGƯỜI HOẶC TỔ CHỨC CÓ THỂ ĐƯỢC TIẾP CẬN VỚI THÔNG TIN CÁ NHÂN</h5>
@@ -58,7 +58,7 @@ function PrivacyStatement() {
                 </p>
                 <h5>6. PHƯƠNG TIỆN VÀ CÔNG CỤ ĐỂ NGƯỜI DÙNG TIẾP CẬN VÀ CHỈNH SỬA DỮ LIỆU CÁ NHÂN CỦA KHÁCH HÀNG</h5>
                 <p>
-                    Quý khách hàng có quyền yêu cầu truy cập và yêu cầu chúng tôi sửa lại những sai sót trong dữ liệu cá nhân đã cung cấp thậm trí có thể yêu cầu chúng tôi xóa bỏ thông tin cá nhân bất kỳ lúc nào. Người dùng, quý khách hàng có thể chỉnh sửa, thay đổi thông tin đã gửi đề nghị tư vấn bằng hình thức gửi mail trực tiếp đến hòm thư hotline@CarWorld.vn, hoặc liên hệ qua SĐT: 0868 470 598  để đề nghị thay đổi.
+                    Quý khách hàng có quyền yêu cầu truy cập và yêu cầu chúng tôi sửa lại những sai sót trong dữ liệu cá nhân đã cung cấp thậm trí có thể yêu cầu chúng tôi xóa bỏ thông tin cá nhân bất kỳ lúc nào. Người dùng, quý khách hàng có thể chỉnh sửa, thay đổi thông tin đã gửi đề nghị tư vấn bằng hình thức gửi mail trực tiếp đến hòm thư hotline@CarWorld.tokyo, hoặc liên hệ qua SĐT: 0868 470 598  để đề nghị thay đổi.
                 </p>
                 <h5>7. BẢO MẬT THÔNG TIN KHÁCH HÀNG</h5>
                 <p>
