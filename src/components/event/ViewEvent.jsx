@@ -65,7 +65,7 @@ function ViewEvent() {
                             <div className="left" >
                                 <div className="row" style={{
                                     height: 300,
-                                    backgroundColor: "#9DBAD5",
+                                    backgroundColor: "#F1935C",
                                     color: "white",
                                 }}>
                                     <Row>
@@ -77,21 +77,21 @@ function ViewEvent() {
                                         </div>
                                         <div className="col-9">
                                             <div style={{ margin: "10px", marginLeft: "40px" }}>
-                                                <div style={{ letterSpacing: 1, paddingBottom: 5, paddingTop: 15 }}><i className="far fa-clock" style={{ color: '#F90716' }}></i> Bắt đầu <span style={{  fontWeight: 500 }}>ĐĂNG KÝ</span>: {moment(record.StartRegister).format('HH:mm - DD/MM/YYYY')}</div>
-                                                <div style={{ letterSpacing: 1, paddingBottom: 25 }}><i className="far fa-clock" style={{ color: '#F90716' }}></i> Kết thúc <span style={{  fontWeight: 500 }}>ĐĂNG KÝ</span>: {moment(record.EndRegister).format('HH:mm - DD/MM/YYYY')}</div>
+                                                <div style={{ letterSpacing: 1, paddingBottom: 5, paddingTop: 15 }}><i className="far fa-clock" style={{ color: '#D35D6E' }}></i> Bắt đầu <span style={{  fontWeight: 500 }}>ĐĂNG KÝ</span>: {moment(record.StartRegister).format('HH:mm - DD/MM/YYYY')}</div>
+                                                <div style={{ letterSpacing: 1, paddingBottom: 25 }}><i className="far fa-clock" style={{ color: '#D35D6E' }}></i> Kết thúc <span style={{  fontWeight: 500 }}>ĐĂNG KÝ</span>: {moment(record.EndRegister).format('HH:mm - DD/MM/YYYY')}</div>
                                                 <div style={{ letterSpacing: 1, paddingBottom: 5 }}><i className="far fa-clock" style={{ color: '#FF7800' }}></i> Thời gian <span style={{  fontWeight: 500 }}>BẮT ĐẦU</span>: {moment(record.StartDate).format('HH:mm - DD/MM/YYYY')}</div>
                                                 <div style={{ letterSpacing: 1, paddingBottom: 5 }}><i className="far fa-clock" style={{ color: '#FF7800' }}></i> Thời gian <span style={{  fontWeight: 500 }}>KẾT THÚC</span>: {moment(record.EndDate).format('HH:mm - DD/MM/YYYY')}</div>
                                             </div>
                                         </div>
                                     </Row>
                                     <div style={{ letterSpacing: 1, marginLeft: 10 }}><i className="fas fa-users" style={{ color: '#E36387' }}></i> <span style={{fontWeight: '550'}}>Số lượng giới hạn:</span> {record.MinParticipants} - {record.MaxParticipants}</div>
-                                    <div style={{ letterSpacing: 1, marginLeft: 10 }}><i className="fas fa-user-check" style={{ color: '#116530' }}></i>  <span style={{ fontWeight: '550' }}>Đã tham gia:</span> {record.CurrentParticipants}</div>
-                                    <div style={{ marginLeft: 10, letterSpacing: 1 }}><i className="fas fa-map-marker-alt" style={{ color: '#4C0070' }}></i>  &nbsp;<span style={{ fontWeight: '550' }}>Địa điểm:</span> {record.Venue}</div>
+                                    <div style={{ letterSpacing: 1, marginLeft: 10 }}><i className="fas fa-user-check" style={{ color: '#CBE2B0' }}></i>  <span style={{ fontWeight: '550' }}>Đã tham gia:</span> {record.CurrentParticipants}</div>
+                                    <div style={{ marginLeft: 10, letterSpacing: 1 }}><i className="fas fa-map-marker-alt" style={{ color: '#A6B1E1' }}></i>  &nbsp;<span style={{ fontWeight: '550' }}>Địa điểm:</span> {record.Venue}</div>
                                 </div>
                             </div>
                         </Col>
                         <Col span={12}>
-                            <div className="right" style={{ backgroundColor: '#9DBAD5', height: 300 }}>
+                            <div className="right" style={{ backgroundColor: '#F1935C', height: 300 }}>
                                 <Carousel effect="fade" >
                                     {img.map((object, i) => {
                                         return (
