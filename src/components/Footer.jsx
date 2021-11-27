@@ -25,8 +25,8 @@ function Footer() {
                         </div> */}
                         <div className="col-4">
                             <div className="ftTitle" style={{ fontSize: 18 }}>THÔNG TIN</div>
-                            <button className="spaceFT2" style={{ fontSize: 16 }}><a className="spaceFT22" onClick={() => history.push("/dieu-khoan-su-dung")}>Điều khoản sử dụng</a></button>
-                            <br /><button className="spaceFT2" style={{ fontSize: 16 }}><a className="spaceFT22" onClick={() => history.push("/chinh-sach-bao-mat")}>Chính sách bảo mật</a></button>
+                            <button className="spaceFT2" style={{ fontSize: 16 }}><span className="spaceFT22" onClick={() => history.push("/dieu-khoan-su-dung")}>Điều khoản sử dụng</span></button>
+                            <br /><button className="spaceFT2" style={{ fontSize: 16 }}><span className="spaceFT22" onClick={() => history.push("/chinh-sach-bao-mat")}>Chính sách bảo mật</span></button>
                         </div>
                         <div className="col-4">
                             <div className="ftTitle" style={{ fontSize: 18 }}>VỀ CHÚNG TÔI</div>

@@ -1,20 +1,19 @@
-import React, { useEffect } from 'react'
-import { Skeleton } from 'antd'
-import './styles.less'
-import imgAbout1 from './f3.jpg'
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import React, { useEffect } from 'react';
+import imgAbout1 from './f3.jpg';
+import './styles.less';
 
 function AboutUs() {
 
     useEffect(() => {
-        Aos.init({duration: 2000});
+        Aos.init({ duration: 2000 });
         document.title = "Về chúng tôi"
     }, []);
 
     return (
         <div className="about">
-            <img src={imgAbout1} />
+            <img alt="" src={imgAbout1} />
             <div className="title"><span className="title1" style={{ paddingBottom: 6 }}>Một thế </span>giới Xe</div>
             <div className="aDes" data-aos="flip-left" style={{ letterSpacing: 1.4, lineHeight: 1.6, paddingTop: 10 }}> <span style={{ fontSize: 42, lineHeight: 0 }}>"</span> Nếu bạn muốn đi nhanh, hãy đi một mình. Nếu bạn muốn đi xa, hãy đi cùng Car World ”</div>
             <div className="aboutUs"><span className="hl11">Về</span> chúng tôi</div>

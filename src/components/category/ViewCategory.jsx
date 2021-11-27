@@ -1,33 +1,31 @@
-import React, { useEffect, useState } from 'react'
-import { useHistory, useLocation } from "react-router-dom";
-import parse from 'html-react-parser';
 import DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import { Row, Col, List, Image } from 'antd'
-import 'moment/locale/vi';
+import { Col, Image, List, Row } from 'antd';
+import parse from 'html-react-parser';
 import moment from 'moment';
-import EventService from '../../services/EventService';
+import 'moment/locale/vi';
+import React, { useEffect, useState } from 'react';
+import { useLocation } from "react-router-dom";
 import CategoriesService from '../../services/CategoriesService';
-import ContestService from '../../services/ContestService';
-import './style.less'
+// import ContestService from '../../services/ContestService';
+import EventService from '../../services/EventService';
+import './style.less';
 export default function ViewCategory() {
-    const history = useHistory();
     const location = useLocation();
     const [title, setTitle] = useState('');
     const [record, setRecord] = useState('');
     const [postList, setPostList] = useState([]);
     const [eventList, setEventList] = useState([]);
-    const [contestList, setContestList] = useState([]);
+    // const [contestList, setContestList] = useState([]);
     useEffect(() => {
         document.title = title
         switch (location.pathname) {
-            case (location.pathname):
+            default:
                 return (setTitle(location.state != null && location.state.record.Title))
         }
-    }, [location.pathname, title])
+    }, [location.pathname, title, location.state])
     useEffect(() => {
         setRecord(location.state != null && location.state.record)
-    })
+    }, [location.state])
     useEffect(() => {
         let result = []
         CategoriesService.getCars()
@@ -60,18 +58,18 @@ export default function ViewCategory() {
                 console.log(err)
             })
     }, [])
-    useEffect(() => {
-        ContestService.getContests()
-            .then((res) => {
-                let filtered = res.data.filter(function (value, index, arr) {
-                    return index < 3
-                })
-                setContestList(filtered)
-            })
-            .catch((err) => {
-                console.log(err)
-            })
-    }, [])
+    // useEffect(() => {
+    //     ContestService.getContests()
+    //         .then((res) => {
+    //             let filtered = res.data.filter(function (value, index, arr) {
+    //                 return index < 3
+    //             })
+    //             setContestList(filtered)
+    //         })
+    //         .catch((err) => {
+    //             console.log(err)
+    //         })
+    // }, [])
     DecoupledEditor
         .create(document.querySelector('#editor'))
         .then(editor => {
@@ -111,7 +109,7 @@ export default function ViewCategory() {
                         itemLayout="horizontal"
                         dataSource={postList}
                         renderItem={item => (
-                            <div style={{ paddingBottom: 15, cursor: 'pointer'}}>
+                            <div style={{ paddingBottom: 15, cursor: 'pointer' }}>
                                 <Image src={item.FeaturedImage}></Image>
                                 <div className="hoverTitle" style={{ fontWeight: 550, fontSize: 16 }}>{item.Title}</div>
                             </div>

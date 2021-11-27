@@ -1,33 +1,30 @@
-import { EnvironmentOutlined, FieldTimeOutlined } from '@ant-design/icons';
-import { Spin, Row, Col, Carousel, Image, Input } from 'antd';
-import React, { useEffect, useState } from 'react';
-import { useHistory, useLocation } from "react-router-dom";
-import f2 from './f2.png';
-import 'moment/locale/vi';
+import { Carousel, Col, Image, Input, Row, Spin } from 'antd';
 import moment from 'moment';
+import 'moment/locale/vi';
+import React, { useEffect, useState } from 'react';
+import { useLocation } from "react-router-dom";
 function ViewEvent() {
-    const history = useHistory();
     const location = useLocation();
     const [record, setRecord] = useState('');
     const [title, setTitle] = useState('');
     const [img, setImg] = useState([]);
     useEffect(() => {
         setRecord(location.state != null && location.state.record)
-    })
+    }, [location.state])
     useEffect(() => {
         document.title = title
         switch (location.pathname) {
-            case (location.pathname):
+            default:
                 return (setTitle(location.state != null && location.state.record.Title))
         }
-    }, [location.pathname, title])
+    }, [location.pathname, title, location.state])
     useEffect(() => {
         let ex = location.state != null && location.state.record.Image.split("|")
         if (ex.length > 1) {
             ex.pop();
         }
         setImg(ex)
-    }, [record])
+    }, [record, location.state])
     return (
         <div className="headerCW">
             <div className="navCW">
@@ -52,17 +49,17 @@ function ViewEvent() {
                                         </div>
                                         <div className="col-9">
                                             <div style={{ margin: "10px", marginLeft: "40px" }}>
-                                                <div style={{letterSpacing: 1}}>Thời gian bắt đầu: {moment(record.StartDate).format('HH:mm DD/MM/YYYY')}</div>
-                                                <div style={{letterSpacing: 1}}>Thời gian kết thúc: {moment(record.EndDate).format('HH:mm DD/MM/YYYY')}</div>
-                                                <div style={{letterSpacing: 1}}>Thời gian bắt đầu đăng ký: {moment(record.StartRegister).format('HH:mm DD/MM/YYYY')}</div>
-                                                <div style={{letterSpacing: 1}}>Thời gian kết thúc đăng ký: {moment(record.EndRegister).format('HH:mm DD/MM/YYYY')}</div>
-                                                <div style={{letterSpacing: 1}}>Số lượng tham gia: {record.MinParticipants} - {record.MaxParticipants}</div>
-                                                <div style={{letterSpacing: 1}}>Đã tham gia: {record.CurrentParticipants}</div>
+                                                <div style={{ letterSpacing: 1 }}>Thời gian bắt đầu: {moment(record.StartDate).format('HH:mm DD/MM/YYYY')}</div>
+                                                <div style={{ letterSpacing: 1 }}>Thời gian kết thúc: {moment(record.EndDate).format('HH:mm DD/MM/YYYY')}</div>
+                                                <div style={{ letterSpacing: 1 }}>Thời gian bắt đầu đăng ký: {moment(record.StartRegister).format('HH:mm DD/MM/YYYY')}</div>
+                                                <div style={{ letterSpacing: 1 }}>Thời gian kết thúc đăng ký: {moment(record.EndRegister).format('HH:mm DD/MM/YYYY')}</div>
+                                                <div style={{ letterSpacing: 1 }}>Số lượng tham gia: {record.MinParticipants} - {record.MaxParticipants}</div>
+                                                <div style={{ letterSpacing: 1 }}>Đã tham gia: {record.CurrentParticipants}</div>
                                             </div>
                                         </div>
                                     </Row>
                                     <Row>
-                                        <div style={{margin: 10}}>Địa điểm: {record.Venue}</div>
+                                        <div style={{ margin: 10 }}>Địa điểm: {record.Venue}</div>
                                     </Row>
                                 </div>
                             </div>

@@ -1,8 +1,7 @@
-import React from 'react'
+import { Card, Divider, Image, List, Tag } from 'antd';
+import React, { useEffect, useState } from 'react';
 import { useHistory, useLocation } from "react-router-dom";
-import { Divider, Row, Col, Image, List, Card, Tag } from 'antd';
-import { useState, useEffect } from 'react';
-import removeVietnamese from '../utils/removeVietnamese'
+import removeVietnamese from '../utils/removeVietnamese';
 export default function Search() {
     const history = useHistory();
     const location = useLocation();
@@ -10,7 +9,6 @@ export default function Search() {
     useEffect(() => {
         setData(location.state.data)
     }, [location, data])
-    console.log("ok", data)
     const { Meta } = Card;
     function handleDetail(record) {
         let repo = removeVietnamese.removeVietnameseTones(record.Title)
@@ -30,7 +28,9 @@ export default function Search() {
     return (
         <div className="headerCW">
             <div className="navCW">
-                <Divider orientation="left" style={{ fontSize: 24 }}>Kết quả cho "{location !== null && location.state.search}"</Divider>
+                <Divider orientation="left" style={{ fontSize: 24 }}>
+                    {location !== null && (location.state.data.length !== 0 ? ("Kết quả cho '" + location.state.search + "'") : ('Không tìm thấy'))}
+                </Divider>
                 {/* <Row gutter={30} style={{ marginBottom: 30, cursor: 'pointer' }} onClick={() => {
                     handleDetail(firstData)
                 }} >
@@ -59,7 +59,7 @@ export default function Search() {
                                     title={<div style={{ height: 55, fontSize: 18 }}>{item.Title}</div>}
                                     description={
                                         <div className="textOverflow">
-                                            <Tag color={item.Type === 1 ? 'magenta' : item.Type === 2 ? 'gold' : item.Type === 3 ? 'green' : 'geekblue' }>{convertType(item.Type)}</Tag>- {item.Overview}</div>
+                                            <Tag color={item.Type === 1 ? 'magenta' : item.Type === 2 ? 'gold' : item.Type === 3 ? 'green' : 'geekblue'}>{convertType(item.Type)}</Tag>- {item.Overview}</div>
                                     }
                                 />
                             </Card>

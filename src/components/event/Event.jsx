@@ -1,14 +1,13 @@
+import { DoubleRightOutlined, EnvironmentOutlined, FieldTimeOutlined } from '@ant-design/icons'
+import { List, Select, Spin } from 'antd'
+import moment from 'moment'
+import 'moment/locale/vi'
 import React, { useEffect, useState } from 'react'
-import './styles.less'
-import f1 from './f2.png'
-import { List, Card, Spin, Space, Select, Row, Col } from 'antd'
+import { useHistory } from "react-router-dom"
 import EventService from '../../services/EventService'
-import { DoubleRightOutlined, FieldTimeOutlined, EnvironmentOutlined } from '@ant-design/icons';
-import { useHistory, useLocation } from "react-router-dom";
 import removeVietnamese from '../../utils/removeVietnamese'
-import locale from 'antd/es/locale-provider/fr_FR';
-import 'moment/locale/vi';
-import moment from 'moment';
+import f1 from './f2.png'
+import './styles.less'
 const { Option } = Select;
 function Event() {
     const [events, setEvents] = useState();
@@ -56,7 +55,7 @@ function Event() {
     const monthNow = moment().format('M')
     return (
         <div className="event">
-            <img src={f1} />
+            <img alt="" src={f1} />
             <div className="eventTitle33"><span className="eventTitle34">SỰ KIỆN THÁNG {month}</span>
                 <Select defaultValue={monthNow} style={{ width: 130, float: 'right', marginTop: 15, marginRight: 12 }} onChange={handleChange}>
                     <Option value="1" disabled={1 < monthNow ? true : false}>Tháng 1</Option>
@@ -102,7 +101,7 @@ function Event() {
                                                 <div className="row">
                                                     <div className="col-4" style={{ padding: 0 }}>
                                                         <div style={{ float: 'left' }} className="eventImage">
-                                                            {<img src={item.Image} style={{ minWidth: '306px', minHeight: 200, width: 'auto', height: 'auto', maxHeight: '200px' }} />}
+                                                            {<img alt="" src={item.Image} style={{ minWidth: '306px', minHeight: 200, width: 'auto', height: 'auto', maxHeight: '200px' }} />}
                                                         </div>
                                                     </div>
                                                     <div className="col-8" style={{ padding: 0, height: 200, backgroundColor: '#f4fcff' }}>
@@ -126,7 +125,7 @@ function Event() {
                                                     <div><EnvironmentOutlined style={{ fontSize: 24, paddingTop: 20, color: '#ff7643' }} /></div>
                                                     <div style={{ fontSize: 15, fontWeight: 600, paddingTop: 5, paddingLeft: 9, paddingRight: 9, color: 'rgb(1, 65, 85)' }}>{item.Venue}</div>
                                                 </div>
-                                                <a href={"http://maps.google.com/?q=" + item.Venue} target="_blank" style={{ textAlign: 'center', display: 'block', fontSize: 18, fontWeight: 600, color: '#ff7643' }}>
+                                                <a href={"http://maps.google.com/?q=" + item.Venue} rel="noopener noreferrer" target="_blank" style={{ textAlign: 'center', display: 'block', fontSize: 18, fontWeight: 600, color: '#ff7643' }}>
                                                     Google Maps
                                                 </a>
                                             </div>
@@ -168,7 +167,7 @@ function Event() {
                                                 <div className="row">
                                                     <div className="col-4" style={{ padding: 0 }}>
                                                         <div style={{ float: 'left' }} className="eventImage">
-                                                            {<img src={item.Image} style={{ minWidth: '306px', minHeight: 200, width: 'auto', height: 'auto', maxHeight: '200px' }} />}
+                                                            {<img alt="" src={item.Image} style={{ minWidth: '306px', minHeight: 200, width: 'auto', height: 'auto', maxHeight: '200px' }} />}
                                                         </div>
                                                     </div>
                                                     <div className="col-8" style={{ padding: 0, height: 200, backgroundColor: '#f4fcff' }}>
@@ -192,7 +191,7 @@ function Event() {
                                                     <div><EnvironmentOutlined style={{ fontSize: 24, paddingTop: 20, color: '#ff7643' }} /></div>
                                                     <div style={{ fontSize: 15, fontWeight: 600, paddingTop: 5, paddingLeft: 9, paddingRight: 9, color: 'rgb(1, 65, 85)' }}>{item.Venue}</div>
                                                 </div>
-                                                <a href={"http://maps.google.com/?q=" + item.Venue} target="_blank" style={{ textAlign: 'center', display: 'block', fontSize: 18, fontWeight: 600, color: '#ff7643' }}>
+                                                <a href={"http://maps.google.com/?q=" + item.Venue} rel="noopener noreferrer" target="_blank" style={{ textAlign: 'center', display: 'block', fontSize: 18, fontWeight: 600, color: '#ff7643' }}>
                                                     Google Maps
                                                 </a>
                                             </div>

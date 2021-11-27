@@ -1,32 +1,21 @@
-import React, { useEffect, useState } from 'react'
-import 'antd/dist/antd.less'
-import './styles.less'
-import { Button, Image, Carousel, Row, Col, Skeleton, Avatar, Divider, Tooltip, Tag } from 'antd'
-import { UserOutlined, AntDesignOutlined, EyeOutlined } from '@ant-design/icons';
-import featured from './featured1.png'
-import f1 from './1.jpg'
-import f2 from './2.jpg'
-import f3 from './3.jpg'
-import f4 from './4.jpg'
-import f5 from './5.jpg'
-import f6 from './6.jpg'
-import f7 from './7.jpg'
+import { Button, Col, Row, Skeleton, Tag } from 'antd';
+import 'antd/dist/antd.less';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import ReactGA from 'react-ga';
-import CategoriesService from '../../services/CategoriesService'
-import removeVietnamese from '../../utils/removeVietnamese'
-import { useHistory } from "react-router-dom";
-import EventService from '../../services/EventService'
-import ContestService from '../../services/ContestService'
-import 'moment/locale/vi';
 import moment from 'moment';
+import 'moment/locale/vi';
+import React, { useEffect, useState } from 'react';
+import ReactGA from 'react-ga';
+import { useHistory } from "react-router-dom";
+import CategoriesService from '../../services/CategoriesService';
+import ContestService from '../../services/ContestService';
+import EventService from '../../services/EventService';
+import removeVietnamese from '../../utils/removeVietnamese';
+import './styles.less';
 function Home() {
     const [post, setPost] = useState(null);
     const [event, setEvent] = useState(null);
     const [contest, setContest] = useState(null);
-    const [userEvent1, setUserEvent1] = useState(null);
-    const [userEvent2, setUserEvent2] = useState(null);
     const history = useHistory();
     useEffect(() => {
         ReactGA.pageview(window.location.pathname + window.location.search);
@@ -52,9 +41,6 @@ function Home() {
         EventService.getEvents().then((res) => { setEvent(res.data) }).catch((err) => { console.log(err) })
     }, [])
     useEffect(() => {
-        
-    }, [])
-    useEffect(() => {
         ContestService.getContests().then((res) => { setContest(res.data) }).catch((err) => { console.log(err) })
     }, [])
     function handleDetail(record) {
@@ -75,7 +61,6 @@ function Home() {
         post !== null && setDis(true)
         post !== null && setSkele("none")
     }, [post])
-    console.log("event: ", event)
     return (
         <>
             <div className="bodyCW">
@@ -143,7 +128,7 @@ function Home() {
                                             <div className="featuredTitle">{post != null && post[0].Title}</div>
                                             <div className="featuredDes">{post != null && post[0].Overview} </div>
                                         </div>
-                                        <img style={{ width: '100%', height: 383, objectFit: 'cover' }} src={post != null && post[0].FeaturedImage} />
+                                        <img alt="" style={{ width: '100%', height: 383, objectFit: 'cover' }} src={post != null && post[0].FeaturedImage} />
                                     </Col>
                                     <Col span={8}>
                                         <Row>
@@ -151,7 +136,7 @@ function Home() {
                                                 <div className="backgroundFeatured1">
                                                     <div className="featuredTitle1">{post != null && post[1].Title}</div>
                                                 </div>
-                                                <img style={{ width: '100%', marginBottom: 10, height: 186.3, objectFit: 'cover' }} src={post != null && post[1].FeaturedImage} />
+                                                <img alt="" style={{ width: '100%', marginBottom: 10, height: 186.3, objectFit: 'cover' }} src={post != null && post[1].FeaturedImage} />
                                             </Col>
                                         </Row>
                                         <Row>
@@ -159,7 +144,7 @@ function Home() {
                                                 <div className="backgroundFeatured1">
                                                     <div className="featuredTitle1">{post != null && post[2].Title}</div>
                                                 </div>
-                                                <img style={{ width: '100%', marginBottom: 10, height: 186.3, objectFit: 'cover' }} src={post != null && post[2].FeaturedImage} />
+                                                <img alt="" style={{ width: '100%', marginBottom: 10, height: 186.3, objectFit: 'cover' }} src={post != null && post[2].FeaturedImage} />
                                             </Col>
                                         </Row>
                                     </Col>
@@ -169,21 +154,21 @@ function Home() {
                                     <div className="row">
                                         <div className="col-4">
                                             <div className="news1" style={{ cursor: 'pointer' }} onClick={() => handleDetail(post != null && post[3])}>
-                                                <img style={{ height: 150, witdth: 'auto', objectFit: 'cover' }} src={post != null && post[3].FeaturedImage} />
+                                                <img alt="" style={{ height: 150, witdth: 'auto', objectFit: 'cover' }} src={post != null && post[3].FeaturedImage} />
                                                 <div className="newsTitleinBox" style={{ fontSize: 18, paddingTop: 5 }}>{post != null && post[3].Title}</div>
                                                 <div className="newsDesinBox">{post != null && post[3].Overview} </div>
                                             </div>
                                         </div>
                                         <div className="col-4">
                                             <div className="news1" style={{ cursor: 'pointer' }} onClick={() => handleDetail(post != null && post[4])}>
-                                                <img style={{ height: 150, witdth: 'auto', objectFit: 'cover' }} src={post != null && post[4].FeaturedImage} />
+                                                <img alt="" style={{ height: 150, witdth: 'auto', objectFit: 'cover' }} src={post != null && post[4].FeaturedImage} />
                                                 <div className="newsTitleinBox" style={{ fontSize: 18, paddingTop: 5 }}>{post != null && post[4].Title}</div>
                                                 <div className="newsDesinBox">{post != null && post[4].Overview} </div>
                                             </div>
                                         </div>
                                         <div className="col-4">
                                             <div className="news1" style={{ cursor: 'pointer' }} onClick={() => handleDetail(post != null && post[5])}>
-                                                <img style={{ height: 150, witdth: 'auto', objectFit: 'cover' }} src={post != null && post[5].FeaturedImage} />
+                                                <img alt="" style={{ height: 150, witdth: 'auto', objectFit: 'cover' }} src={post != null && post[5].FeaturedImage} />
                                                 <div className="newsTitleinBox" style={{ fontSize: 18, paddingTop: 5 }}>{post != null && post[5].Title}</div>
                                                 <div className="newsDesinBox">{post != null && post[5].Overview} </div>
                                             </div>
@@ -199,7 +184,7 @@ function Home() {
                                     {/* <div style={{ position: 'absolute', right: 0 }} ><i class="fas fa-eye"  style={{ color: 'white', background: '#ff7643', padding: 5, fontSize: 16, borderRadius: 30, margin: '10px 10px 0px 0px' }} /></div> */}
                                     <div className="activeHome">
                                         <div className="activeBodyHome" style={{ fontWeight: 600, color: 'black' }}>{event != null && event[0].Title}</div>
-                                        <div style={{ backgroundColor: '#FBF7F0', width: '100%', padding: '6px 10px 6px 10px', marginBottom: 10, marginTop: 10, borderRadius: 18, fontSize: 14, color: '#555454' }}>{moment(event != null && event[0].StartDate).format('lll')}</div>
+                                        <div style={{ backgroundColor: '#FBF7F0', width: '100%', padding: '6px 10px 6px 10px', marginBottom: 10, marginTop: 10, borderRadius: 18, fontSize: 14, color: '#555454' }}>{event != null && moment(event[0].StartDate).format('lll')}</div>
                                         <div className="activeVenue" style={{ border: '1px solid #DFDFDF', padding: '6px 10px 6px 10px', marginBottom: 10, marginTop: 10, borderRadius: 18, fontSize: 14, color: '#555454' }}><i class="fas fa-map-marked-alt" style={{ color: '#ff7643' }}></i>&nbsp;&nbsp;{event != null && event[0].Venue}</div>
                                         <Row>
                                             {/* <Avatar.Group size="small" maxCount={3} maxStyle={{ color: '#f56a00', backgroundColor: '#fde3cf' }}>
@@ -215,12 +200,12 @@ function Home() {
                                             <div style={{  fontSize: 14, color: '#555454' }}>Người đã tham gia</div>
                                         </Row>
                                     </div>
-                                    <div className="activeImg"><img src={event != null && event[0].Image} className='activeImgHover' /></div>
+                                    <div className="activeImg"><img alt="" src={event != null && event[0].Image} className='activeImgHover' /></div>
                                 </Col>
                                 <Col style={{ marginTop: 10, marginBottom: 10, cursor: 'pointer' }} onClick={() => handleEventDetail(event != null && event[1])}>
                                     <div className="activeHome">
                                         <div className="activeBodyHome" style={{ fontWeight: 600, color: 'black' }}>{event != null && event[1].Title}</div>
-                                        <div style={{ backgroundColor: '#FBF7F0', width: '100%', padding: '6px 10px 6px 10px', marginBottom: 10, marginTop: 10, borderRadius: 18, fontSize: 14, color: '#555454' }}>{moment(event != null && event[1].StartDate).format('lll')}</div>
+                                        <div style={{ backgroundColor: '#FBF7F0', width: '100%', padding: '6px 10px 6px 10px', marginBottom: 10, marginTop: 10, borderRadius: 18, fontSize: 14, color: '#555454' }}>{event != null && moment(event[1].StartDate).format('lll')}</div>
                                         <div className="activeVenue" style={{ border: '1px solid #DFDFDF', padding: '6px 10px 6px 10px', marginBottom: 10, marginTop: 10, borderRadius: 18, fontSize: 14, color: '#555454' }}><i class="fas fa-map-marked-alt" style={{ color: '#ff7643' }}></i>&nbsp;&nbsp;{event != null && event[1].Venue}</div>
                                         <Row>
                                             {/* <Avatar.Group size="small" maxCount={3} maxStyle={{ color: '#f56a00', backgroundColor: '#fde3cf' }}>
@@ -236,7 +221,7 @@ function Home() {
                                             <div style={{ marginLeft: 4, fontSize: 14, color: '#555454' }}>Người đã tham gia</div>
                                         </Row>
                                     </div>
-                                    <div className="activeImg"><img src={event != null && event[1].Image} /></div>
+                                    <div className="activeImg"><img alt="" src={event != null && event[1].Image} /></div>
                                 </Col>
                                 <Button type='primary' onClick={() => (window.location.href = '/su-kien')} style={{ display: 'flex', margin: 'auto', borderRadius: 5, width: 120, justifyContent: 'center' }} >Xem thêm</Button>
                             </div>
@@ -245,23 +230,23 @@ function Home() {
                         <div className="row" data-aos="zoom-in">
                             <div className="col-4" >
                                 <div className="ECsmall" onClick={() => handleEventDetail(event != null && event[2])} style={{ cursor: 'pointer' }}>
-                                    <img src={event != null && event[2].Image} />
+                                    <img alt="" src={event != null && event[2].Image} />
                                     <div className="ECsmallTitle" style={{ fontSize: 20 }}>{event != null && event[2].Title}</div>
                                     <div className="des">{event != null && event[2].Description}</div>
                                 </div>
                             </div>
                             <div className="col-4">
-                                <div className="ECsmall" onClick={() => handleEventDetail(event != null && event[2])} style={{ cursor: 'pointer' }}>
-                                    <img src={event != null && event[1].Image} />
-                                    <div className="ECsmallTitle" style={{ fontSize: 20 }}>{event != null && event[1].Title}</div>
-                                    <div className="des">{event != null && event[1].Description}</div>
+                                <div className="ECsmall" onClick={() => handleEventDetail(event != null && event[3])} style={{ cursor: 'pointer' }}>
+                                    <img alt="" src={event != null && event[3].Image} />
+                                    <div className="ECsmallTitle" style={{ fontSize: 20 }}>{event != null && event[3].Title}</div>
+                                    <div className="des">{event != null && event[3].Description}</div>
                                 </div>
                             </div>
                             <div className="col-4">
-                                <div className="ECsmall" onClick={() => handleEventDetail(event != null && event[2])} style={{ cursor: 'pointer' }}>
-                                    <img src={event != null && event[1].Image} />
-                                    <div className="ECsmallTitle" style={{ fontSize: 20 }}>{event != null && event[1].Title}</div>
-                                    <div className="des">{event != null && event[1].Description}</div>
+                                <div className="ECsmall" onClick={() => handleEventDetail(event != null && event[4])} style={{ cursor: 'pointer' }}>
+                                    <img alt="" src={event != null && event[4].Image} />
+                                    <div className="ECsmallTitle" style={{ fontSize: 20 }}>{event != null && event[4].Title}</div>
+                                    <div className="des">{event != null && event[4].Description}</div>
                                 </div>
                             </div>
                         </div>
@@ -269,23 +254,23 @@ function Home() {
                         <div className="row" data-aos="zoom-in">
                             <div className="col-4">
                                 <div className="ECsmall" onClick={() => handleContestDetail(contest != null && contest[0])} style={{ cursor: 'pointer' }}>
-                                    <img src={contest != null && contest[0].Image} />
+                                    <img alt="" src={contest != null && contest[0].Image} />
                                     <div className="ECsmallTitle" style={{ fontSize: 20 }}>{contest != null && contest[0].Title}</div>
                                     <div className="des">{contest != null && contest[0].Description}</div>
                                 </div>
                             </div>
                             <div className="col-4">
-                                <div className="ECsmall" onClick={() => handleContestDetail(contest != null && contest[0])} style={{ cursor: 'pointer' }}>
-                                    <img src={contest != null && contest[0].Image} />
-                                    <div className="ECsmallTitle" style={{ fontSize: 20 }}>{contest != null && contest[0].Title}</div>
-                                    <div className="des">{contest != null && contest[0].Description}</div>
+                                <div className="ECsmall" onClick={() => handleContestDetail(contest != null && contest[1])} style={{ cursor: 'pointer' }}>
+                                    <img alt="" src={contest != null && contest[1].Image} />
+                                    <div className="ECsmallTitle" style={{ fontSize: 20 }}>{contest != null && contest[1].Title}</div>
+                                    <div className="des">{contest != null && contest[1].Description}</div>
                                 </div>
                             </div>
                             <div className="col-4">
-                                <div className="ECsmall" onClick={() => handleContestDetail(contest != null && contest[0])} style={{ cursor: 'pointer' }}>
-                                    <img src={contest != null && contest[0].Image} />
-                                    <div className="ECsmallTitle" style={{ fontSize: 20 }}>{contest != null && contest[0].Title}</div>
-                                    <div className="des">{contest != null && contest[0].Description}</div>
+                                <div className="ECsmall" onClick={() => handleContestDetail(contest != null && contest[2])} style={{ cursor: 'pointer' }}>
+                                    <img alt="" src={contest != null && contest[2].Image} />
+                                    <div className="ECsmallTitle" style={{ fontSize: 20 }}>{contest != null && contest[2].Title}</div>
+                                    <div className="des">{contest != null && contest[2].Description}</div>
                                 </div>
                             </div>
                         </div>
