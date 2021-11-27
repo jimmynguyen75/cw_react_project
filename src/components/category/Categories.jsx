@@ -9,10 +9,10 @@ function Categories() {
     const location = useLocation();
     const [data, setData] = useState({ cars: [], accessories: [], events: [], contests: [] })
     const firstData =
-        location.pathname === '/tin-xe' ? data.cars[0] :
-            location.pathname === '/tin-phu-kien' ? data.accessories[0] :
-                location.pathname === '/tin-su-kien' ? data.events[0] :
-                    location.pathname === '/tin-cuoc-thi' ? data.contests[0] : null
+        location.pathname === "/tin-xe" ? data.cars[0] :
+            location.pathname === "/tin-phu-kien" ? data.accessories[0] :
+                location.pathname === "/tin-su-kien" ? data.events[0] :
+                    location.pathname === "/tin-cuoc-thi" ? data.contests[0] : null
     const history = useHistory();
     const { Meta } = Card;
     const [title, setTitle] = useState("")
@@ -20,18 +20,17 @@ function Categories() {
         let repo = removeVietnamese.removeVietnameseTones(record.Title)
         history.push(`/${repo.replace(/\s+/g, '-').toLowerCase()}`, { record: record });
     }
-    useEffect(() => {
+    useEffect(() => { 
         document.title = title
         switch (location.pathname) {
-            case '/tin-xe':
+            case "/tin-xe":
                 return setTitle('Tin xe')
-            case '/tin-phu-kien':
+            case "/tin-phu-kien":
                 return setTitle('Tin phụ kiện')
-            case '/tin-su-kien':
+            case "/tin-su-kien":
                 return setTitle('Tin sự kiện')
-            case '/tin-cuoc-thi':
-                return setTitle('Tin cuộc thi')
             default:
+                return setTitle('Tin cuộc thi')
         }
     }, [location.pathname, title])
     useEffect(() => {
@@ -86,10 +85,10 @@ function Categories() {
                 <List
                     grid={{ gutter: 16, column: 3 }}
                     dataSource={
-                        location.pathname = '/tin-xe' ? data.cars.filter(function (value, index, arr) { return index !== 0 }) :
-                            location.pathname === '/tin-phu-kien' ? data.accessories.filter(function (value, index, arr) { return index !== 0 }) :
-                                location.pathname === '/tin-su-kien' ? data.events.filter(function (value, index, arr) { return index !== 0 }) :
-                                    location.pathname === '/tin-cuoc-thi' ? data.contests.filter(function (value, index, arr) { return index !== 0 }) : null}
+                        location.pathname === "/tin-xe" ? data.cars.filter(function (value, index, arr) { return index !== 0 }) :
+                            location.pathname === "/tin-phu-kien" ? data.accessories.filter(function (value, index, arr) { return index !== 0 }) :
+                                location.pathname === "/tin-su-kien" ? data.events.filter(function (value, index, arr) { return index !== 0 }) :
+                                    location.pathname === "/tin-cuoc-thi" ? data.contests.filter(function (value, index, arr) { return index !== 0 }) : null}
                     renderItem={item => (
                         <List.Item
                             onClick={() => {

@@ -53,12 +53,12 @@ function Navbar() {
                                     <Menu.Item key="/" className="navRight1"><div  onClick={() => history.push("/")} style={{ textDecoration: 'none' }}>Trang chủ</div></Menu.Item>
                                     <SubMenu key="SubMenu" className="navRight2" title="Chuyên mục">
                                         <Menu.ItemGroup title="Xe">
-                                            <Menu.Item key="/tin-xe"><div  onClick={() => history.push("/tin-xe")} style={{ textDecoration: 'none' }}>Tin Xe</div></Menu.Item>
-                                            <Menu.Item key="/tin-phu-kien"><div  onClick={() => history.push("/tin-phu-kien")} style={{ textDecoration: 'none' }}>Tin Phụ Kiện</div></Menu.Item>
+                                            <Menu.Item key="/tin-xe"><div onClick={() => history.push("/tin-xe")} style={{ textDecoration: 'none' }}>Tin Xe</div></Menu.Item>
+                                            <Menu.Item key="/tin-phu-kien"><div onClick={() => (history.push("/tin-phu-kien"))} style={{ textDecoration: 'none' }}>Tin Phụ Kiện</div></Menu.Item>
                                         </Menu.ItemGroup>
                                         <Menu.ItemGroup title="Hoạt động">
-                                            <Menu.Item key="/tin-su-kien"><div  onClick={() => history.push("/tin-su-kien")} style={{ textDecoration: 'none' }}>Tin Sự kiện</div></Menu.Item>
-                                            <Menu.Item key="/tin-cuoc-thi"><div  onClick={() => history.push("/tin-cuoc-thi")} style={{ textDecoration: 'none' }}>Tin Cuộc thi</div></Menu.Item>
+                                            <Menu.Item key="/tin-su-kien"><div onClick={() => history.push("/tin-su-kien")} style={{ textDecoration: 'none' }}>Tin Sự kiện</div></Menu.Item>
+                                            <Menu.Item key="/tin-cuoc-thi"><div onClick={() => history.push("/tin-cuoc-thi")} style={{ textDecoration: 'none' }}>Tin Cuộc thi</div></Menu.Item>
                                         </Menu.ItemGroup>
                                     </SubMenu>
                                     {/* <Menu.Item key="/tin-xe" className="navRight2"><a href="/tin-xe" style={{ textDecoration: 'none' }}>Tin phụ kiện</a></Menu.Item> */}

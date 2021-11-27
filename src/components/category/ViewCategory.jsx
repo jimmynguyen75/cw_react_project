@@ -76,10 +76,12 @@ export default function ViewCategory() {
             const toolbarContainer = document.querySelector('#toolbar-container');
             editor.isReadOnly = true
             toolbarContainer.appendChild(editor.ui.view.toolbar.element);
-            editor.ui.view.top.remove(toolbarContainer)
+            if (toolbarContainer.length > 0) {
+                editor.ui.view.top.remove(toolbarContainer)
+            }
         })
-        .catch(error => {
-            console.error(error);
+        .catch((error) => {
+
         });
     return (
         <div className="headerCW">
@@ -96,7 +98,7 @@ export default function ViewCategory() {
                     </div>
                     <div id="toolbar-container"></div>
                     <div id="editor" style={{ width: 900 }}>
-                        <p>{record !== '' && parse(record.Contents)}</p>
+                        {record !== '' && <p>{parse(record.Contents)}</p>}
                     </div>
                     <div style={{ paddingLeft: '9.6px', fontWeight: '500' }}>Thực hiện: {record !== '' && record.CreatedByNavigation.FullName}</div>
                 </Col>

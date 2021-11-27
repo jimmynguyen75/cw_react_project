@@ -17,6 +17,7 @@ function Home() {
     const [event, setEvent] = useState(null);
     const [contest, setContest] = useState(null);
     const history = useHistory();
+    ReactGA.initialize("G-1CF3W5KCBY");
     useEffect(() => {
         ReactGA.pageview(window.location.pathname + window.location.search);
     }, [])
@@ -185,7 +186,7 @@ function Home() {
                                     <div className="activeHome">
                                         <div className="activeBodyHome" style={{ fontWeight: 600, color: 'black' }}>{event != null && event[0].Title}</div>
                                         <div style={{ backgroundColor: '#FBF7F0', width: '100%', padding: '6px 10px 6px 10px', marginBottom: 10, marginTop: 10, borderRadius: 18, fontSize: 14, color: '#555454' }}>{event != null && moment(event[0].StartDate).format('lll')}</div>
-                                        <div className="activeVenue" style={{ border: '1px solid #DFDFDF', padding: '6px 10px 6px 10px', marginBottom: 10, marginTop: 10, borderRadius: 18, fontSize: 14, color: '#555454' }}><i class="fas fa-map-marked-alt" style={{ color: '#ff7643' }}></i>&nbsp;&nbsp;{event != null && event[0].Venue}</div>
+                                        <div className="activeVenue" style={{ border: '1px solid #DFDFDF', padding: '6px 10px 6px 10px', marginBottom: 10, marginTop: 10, borderRadius: 18, fontSize: 14, color: '#555454' }}><i className="fas fa-map-marked-alt" style={{ color: '#ff7643' }}></i>&nbsp;&nbsp;{event != null && event[0].Venue}</div>
                                         <Row>
                                             {/* <Avatar.Group size="small" maxCount={3} maxStyle={{ color: '#f56a00', backgroundColor: '#fde3cf' }}>
                                                 <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
@@ -206,7 +207,7 @@ function Home() {
                                     <div className="activeHome">
                                         <div className="activeBodyHome" style={{ fontWeight: 600, color: 'black' }}>{event != null && event[1].Title}</div>
                                         <div style={{ backgroundColor: '#FBF7F0', width: '100%', padding: '6px 10px 6px 10px', marginBottom: 10, marginTop: 10, borderRadius: 18, fontSize: 14, color: '#555454' }}>{event != null && moment(event[1].StartDate).format('lll')}</div>
-                                        <div className="activeVenue" style={{ border: '1px solid #DFDFDF', padding: '6px 10px 6px 10px', marginBottom: 10, marginTop: 10, borderRadius: 18, fontSize: 14, color: '#555454' }}><i class="fas fa-map-marked-alt" style={{ color: '#ff7643' }}></i>&nbsp;&nbsp;{event != null && event[1].Venue}</div>
+                                        <div className="activeVenue" style={{ border: '1px solid #DFDFDF', padding: '6px 10px 6px 10px', marginBottom: 10, marginTop: 10, borderRadius: 18, fontSize: 14, color: '#555454' }}><i className="fas fa-map-marked-alt" style={{ color: '#ff7643' }}></i>&nbsp;&nbsp;{event != null && event[1].Venue}</div>
                                         <Row>
                                             {/* <Avatar.Group size="small" maxCount={3} maxStyle={{ color: '#f56a00', backgroundColor: '#fde3cf' }}>
                                                 <Avatar src={event != null && event[1].Image} />
