@@ -55,7 +55,7 @@ function Contest() {
     return (
         <div className="contest">
             <img alt="" src={f1} />
-            <div className="eventTitle33"><span className="eventTitle34">SỰ KIỆN THÁNG {month}</span>
+            <div className="eventTitle33"><span className="eventTitle34">CUỘC THI THÁNG {month}</span>
                 <Select defaultValue={monthNow} style={{ width: 130, float: 'right', marginTop: 15, marginRight: 12 }} onChange={handleChange}>
                     <Option value="1" disabled={1 < monthNow ? true : false}>Tháng 1</Option>
                     <Option value="2" disabled={2 < monthNow ? true : false}>Tháng 2</Option>
@@ -147,7 +147,7 @@ function Contest() {
                     />
                 </Spin>
             </div>
-            <div className="eventTitle33" style={{ marginTop: '-30px' }}><span className="eventTitle34">CÁC SỰ KIỆN</span></div>
+            <div className="eventTitle33" style={{ marginTop: '-30px' }}><span className="eventTitle34">CÁC CUỘC THI</span></div>
             <div className="event33">
                 <Spin size="large" spinning={contests == null ? true : false} >
                     <List itemLayout="horizontal"

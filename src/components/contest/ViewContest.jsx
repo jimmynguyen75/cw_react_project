@@ -122,15 +122,15 @@ function ViewContest() {
                             </div>
                         </Col>
                     </Row>
-                    <div style={{ width: '1170px' }}>
-                        <div className="featuredEC" style={{ marginTop: 15 }}>
+                    <div style={{ width: '1175px', marginLeft: '-10px' }}>
+                        <div className="featuredEC" style={{ marginTop: 15, fontSize: 22 }}>
                             <span style={{ paddingBottom: 2, borderBottom: '4px solid rgb(245, 126, 79)' }}>MÔ TẢ</span> CUỘC THI
                         </div>
                         <Input.TextArea style={{ backgroundColor: 'white', color: 'black', border: 'none', fontSize: '18px' }} disabled={true} autoSize={{ minRows: 2, maxRows: 100 }} value={record.Description}></Input.TextArea>
                     </div>
-                    <div className="newsTitle" style={{ marginTop: 30 }}>Cuộc thi gợi ý</div>
+                    <div className="newsTitle" style={{ marginTop: 30, width: '1160px'}}>Cuộc thi gợi ý</div>
                     <div className="site-card-wrapper" >
-                        <Row gutter={16} style={{ width: '1185px' }}>
+                        <Row gutter={16} style={{ width: '1175px' }}>
                             <Col span={8} onClick={() => { handleContestDetail(contests.length !== 0 && contests[0]) }}>
                                 <Card
                                     cover={<Image alt="" src={contests.length !== 0 && contests[0].Image} preview={false} style={{ height: 250, maxWidth: '100%', objectFit: 'cover' }} />}
