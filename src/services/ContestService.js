@@ -5,7 +5,10 @@ const CONTEST_API_URL = "https://carworld.cosplane.asia/api/contestEvent/"
 
 class ContestService {
     getContests() {
-        return axios.get(CONTEST_API_URL + "GetNewCEs?type=2&now=" + moment().format('yyyy-MM-DDTHH:mm:ss'))
+        return axios.get(CONTEST_API_URL + "GetRegisterCEsWeb?type=2&now=" + moment().format('yyyy-MM-DDTHH:mm:ss'))
+    }
+    getContestsByBrandId(id) {
+        return axios.get(CONTEST_API_URL + "GetRegisterCEsByBrandWeb?brandId=" + id + "&type=2&now=" + moment().format('yyyy-MM-DDTHH:mm:ss'))
     }
 }
 

@@ -1,5 +1,5 @@
 import DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
-import { Col, Image, List, Row } from 'antd';
+import { Col, Image, List, Row, Avatar } from 'antd';
 import parse from 'html-react-parser';
 import moment from 'moment';
 import 'moment/locale/vi';
@@ -18,8 +18,10 @@ export default function ViewCategory() {
     const [postList, setPostList] = useState([]);
     const [eventList, setEventList] = useState([]);
     const history = useHistory();
+    const [brand, setBrand] = useState('')
+
     function handleDetail(record1) {
-        let repo = removeVietnamese.removeVietnameseTones(record1.Title)    
+        let repo = removeVietnamese.removeVietnameseTones(record1.Title)
         history.push(`/${repo.replace(/\s+/g, '-').toLowerCase()}`, { record: record1 });
         window.location.reload()
     }
@@ -27,7 +29,6 @@ export default function ViewCategory() {
         let repo = removeVietnamese.removeVietnameseTones(record.Title)
         history.push(`/su-kien/${repo.replace(/\s+/g, '-').toLowerCase()}`, { record: record });
     }
-    // const [contestList, setContestList] = useState([]);
     useEffect(() => {
         document.title = title
         switch (location.pathname) {
@@ -70,18 +71,11 @@ export default function ViewCategory() {
                 console.log(err)
             })
     }, [])
-    // useEffect(() => {
-    //     ContestService.getContests()
-    //         .then((res) => {
-    //             let filtered = res.data.filter(function (value, index, arr) {
-    //                 return index < 3
-    //             })
-    //             setContestList(filtered)
-    //         })
-    //         .catch((err) => {
-    //             console.log(err)
-    //         })
-    // }, [])
+    useEffect(() => {
+        CategoriesService.getBrandById(record.BrandId).then((brand) => {
+            setBrand(brand.data);
+        }).catch((error) => { console.log(error) })
+    }, [record])
     DecoupledEditor
         .create(document.querySelector('#editor'))
         .then(editor => {
@@ -93,14 +87,17 @@ export default function ViewCategory() {
             }
         })
         .catch((error) => {
-
+            console.error(error);
         });
     return (
         <div className="headerCW">
             <Row gutter={15}>
                 <Col>
                     <div style={{ padding: '9.6px', fontWeight: 600, fontSize: 32, width: 900, marginTop: 30 }}> {record !== '' && record.Title}</div>
-                    <div style={{ marginLeft: '9.6px', fontSize: 15, color: '#888888' }}>{record !== '' && moment(record.CreatedDate).format('llll')}</div>
+                    <Row style={{ paddingLeft: '9.6px', marginTop: '5px', fontSize: 15, color: '#888888' }}>
+                        {brand !== '' && <div style={{ display: 'flex', alignItems: 'center' }}><Avatar src={brand.Image} style={{ height: 'auto', width: 'auto', margin: 'auto', maxHeight: '40px', maxWidth: '40px' }}></Avatar>&nbsp;{brand.Name}</div>}
+                        <div style={{ display: 'flex', alignItems: 'center' }}>&nbsp;- {record !== '' && moment(record.CreatedDate).format('llll')}</div>
+                    </Row>
                     <div style={{ fontWeight: '500', marginBottom: 1, fontSize: 18, padding: '9.6px', width: 900 }}>
                         {record !== '' && record.Type === 1 ? <span style={{ color: '#555555', fontWeight: 450 }}>Xe </span> :
                             record !== '' && record.Type === 2 ? <span style={{ color: '#555555', fontWeight: 450 }}>Phụ kiện </span> :

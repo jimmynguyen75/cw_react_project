@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const CATEGORIES_API_URL = "https://carworld.cosplane.asia/api/post/"
+const BRAND_API_URL = "https://carworld.cosplane.asia/api/brand/"
 
 class Categories {
     getCars() {
@@ -20,6 +21,15 @@ class Categories {
     }
     getAll() {
         return axios.get(CATEGORIES_API_URL + "GetAllPosts")
+    }
+    getBrandById(id) {
+        return axios.get(BRAND_API_URL + "GetBrandById?id=" + id)
+    }
+    getAllBrand() {
+        return axios.get(BRAND_API_URL + "GetAllBrandsOfCar")
+    }
+    getPostByBrandId(id) {
+        return axios.get(BRAND_API_URL + "GetAllPostsByBrand?brandId=" + id)
     }
 }
 

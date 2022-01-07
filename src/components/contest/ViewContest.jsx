@@ -1,4 +1,4 @@
-import { Carousel, Col, Image, Input, Row, Spin, Card } from 'antd';
+import { Carousel, Col, Image, Input, Row, Spin, Card, Avatar } from 'antd';
 import moment from 'moment';
 import 'moment/locale/vi';
 import React, { useEffect, useState } from 'react';
@@ -7,6 +7,7 @@ import { useLocation } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import NumberFormat from 'react-number-format';
 import removeVietnamese from '../../utils/removeVietnamese'
+import CategoriesService from '../../services/CategoriesService';
 function ViewContest() {
     const location = useLocation();
     const [record, setRecord] = useState('');
@@ -15,10 +16,17 @@ function ViewContest() {
     const [contests, setcontests] = useState([]);
     const history = useHistory();
     const { Meta } = Card;
+    const [brand, setBrand] = useState('')
+
     function handleContestDetail(record) {
         let repo = removeVietnamese.removeVietnameseTones(record.Title)
         history.push(`/cuoc-thi/${repo.replace(/\s+/g, '-').toLowerCase()}`, { record: record });
     }
+    useEffect(() => {
+        CategoriesService.getBrandById(record.BrandId).then((brand) => {
+            setBrand(brand.data);
+        }).catch((error) => { console.log(error) })
+    }, [record])
     useEffect(() => {
         setRecord(location.state != null && location.state.record)
     }, [location.state])
@@ -123,12 +131,17 @@ function ViewContest() {
                         </Col>
                     </Row>
                     <div style={{ width: '1175px', marginLeft: '-10px' }}>
-                        <div className="featuredEC" style={{ marginTop: 15, fontSize: 22 }}>
-                            <span style={{ paddingBottom: 2, borderBottom: '4px solid rgb(245, 126, 79)' }}>MÔ TẢ</span> CUỘC THI
-                        </div>
+                        <Row className="featuredEC" style={{ display: 'flex', justifyContent: 'center' }}>
+                            <div style={{ marginTop: 15, fontSize: 22 }}>
+                                <span style={{ paddingBottom: 2, borderBottom: '4px solid rgb(245, 126, 79)' }}>MÔ TẢ</span> CUỘC THI - 
+                            </div>
+                            <Row style={{ paddingLeft: '5px', letterSpacing: 1, fontSize: 18, marginTop: 16 }}>
+                                {brand !== '' && <div style={{ display: 'flex', alignItems: 'center' }}><Avatar src={brand.Image} style={{ objectFit: 'contain' }}></Avatar>&nbsp;{brand.Name}</div>}
+                            </Row>
+                        </Row>
                         <Input.TextArea style={{ backgroundColor: 'white', color: 'black', border: 'none', fontSize: '18px' }} disabled={true} autoSize={{ minRows: 2, maxRows: 100 }} value={record.Description}></Input.TextArea>
                     </div>
-                    <div className="newsTitle" style={{ marginTop: 30, width: '1160px'}}>Cuộc thi gợi ý</div>
+                    <div className="newsTitle" style={{ marginTop: 30, width: '1160px' }}>Cuộc thi gợi ý</div>
                     <div className="site-card-wrapper" >
                         <Row gutter={16} style={{ width: '1175px' }}>
                             <Col span={8} onClick={() => { handleContestDetail(contests.length !== 0 && contests[0]) }}>

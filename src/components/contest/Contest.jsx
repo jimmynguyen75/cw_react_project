@@ -9,12 +9,28 @@ import removeVietnamese from '../../utils/removeVietnamese';
 import NumberFormat from 'react-number-format';
 import f1 from './f3.jpg';
 import './styles.less';
+import CategoriesService from '../../services/CategoriesService';
 const { Option } = Select;
 function Contest() {
     const [contests, setContests] = useState();
     const history = useHistory();
     const [thisMonth, setThisMonth] = useState([]);
     const [month, setMonth] = useState(moment().format('M'));
+    const [brands, setBrands] = useState([]);
+    const [filteredTable, setFilteredTable] = useState(null);
+    useEffect(() => {
+        CategoriesService.getAllBrand()
+            .then(res => {
+                setBrands(res.data);
+            })
+            .catch(err => console.log(err))
+    }, [])
+    const handleSelectBrand = (id) => {
+        id !== undefined && ContestService.getContestsByBrandId(id).then((res) => { setFilteredTable(res.data) }).catch(err => console.log(err))
+    }
+    const handleBrandClear = () => {
+        setFilteredTable(null)
+    }
     function handleChange(value) {
         setMonth(value);
     }
@@ -70,6 +86,25 @@ function Contest() {
                     <Option value="11" disabled={11 < monthNow ? true : false}>Tháng 11</Option>
                     <Option value="12" disabled={12 < monthNow ? true : false}>Tháng 12</Option>
                 </Select>
+                <Select
+                    className="selectBrand"
+                    style={{ width: 220, float: 'right', marginTop: 15, marginRight: 12 }}
+                    showSearch
+                    placeholder="Sắp xếp theo hãng"
+                    optionFilterProp="children"
+                    filterOption={(input, option) =>
+                        option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                    }
+                    onChange={handleSelectBrand}
+                    onClear={handleBrandClear}
+                    allowClear
+                >
+                    {thisMonth !== null && Array.from(new Set(thisMonth.map(obj => obj.BrandId))).map((brand) => (
+                        brands.map((brands) => (
+                            brand === brands.Id && <Option key={brands.Id} value={brands.Id}>{brands.Name}</Option>
+                        ))
+                    ))}
+                </Select>
             </div>
             <div className="event33">
                 <Spin size="large" spinning={contests == null ? true : false} >
@@ -81,7 +116,7 @@ function Contest() {
                             },
                             pageSize: 3,
                         }}
-                        dataSource={thisMonth}
+                        dataSource={filteredTable === null ? thisMonth : filteredTable}
                         renderItem={item => (
                             <List.Item>
                                 <div className="rowHover" style={{ cursor: 'pointer' }} >

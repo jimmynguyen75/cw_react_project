@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react'
-import { Divider, Row, Col, Image, List, Card, Spin } from 'antd';
+import { Divider, Row, Col, Image, List, Card, Spin, Select } from 'antd';
 import CategoriesService from '../../services/CategoriesService';
 import { useLocation } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import removeVietnamese from '../../utils/removeVietnamese'
 import './style.less'
 function Categories() {
+    const { Option } = Select;
     const location = useLocation();
     const [data, setData] = useState({ cars: [], accessories: [], events: [], contests: [] })
+    const [brands, setBrands] = useState([]);
+    const [filteredTable, setFilteredTable] = useState(null);
+    const [dt, setDt] = useState(null);
     const firstData =
         location.pathname === "/tin-xe" ? data.cars[0] :
             location.pathname === "/tin-phu-kien" ? data.accessories[0] :
@@ -77,11 +81,50 @@ function Categories() {
         }
         fetchData();
     }, [])
+    useEffect(() => {
+        CategoriesService.getAllBrand()
+            .then(res => {
+                setBrands(res.data);
+            })
+            .catch(err => console.log(err))
+    }, [])
+    const handleSelectBrand = (id) => {
+        id !== undefined && CategoriesService.getPostByBrandId(id).then((res) => { setFilteredTable(res.data) }).catch(err => console.log(err))
+    }
+    const handleBrandClear = () => {
+        setFilteredTable(null)
+    }
+    // useEffect(() => {
+    //     {location.pathname === "/tin-xe" ? setDt(data.cars) :
+    //         location.pathname === "/tin-phu-kien" ? setDt(data.accessories) :
+    //             location.pathname === "/tin-su-kien" ? setDt(data.events) :
+    //                 location.pathname === "/tin-cuoc-thi" ? setDt(data.contests) : null}
+    // }, [])
     return (
         <Spin spinning={data.cars.length !== 0 ? false : true}>
             <div className="headerCW">
+                <Select
+                    className="selectBrand"
+                    style={{ width: 220, float: 'right', marginTop: 25, marginRight: 15, marginBottom: '-25px' }}
+                    showSearch
+                    placeholder="Sắp xếp theo hãng"
+                    optionFilterProp="children"
+                    filterOption={(input, option) =>
+                        option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                    }
+                    onChange={handleSelectBrand}
+                    onClear={handleBrandClear}
+                    allowClear
+                >
+                    {dt !== null && Array.from(new Set(dt.map(obj => obj.BrandId))).map((brand) => (
+                        brands.map((brands) => (
+                            brand === brands.Id && <Option key={brands.Id} value={brands.Id}>{brands.Name}</Option>
+                        ))
+                    ))}
+                </Select>
                 <div className="navCW">
                     <Divider orientation="left" style={{ fontSize: 32 }}>TIN XE</Divider>
+
                     <Row gutter={15} style={{ marginBottom: 20 }}>
                         <Col className="hoverTitlePage" span={16} style={{ cursor: 'pointer' }} onClick={() => { handleDetail(firstData) }}>
                             <Image preview={false} alt="" style={{ height: 400, width: '773.68px', objectFit: 'cover' }} src={firstData != null && firstData.FeaturedImage} />

@@ -4,6 +4,7 @@ import moment from 'moment'
 import 'moment/locale/vi'
 import React, { useEffect, useState } from 'react'
 import { useHistory } from "react-router-dom"
+import CategoriesService from '../../services/CategoriesService'
 import EventService from '../../services/EventService'
 import removeVietnamese from '../../utils/removeVietnamese'
 import f1 from './f2.png'
@@ -14,6 +15,8 @@ function Event() {
     const history = useHistory();
     const [thisMonth, setThisMonth] = useState([]);
     const [month, setMonth] = useState(moment().format('M'));
+    const [brands, setBrands] = useState([]);
+    const [filteredTable, setFilteredTable] = useState(null);
     function handleChange(value) {
         setMonth(value);
     }
@@ -53,6 +56,19 @@ function Event() {
             })
     }, [month])
     const monthNow = moment().format('M')
+    useEffect(() => {
+        CategoriesService.getAllBrand()
+            .then(res => {
+                setBrands(res.data);
+            })
+            .catch(err => console.log(err))
+    }, [])
+    const handleSelectBrand = (id) => {
+        id !== undefined && EventService.getEventsByBrandId(id).then((res) => { setFilteredTable(res.data) }).catch(err => console.log(err))
+    }
+    const handleBrandClear = () => {
+        setFilteredTable(null)
+    }
     return (
         <div className="event">
             <img alt="" src={f1} />
@@ -71,6 +87,25 @@ function Event() {
                     <Option value="11" disabled={11 < monthNow ? true : false}>Tháng 11</Option>
                     <Option value="12" disabled={12 < monthNow ? true : false}>Tháng 12</Option>
                 </Select>
+                <Select
+                    className="selectBrand"
+                    style={{ width: 220, float: 'right', marginTop: 15, marginRight: 12 }}
+                    showSearch
+                    placeholder="Sắp xếp theo hãng"
+                    optionFilterProp="children"
+                    filterOption={(input, option) =>
+                        option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                    }
+                    onChange={handleSelectBrand}
+                    onClear={handleBrandClear}
+                    allowClear
+                >
+                    {thisMonth !== null && Array.from(new Set(thisMonth.map(obj => obj.BrandId))).map((brand) => (
+                        brands.map((brands) => (
+                            brand === brands.Id && <Option key={brands.Id} value={brands.Id}>{brands.Name}</Option>
+                        ))
+                    ))}
+                </Select>
             </div>
             <div className="event33">
                 <Spin size="large" spinning={events == null ? true : false} >
@@ -80,9 +115,9 @@ function Event() {
                                 document.body.scrollTop = 540; // For Safari
                                 document.documentElement.scrollTop = 540;
                             },
-                            pageSize: 3,
+                            pageSize: 5,
                         }}
-                        dataSource={thisMonth}
+                        dataSource={filteredTable === null ? thisMonth : filteredTable}
                         renderItem={item => (
                             <List.Item>
                                 <div className="rowHover" style={{ cursor: 'pointer' }} >
