@@ -8,28 +8,17 @@ import './style.less'
 function Categories() {
     const { Option } = Select;
     const location = useLocation();
-    const [data, setData] = useState({ cars: [], accessories: [], events: [], contests: [] })
     const [brands, setBrands] = useState([]);
     const [filteredTable, setFilteredTable] = useState(null);
-    const [dt, setDt] = useState(null);
-    const firstData =
-        location.pathname === "/tin-xe" ? data.cars[0] :
-            location.pathname === "/tin-phu-kien" ? data.accessories[0] :
-                location.pathname === "/tin-su-kien" ? data.events[0] :
-                    location.pathname === "/tin-cuoc-thi" ? data.contests[0] : null
-    const secondData =
-        location.pathname === "/tin-xe" ? data.cars[1] :
-            location.pathname === "/tin-phu-kien" ? data.accessories[1] :
-                location.pathname === "/tin-su-kien" ? data.events[1] :
-                    location.pathname === "/tin-cuoc-thi" ? data.contests[1] : null
-    const thirdData =
-        location.pathname === "/tin-xe" ? data.cars[2] :
-            location.pathname === "/tin-phu-kien" ? data.accessories[2] :
-                location.pathname === "/tin-su-kien" ? data.events[2] :
-                    location.pathname === "/tin-cuoc-thi" ? data.contests[2] : null
+    const [dt, setDt] = useState([]);
+    const firstData = dt !== null && dt[0]
+    const secondData = dt !== null && dt[1]
+    const thirdData = dt !== null && dt[2]
     const history = useHistory();
     const { Meta } = Card;
     const [title, setTitle] = useState("")
+    const [brandSelectValue, setBrandValue] = useState(null)
+
     function handleDetail(record) {
         let repo = removeVietnamese.removeVietnameseTones(record.Title)
         history.push(`/${repo.replace(/\s+/g, '-').toLowerCase()}`, { record: record });
@@ -77,10 +66,26 @@ function Categories() {
                     contest.push(data)
                 }
             })
-            setData({ cars: car, accessories: accessory, events: event, contests: contest })
+            if (location.pathname === "/tin-xe") {
+                setFilteredTable(null)
+                setBrandValue(null)
+                setDt(car)
+            } else if (location.pathname === "/tin-phu-kien") {
+                setFilteredTable(null)
+                setBrandValue(null)
+                setDt(accessory)
+            } else if (location.pathname === "/tin-su-kien") {
+                setFilteredTable(null)
+                setBrandValue(null)
+                setDt(event)
+            } else if (location.pathname === "/tin-cuoc-thi") {
+                setFilteredTable(null)
+                setBrandValue(null)
+                setDt(contest)
+            }
         }
-        fetchData();
-    }, [])
+        fetchData()
+    }, [location.pathname])
     useEffect(() => {
         CategoriesService.getAllBrand()
             .then(res => {
@@ -89,19 +94,14 @@ function Categories() {
             .catch(err => console.log(err))
     }, [])
     const handleSelectBrand = (id) => {
+        setBrandValue(id)
         id !== undefined && CategoriesService.getPostByBrandId(id).then((res) => { setFilteredTable(res.data) }).catch(err => console.log(err))
     }
     const handleBrandClear = () => {
         setFilteredTable(null)
     }
-    // useEffect(() => {
-    //     {location.pathname === "/tin-xe" ? setDt(data.cars) :
-    //         location.pathname === "/tin-phu-kien" ? setDt(data.accessories) :
-    //             location.pathname === "/tin-su-kien" ? setDt(data.events) :
-    //                 location.pathname === "/tin-cuoc-thi" ? setDt(data.contests) : null}
-    // }, [])
     return (
-        <Spin spinning={data.cars.length !== 0 ? false : true}>
+        <Spin spinning={dt !== null ? false : true}>
             <div className="headerCW">
                 <Select
                     className="selectBrand"
@@ -114,6 +114,7 @@ function Categories() {
                     }
                     onChange={handleSelectBrand}
                     onClear={handleBrandClear}
+                    value={brandSelectValue}
                     allowClear
                 >
                     {dt !== null && Array.from(new Set(dt.map(obj => obj.BrandId))).map((brand) => (
@@ -123,9 +124,9 @@ function Categories() {
                     ))}
                 </Select>
                 <div className="navCW">
-                    <Divider orientation="left" style={{ fontSize: 32 }}>TIN XE</Divider>
+                    <Divider orientation="left" style={{ fontSize: 32 }}>{title.toUpperCase()}</Divider>
 
-                    <Row gutter={15} style={{ marginBottom: 20 }}>
+                    {filteredTable === null ? <Row gutter={15} style={{ marginBottom: 20 }}>
                         <Col className="hoverTitlePage" span={16} style={{ cursor: 'pointer' }} onClick={() => { handleDetail(firstData) }}>
                             <Image preview={false} alt="" style={{ height: 400, width: '773.68px', objectFit: 'cover' }} src={firstData != null && firstData.FeaturedImage} />
                             <div style={{ fontSize: 28, marginBottom: 10, fontWeight: '600' }}>{firstData != null && firstData.Title}</div>
@@ -140,15 +141,11 @@ function Categories() {
                                 <div style={{ fontSize: 16, marginBottom: 10, fontWeight: '600', width: '378.67px' }}>{thirdData != null && thirdData.Title}</div>
                             </Row>
                         </Col>
-                    </Row>
+                    </Row> : null}
                     <Divider></Divider>
                     <List
                         grid={{ gutter: 16, column: 3 }}
-                        dataSource={
-                            location.pathname === "/tin-xe" ? data.cars.filter(function (value, index, arr) { return (index !== 0 && index !== 1 && index !== 2) }) :
-                                location.pathname === "/tin-phu-kien" ? data.accessories.filter(function (value, index, arr) { return (index !== 0 && index !== 1 && index !== 2) }) :
-                                    location.pathname === "/tin-su-kien" ? data.events.filter(function (value, index, arr) { return (index !== 0 && index !== 1 && index !== 2) }) :
-                                        location.pathname === "/tin-cuoc-thi" ? data.contests.filter(function (value, index, arr) { return (index !== 0 && index !== 1 && index !== 2) }) : null}
+                        dataSource={filteredTable === null ? dt.filter(function (value, index, arr) { return (index !== 0 && index !== 1 && index !== 2) }) : filteredTable}
                         renderItem={item => (
                             <List.Item
                                 onClick={() => {
