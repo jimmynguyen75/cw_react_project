@@ -29,6 +29,13 @@ export default function ViewCategory() {
         let repo = removeVietnamese.removeVietnameseTones(record.Title)
         history.push(`/su-kien/${repo.replace(/\s+/g, '-').toLowerCase()}`, { record: record });
     }
+    const onClickBrand = () => {
+        history.push({
+            pathname: '/hang-xe',
+            search: brand.Name,
+            state: brand
+        })
+    }
     useEffect(() => {
         document.title = title
         switch (location.pathname) {
@@ -95,7 +102,7 @@ export default function ViewCategory() {
                 <Col>
                     <div style={{ padding: '9.6px', fontWeight: 600, fontSize: 32, width: 900, marginTop: 30 }}> {record !== '' && record.Title}</div>
                     <Row style={{ paddingLeft: '9.6px', marginTop: '5px', fontSize: 15, color: '#888888' }}>
-                        {brand !== '' && <div style={{ display: 'flex', alignItems: 'center' }}><Avatar src={brand.Image} style={{ height: 'auto', width: 'auto', margin: 'auto', maxHeight: '40px', maxWidth: '40px' }}></Avatar>&nbsp;{brand.Name}</div>}
+                        {brand !== '' && <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} onClick={onClickBrand}><Avatar src={brand.Image} style={{ height: 'auto', width: 'auto', margin: 'auto', maxHeight: '40px', maxWidth: '40px' }}></Avatar>&nbsp;{brand.Name}</div>}
                         <div style={{ display: 'flex', alignItems: 'center' }}>&nbsp;- {record !== '' && moment(record.CreatedDate).format('llll')}</div>
                     </Row>
                     <div style={{ fontWeight: '500', marginBottom: 1, fontSize: 18, padding: '9.6px', width: 900 }}>

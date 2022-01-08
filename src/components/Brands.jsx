@@ -1,19 +1,25 @@
-import { Card, Divider, Image, List, Tag } from 'antd';
+import { Card, Divider, Image, List, Tag, Avatar } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { useHistory, useLocation } from "react-router-dom";
+import CategoriesService from '../services/CategoriesService';
 import removeVietnamese from '../utils/removeVietnamese';
-export default function Search() {
+function Brands() {
     const history = useHistory();
     const location = useLocation();
     const [data, setData] = useState([])
-    useEffect(() => {
-        setData(location.state.data)
-    }, [location, data])
     const { Meta } = Card;
+    console.log(location.state)
     function handleDetail(record) {
         let repo = removeVietnamese.removeVietnameseTones(record.Title)
         history.push(`/${repo.replace(/\s+/g, '-').toLowerCase()}`, { record: record });
     }
+    useEffect(() => {
+        CategoriesService.getPostByBrandId(location.state.Id)
+            .then((result) => {
+                setData(result.data)
+            })
+            .catch((err) => { console.log(err) })
+    }, [location])
     function convertType(type) {
         if (type === 1) {
             return 'Xe'
@@ -29,7 +35,9 @@ export default function Search() {
         <div className="headerCW">
             <div className="navCW">
                 <Divider orientation="left" style={{ fontSize: 24 }}>
-                    {location !== null && (location.state.data.length !== 0 ? ("Kết quả cho '" + location.state.search + "'") : ('Không tìm thấy'))}
+                    {location !== null && <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
+                        <Avatar src={location.state.Image} style={{ height: 'auto', width: 'auto', margin: 'auto', maxHeight: '40px', maxWidth: '80px' }}></Avatar>
+                        &nbsp;{location.state.Name}</div>}
                 </Divider>
                 <List
                     grid={{ gutter: 16, column: 4 }}
@@ -59,3 +67,5 @@ export default function Search() {
         </div>
     )
 }
+
+export default Brands

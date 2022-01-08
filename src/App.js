@@ -15,6 +15,7 @@ import ViewCategory from './components/category/ViewCategory';
 import Search from './components/Search';
 import ReactGA from "react-ga4";
 import ScrollToTop from './utils/scrollToTop';
+import Brands from './components/Brands';
 ReactGA.initialize("G-1CF3W5KCBY");
 ReactGA.send("pageview");
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/tim-kiem" exact component={Search} />
+          <Route path="/hang-xe" exact component={Brands} />
           <Route path="/su-kien" exact component={Event} />
           <Route path="/su-kien/:title?" exact component={ViewEvent} />
           <Route path="/cuoc-thi" exact component={Contest} />
