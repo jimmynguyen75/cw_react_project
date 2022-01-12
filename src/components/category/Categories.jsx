@@ -88,10 +88,12 @@ function Categories() {
     }, [location.pathname])
     useEffect(() => {
         CategoriesService.getAllBrand()
-            .then(res => {
-                setBrands(res.data);
-            })
-            .catch(err => console.log(err))
+            .then(car => {
+                CategoriesService.getAllAccessoriesBrand()
+                    .then(acc => {
+                        setBrands([...car.data, ...acc.data])
+                    }).catch(err => console.log(err))
+            }).catch(err => console.log(err))
     }, [])
     const handleSelectBrand = (id) => {
         setBrandValue(id)

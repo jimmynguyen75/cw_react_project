@@ -20,10 +20,12 @@ function Contest() {
     const [filteredTable, setFilteredTable] = useState(null);
     useEffect(() => {
         CategoriesService.getAllBrand()
-            .then(res => {
-                setBrands(res.data);
-            })
-            .catch(err => console.log(err))
+            .then(car => {
+                CategoriesService.getAllAccessoriesBrand()
+                    .then(acc => {
+                        setBrands([...car.data, ...acc.data])
+                    }).catch(err => console.log(err))
+            }).catch(err => console.log(err))
     }, [])
     const handleSelectBrand = (id) => {
         id !== undefined && ContestService.getContestsByBrandId(id).then((res) => { setFilteredTable(res.data) }).catch(err => console.log(err))

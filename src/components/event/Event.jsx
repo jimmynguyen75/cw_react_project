@@ -58,10 +58,12 @@ function Event() {
     const monthNow = moment().format('M')
     useEffect(() => {
         CategoriesService.getAllBrand()
-            .then(res => {
-                setBrands(res.data);
-            })
-            .catch(err => console.log(err))
+            .then(car => {
+                CategoriesService.getAllAccessoriesBrand()
+                    .then(acc => {
+                        setBrands([...car.data, ...acc.data])
+                    }).catch(err => console.log(err))
+            }).catch(err => console.log(err))
     }, [])
     const handleSelectBrand = (id) => {
         id !== undefined && EventService.getEventsByBrandId(id).then((res) => { setFilteredTable(res.data) }).catch(err => console.log(err))
