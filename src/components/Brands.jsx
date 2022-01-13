@@ -14,9 +14,15 @@ function Brands() {
         history.push(`/${repo.replace(/\s+/g, '-').toLowerCase()}`, { record: record });
     }
     useEffect(() => {
+        let data = []
         CategoriesService.getPostByBrandId(location.state.Id)
             .then((result) => {
-                setData(result.data)
+                result.data.forEach((category) => {
+                    if (category.Status === 1) {
+                        data.push(category)
+                    }
+                })
+                setData(data)
             })
             .catch((err) => { console.log(err) })
     }, [location])
