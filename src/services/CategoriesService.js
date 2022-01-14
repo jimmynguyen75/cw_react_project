@@ -22,6 +22,9 @@ class Categories {
     getAll() {
         return axios.get(CATEGORIES_API_URL + "GetAllPosts")
     }
+    getPostById(id) {
+        return axios.get(CATEGORIES_API_URL + "GetPostById?id=" + id)
+    }
     getBrandById(id) {
         return axios.get(BRAND_API_URL + "GetBrandById?id=" + id)
     }

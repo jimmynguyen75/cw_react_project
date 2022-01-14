@@ -1,6 +1,7 @@
 import { Card, Divider, Image, List, Tag } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { useHistory, useLocation } from "react-router-dom";
+import CategoriesService from '../services/CategoriesService';
 import removeVietnamese from '../utils/removeVietnamese';
 export default function Search() {
     const history = useHistory();
@@ -11,8 +12,13 @@ export default function Search() {
     }, [location, data])
     const { Meta } = Card;
     function handleDetail(record) {
-        let repo = removeVietnamese.removeVietnameseTones(record.Title)
-        history.push(`/${repo.replace(/\s+/g, '-').toLowerCase()}`, { record: record });
+        CategoriesService.getPostById(record.Id).then((res) => {
+            let repo = removeVietnamese.removeVietnameseTones(record.Title)
+            history.push(`/${repo.replace(/\s+/g, '-').toLowerCase()}`, { record: res.data });
+            console.log(res.data)
+        }).catch((error) => {
+            console.error(error)
+        })
     }
     function convertType(type) {
         if (type === 1) {

@@ -20,8 +20,13 @@ function Categories() {
     const [brandSelectValue, setBrandValue] = useState(null)
 
     function handleDetail(record) {
-        let repo = removeVietnamese.removeVietnameseTones(record.Title)
-        history.push(`/${repo.replace(/\s+/g, '-').toLowerCase()}`, { record: record });
+        CategoriesService.getPostById(record.Id).then((res) => {
+            let repo = removeVietnamese.removeVietnameseTones(record.Title)
+            history.push(`/${repo.replace(/\s+/g, '-').toLowerCase()}`, { record: res.data });
+            console.log(res.data)
+        }).catch((error) => {
+            console.error(error)
+        })
     }
     useEffect(() => {
         document.title = title

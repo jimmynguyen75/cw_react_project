@@ -21,9 +21,13 @@ export default function ViewCategory() {
     const [brand, setBrand] = useState('')
 
     function handleDetail(record1) {
-        let repo = removeVietnamese.removeVietnameseTones(record1.Title)
-        history.push(`/${repo.replace(/\s+/g, '-').toLowerCase()}`, { record: record1 });
-        window.location.reload()
+        CategoriesService.getPostById(record1.Id).then((res) => {
+            let repo = removeVietnamese.removeVietnameseTones(record1.Title)
+            history.push(`/${repo.replace(/\s+/g, '-').toLowerCase()}`, { record: res.data });
+            window.location.reload()
+        }).catch((error) => {
+            console.error(error)
+        })
     }
     function handleEventDetail(record) {
         let repo = removeVietnamese.removeVietnameseTones(record.Title)
@@ -116,7 +120,7 @@ export default function ViewCategory() {
                     <div id="editor" style={{ width: 900 }}>
                         {record !== '' && <p>{parse(record.Contents)}</p>}
                     </div>
-                    <div style={{ paddingLeft: '9.6px', fontWeight: '500' }}>Thực hiện: {record !== '' && record.CreatedByNavigation.FullName}</div>
+                    <div style={{ paddingLeft: '9.6px', fontWeight: '500' }}>Thực hiện: {record !== '' && record.CreatorName}</div>
                 </Col>
                 <Col style={{ width: 280 }}>
                     {/* <div style={{ marginTop: 50 }}>Bài đăng gần đây</div> */}

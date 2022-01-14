@@ -45,8 +45,13 @@ function Home() {
         ContestService.getContests().then((res) => { setContest(res.data) }).catch((err) => { console.log(err) })
     }, [])
     function handleDetail(record) {
-        let repo = removeVietnamese.removeVietnameseTones(record.Title)
-        history.push(`/${repo.replace(/\s+/g, '-').toLowerCase()}`, { record: record });
+        CategoriesService.getPostById(record.Id).then((res) => {
+            let repo = removeVietnamese.removeVietnameseTones(record.Title)
+            history.push(`/${repo.replace(/\s+/g, '-').toLowerCase()}`, { record: res.data });
+            console.log(res.data)
+        }).catch((error) => {
+            console.error(error)
+        })
     }
     function handleEventDetail(record) {
         let repo = removeVietnamese.removeVietnameseTones(record.Title)
@@ -197,8 +202,8 @@ function Home() {
                                                 <Avatar style={{ backgroundColor: '#1890ff' }} icon={<AntDesignOutlined />} />
                                                 <Avatar style={{ backgroundColor: '#1890ff' }} icon={<AntDesignOutlined />} />
                                             </Avatar.Group> */}
-                                            <Tag style={{borderRadius: 90}} color="#2db7f5">#{event != null && event[0].CurrentParticipants}</Tag>
-                                            <div style={{  fontSize: 14, color: '#555454' }}>Người đã tham gia</div>
+                                            <Tag style={{ borderRadius: 90 }} color="#2db7f5">#{event != null && event[0].CurrentParticipants}</Tag>
+                                            <div style={{ fontSize: 14, color: '#555454' }}>Người đã tham gia</div>
                                         </Row>
                                     </div>
                                     <div className="activeImg"><img alt="" src={event != null && event[0].Image} className='activeImgHover' /></div>
